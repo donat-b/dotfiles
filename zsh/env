@@ -1,0 +1,6 @@
+typeset -U path
+
+path=($HOME/opt/bin)
+
+export LANG="en_US.UTF-8"
+export EDITOR=$(which vim)

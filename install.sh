@@ -15,4 +15,4 @@ sl tmux.conf .tmux.conf
 # vim
 sl vimrc .vimrc
 # zsh
-sl zshenv .zshenv
+sl zsh/env .zshenv
