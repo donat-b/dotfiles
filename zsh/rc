@@ -1,0 +1,35 @@
+# History
+HISTFILE=~/.zsh_history
+HISTSIZE=15000
+SAVEHIST=15000
+setopt appendhistory autocd notify
+setopt hist_ignore_dups
+setopt hist_ignore_space
+setopt share_history
+# Allow comments in shell
+setopt interactivecomments
+
+# Bindings
+#bindkey -v # vi
+bindkey -e # emacss keys
+bindkey '^r' history-incremental-search-backward
+
+# completion
+autoload -Uz compinit
+compinit
+
+# prompt
+autoload -U promptinit
+promptinit
+prompt gentoo
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/etc/zsh/zshrc'
+
+# Auto start tmux if shell is interactive
+#[[ -o interactive && -z "$TMUX" ]] && hash tmux 2>/dev/null \
+#	&& exec tmux
+
+# start Xorg
+[[ ! ${DISPLAY} && ${XDG_VTNR} == 8 ]] \
+	&& exec startx

@@ -1,6 +1,6 @@
 typeset -U path
 
-path=($HOME/opt/bin)
+path=( $HOME/opt/bin $path )
 
-export LANG="en_US.UTF-8"
+#export LANG="en_US.UTF-8"
 export EDITOR=$(which vim)
