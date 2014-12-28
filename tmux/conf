@@ -16,7 +16,7 @@ unbind C-b
 # Open man
 bind-key m command-prompt "split-window 'exec man %%'"
 # Reload config
-bind-key r source-file /etc/tmux.conf \; display-message 'configuration reloaded'
+bind-key r source-file ~/.tmux.conf \; display-message 'configuration reloaded'
 # Copy-paste
 bind P paste-buffer
 # Vi
@@ -31,9 +31,9 @@ bind-key -t vi-copy 'y' copy-selection
 # Aggressive resize
 setw -g aggressive-resize on
 # Status line style
-#set -g status-right "#h L: #(cut -d' ' -f1 /proc/loadavg) B: #(cat /sys/class/power_supply/BAT0/capacity)%"
-set -g status-right "#h LAN: #(ifconfig lan | awk -F'[: ]+' '/inet addr:/ {print $4}' || echo -n none) Load: #(cut -d' ' -f1 /proc/loadavg)"
+#set -g status-right "B: #(cat /sys/class/power_supply/BAT0/capacity)%"
+set -g status-right "#h E: #(ifconfig lan | awk -F'[: ]+' '/inet addr:/ {print $4}' || echo -n none) Load: #(cut -d' ' -f1 /proc/loadavg)"
 set -g status-utf8 on
-#set -g status-style bg=yellow
-# Highlighting active window
-set-window-option -g window-status-current-bg yellow
+set -g status-style 'bg=black'
+set -ag status-style 'fg=cyan,bold'
+set-window-option -g window-status-current-fg 'magenta'
