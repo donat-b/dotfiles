@@ -22,6 +22,9 @@ set softtabstop=2
 " Show extra whitespace
 set list listchars=tab:>-
 
+" Show line numbers
+set number
+
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -62,7 +65,7 @@ nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Run current script in shell
-command R !./%
+command R !%:p
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
