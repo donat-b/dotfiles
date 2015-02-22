@@ -38,6 +38,7 @@ sl vimrc .vimrc
 
 # x11 stuff
 sl i3config .i3/config
+sl i3status .config/i3status/config
 sl xinitrc .xinitrc
 sl Xresources .Xresources
 
