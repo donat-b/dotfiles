@@ -1,0 +1,23 @@
+[user]
+  email = donat@opmbx.org
+  name = donat-b
+[color]
+  ui = true
+[alias]
+  # commit with diff
+  c     = commit --verbose
+  # sholt log
+  l     = log --graph --decorate --oneline
+  # full log
+  ll    = log --graph --decorate --stat
+  dup   = "!f() { git fetch upstream && git diff upstream/master -- $*; }; f"
+  # list tags
+  tags = tag -l
+  # Start a new local repository and perform initial commit
+  this  = !git init && git add . && git commmit -m \"Initial commit\"
+[push]
+  default = simple
+[https]
+  proxy = 'socks5://127.0.0.1:9080'
+[core]
+  autocrlf = false
