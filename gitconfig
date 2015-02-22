@@ -1,23 +1,60 @@
-[user]
-  email = donat@opmbx.org
-  name = donat-b
-[color]
-  ui = true
 [alias]
+  a = add
+  # list all configured aliases
+  aliases = !git config --list | grep '^alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
+  # amend last commit
+  amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+  # delete a branch
+  brdel = branch -D
+  # cherry pick
+  cp  = cherry-pick
   # commit with diff
   c     = commit --verbose
+  dup   = !git fetch upstream && git diff upstream/master --
   # sholt log
   l     = log --graph --decorate --oneline
   # full log
   ll    = log --graph --decorate --stat
-  dup   = "!f() { git fetch upstream && git diff upstream/master -- $*; }; f"
+  # status
+  s     = status
+  # status with untracked files
+  su     = status --untracked-files
+  # update submodule
+  subup = submodule update --init
   # list tags
   tags = tag -l
   # Start a new local repository and perform initial commit
   this  = !git init && git add . && git commmit -m \"Initial commit\"
-[push]
-  default = simple
-[https]
-  proxy = 'socks5://127.0.0.1:9080'
+
+[color]
+  ui = true
+
+[color "status"]
+  added = yellow
+  changed = green
+  untracked = red
+
 [core]
   autocrlf = false
+  compression = 9
+  excludesfile = ~/dotfiles/gitignore_global
+
+[diff]
+  mnemonicprefix = true
+
+[push]
+  default = simple
+
+[https]
+  proxy = 'socks5://127.0.0.1:9080'
+
+[url "https://bitbucket.org/"]
+  insteadOf = bb:
+[url "https://github.com/"]
+  insteadOf = gh:
+[url "https://gist.github.com/"]
+  insteadOf = gist:
+
+[user]
+  email = donat@opmbx.org
+  name = donat-b
