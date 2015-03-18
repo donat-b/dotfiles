@@ -2,5 +2,5 @@ typeset -U path
 
 path=( $HOME/opt/bin $path )
 
-#export LANG="en_US.UTF-8"
 export EDITOR=$(which vim)
+export GIT_PROXY_COMMAND=~/bin/proxy-wrapper.sh
