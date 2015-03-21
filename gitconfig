@@ -58,3 +58,5 @@
 [user]
   email = donat@opmbx.org
   name = donat-b
+[http]
+	lowSpeedTime = 900
