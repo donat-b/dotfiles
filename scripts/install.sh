@@ -8,7 +8,7 @@
 DOTDIR=$HOME/dotfiles
 
 function sl() {
-	# <name> <config name>
+	# <path to config in dotfiles> <path to config in $HOME>
 	if [ -h "$HOME/$2" ]; then
 		printf 'warn: %s exists - symlink\n' "$1"
 	elif [ -e "$HOME/$2" ]; then
@@ -41,8 +41,8 @@ sl vimrc .vimrc
 # x11 stuff
 sl i3config .i3/config
 sl i3status .config/i3status/config
-sl xinitrc .xinitrc
-sl Xresources .Xresources
+sl X/xinitrc .xinitrc
+sl X/Xresources .Xresources
 
 # zsh
 sl zsh/env .zshenv
