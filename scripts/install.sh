@@ -22,7 +22,7 @@ function sl() {
 sl gitconfig .gitconfig
 
 # mpv
-sl mpv.conf .config/mpv/mpv.conf
+sl mpv/mpv.conf .config/mpv/mpv.conf
 sl mpv/input.conf .config/mpv/input.conf
 
 # mutt
@@ -30,6 +30,7 @@ sl muttrc .muttrc
 
 # ranger
 sl rangerrc .config/ranger/rc.conf
+sl ranger/rifle.conf .config/ranger/rifle.conf
 
 # tmux
 sl tmux/conf .tmux.conf
