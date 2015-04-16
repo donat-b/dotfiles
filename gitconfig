@@ -6,6 +6,8 @@
   amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
   # delete a branch
   brdel = branch -D
+  # shallow clone
+  clsh  = clone --depth 1
   # cherry pick
   cp  = cherry-pick
   # commit with diff
