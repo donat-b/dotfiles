@@ -1,11 +1,14 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" No useless compatability with vi
+set nocompatible
+
+" Always use unicode
 scriptencoding utf-8
 set encoding=utf-8
+set fileformat=unix
 
-" No compatability with vi
-set nocompatible
 " Enable syntax highlighting
 syntax on
 " Required by vundle
@@ -25,6 +28,9 @@ set list listchars=tab:>-
 " Show line numbers
 set number
 
+" History
+set history=5000
+
 " Vundle
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -36,6 +42,7 @@ filetype indent on
 
 Bundle 'tpope/vim-sensible'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'noahfrederick/vim-skeleton'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
@@ -78,3 +85,18 @@ match ErrorMsg '\s\+$'
 au CursorHoldI * stopinsert
 "au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
 "au InsertEnter * let &updatetime=updaterestore
+
+" Automatically create directories on save
+function s:MkNonExDir(file, buf)
+  if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
+    let dir=fnamemodify(a:file, ':h')
+    if !isdirectory(dir)
+      call mkdir(dir, 'p')
+    endif
+  endif
+endfunction
+
+augroup BWCCreateDir
+  autocmd!
+  autocmd BufWritePre * :call s:MkNonExDir(expand('<afile>'), +expand('<abuf>'))
+augroup END
