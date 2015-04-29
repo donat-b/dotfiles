@@ -36,7 +36,7 @@ sl ranger/rifle.conf .config/ranger/rifle.conf
 sl tmux/conf .tmux.conf
 
 # vim
-sl vimrc .vimrc
+sl vim/vimrc .vimrc
 
 # x11 stuff
 sl i3config .i3/config
