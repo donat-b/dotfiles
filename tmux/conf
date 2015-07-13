@@ -3,18 +3,22 @@
 # Color
 # set -g default-terminal 'screen-256color'
 # History
-set-option -g history-limit 5000
+set-option -g history-limit 15000
 # Start window numbering at 1
 set -g base-index 1
 # Faster command sequence
-# set -s escape-time 0
+set -s escape-time 0
+set-option -g repeat-time 205
 # Rebind profix to Ctrl-A
 set-option -g prefix C-q
+bind-key C-q send-prefix
 unbind C-b
 # Last active window
 #bind-key C-a last-window
 # Open man
 bind-key m command-prompt "split-window 'exec man %%'"
+# Root
+bind-key R split-window 'exec su -'
 # Reload config
 bind-key r source-file ~/.tmux.conf \; display-message 'configuration reloaded'
 # Copy-paste
@@ -22,17 +26,14 @@ bind P paste-buffer
 # Vi
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
-# Resize panes
-#bind-key q resize-pane -L	# left
-#bind-key j resize-pane 21	# down
-#bind-key k resize-pane -U	# upward
-#bind-key x resize-pane -R	# right
+# Switching windows
+bind-key j previous-window
+bind-key k next-window
 
 # Aggressive resize
 setw -g aggressive-resize on
 # Status line style
-#set -g status-right "B: #(cat /sys/class/power_supply/BAT0/capacity)%"
-set -g status-right "#h E: #(ifconfig lan | awk -F'[: ]+' '/inet addr:/ {print $4}' || echo -n none) Load: #(cut -d' ' -f1 /proc/loadavg)"
+set -g status-right "B: #(cat /sys/class/power_supply/BAT0/capacity)%"
 set -g status-utf8 on
 set -g status-style 'bg=black'
 set -ag status-style 'fg=cyan,bold'
