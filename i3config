@@ -15,7 +15,7 @@ set $mod Mod4
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Droid Sans Mono 8
+font pango:Miriam 8
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 # The font above is very space-efficient, that is, it looks good, sharp and
@@ -44,13 +44,11 @@ bindsym XF86AudioStop exec qdbus $pmethod $ppath Stop
 bindsym Mod1+XF86AudioPlay exec qdbus $pmethod $ppath Next
 bindsym Mod1+XF86AudioStop exec qdbus $pmethod $ppath Previous
 
-#bindsym XF86AudioLowerVolume exec qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.VolumeSet $((`qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.VolumeGet` - 10))
-#bindsym XF86AudioRaiseVolume exec qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.VolumeSet $((`qdbus org.mpris.clementine /Player org.freedesktop.MediaPlayer.VolumeGet` + 10))
 #==============================================================================
 
 # Volume settings
-bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 1-
-bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 1+
+bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 3-
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 3+
 bindsym XF86AudioMute exec amixer -c0 set Master toggle
 #==============================================================================
 
@@ -58,7 +56,8 @@ bindsym XF86AudioMute exec amixer -c0 set Master toggle
 set $browser firefox
 bindsym $mod+w exec --no-startup-id $browser
 bindsym $mod+mod1+w exec $browser "$(xclip -o)"
-bindsym Mod1+XF86HomePage exec $browser -no-remote -P private
+bindsym Control+$mod+w exec optirun -- $browser --ProfileManager --no-remote
+#bindsym Control+$mod+w exec $browser -no-remote -P safe
 #==============================================================================
 
 # Mail
@@ -68,10 +67,11 @@ bindsym $mod+mod1+b exec nice -19 ~/opt/bin/bitcoin-qt -splash=0
 
 # Screenshot
 bindsym Control+Print exec --no-startup-id ~/bin/screenshot.sh -u
+bindsym shift+Print exec --no-startup-id ~/bin/screenshot.sh -cd 3
 bindsym Mod1+Print exec --no-startup-id ~/bin/screenshot.sh -s
 
 # Misc
-bindsym Control+$mod+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o)"
+bindsym Control+$mod+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o -selection clipboard)"
 bindsym mod1+$mod+m exec --no-startup-id "~/bin/mpv-play.sh --dash $(xclip -o)"
 bindsym $mod+m exec --no-startup-id "~/bin/mpv-play.sh $(xclip -o)"
 bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
@@ -79,8 +79,10 @@ bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
 bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
 
 # Brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 3
+bindsym XF86MonBrightnessDown exec xbacklight -dec 3
+bindsym mod1+XF86MonBrightnessUp exec xbacklight -set 100
+bindsym mod1+XF86MonBrightnessDown exec xbacklight -set 2
 
 # Touchpad
 bindsym Mod1+F9 exec ~/dotfiles/scripts/toggle-touchpad.sh
@@ -89,10 +91,10 @@ bindsym Mod1+F9 exec ~/dotfiles/scripts/toggle-touchpad.sh
 bindsym $mod+Control+o exec xrandr --output VGA1 --off
 
 # Lockscreen
-bindsym Control+Mod1+l exec i3lock -d -c 331111
+bindsym Control+Mod1+l exec i3lock -d -c 331111 --nofork
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec urxvt -tr -sh 14 -blr 5x5
 
 # kill focused window
 bindsym $mod+Shift+apostrophe kill
@@ -183,6 +185,16 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
+# scratchpad
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+grave move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+grave scratchpad show
+
+# Show the sup-mail scratchpad window, if any.
+bindsym Control+$mod+grave [title="^Sup ::"] scratchpad show
+
 # reload the configuration file
 bindsym $mod+Shift+j reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -217,9 +229,10 @@ mode "resize" {
 bindsym $mod+p mode "resize"
 
 # Assigns
+for_window [class="Skype-bin"] floating enable
 for_window [class="URxvt"] border none
 for_window [class="feh"] floating enable
-for_window [class="Skype-bin"] floating enable
+for_window [class="mpv"] floating enable
 
 for_window [class="Bitcoin-qt"] floating enable
 #for_window [class="Gimp"] floating enable
@@ -242,21 +255,36 @@ exec --no-startup-id qlipper
 # enable touchpad palm detection
 exec --no-startup-id synclient PalmDetect=1
 
-#exec_always --no-startup-id nitrogen --restore
+exec_always --no-startup-id nitrogen --restore
 #exec_always --no-startup-id xrandr --output VGA1 --mode 1920x1080 --above LVDS1 --rotate normal --rate 60
 exec_always --no-startup-id xrandr --output LVDS1 --auto --rotate normal --output VGA1 --mode 1920x1080 --above LVDS1
 exec_always --no-startup-id unclutter
 exec_always --no-startup-id xmodmap ~/dotfiles/xmodmaprc
-# nvidia optimus (works only on nouveau, very badly)
-#exec_always --no-startup-id xrandr --setprovideroffloadsink 0x5f 0x88
 
 #workspace 0 output VGA1
 #==============================================================================
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
+  colors {
+    separator #FFFF5F
+  }
   position top
-  font pango:Droid Sans Mono 11
-  status_command i3status
+  font pango:Miriam Mono 10
+  status_command ~/bin/i3status-wrapper.sh
   tray_output LVDS1
+  #tray_output HDMI1
+}
+bar {
+  colors {
+    background #111115
+  }
+  font pango:Miriam Mono 10
+  position bottom
+  mode hide
+  hidden_state hide
+  modifier Mod4
+  workspace_buttons no
+  status_command ~/bin/i3status-bottom.sh
+  tray_output none
 }
