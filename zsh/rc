@@ -25,14 +25,7 @@ prompt gentoo
 # The following lines were added by compinstall
 zstyle :compinstall filename '/etc/zsh/zshrc'
 
-# aliases
-alias rr=ranger
-alias sprunge='pastebinit -b sprunge.us'
 take() { mkdir "$1" && cd "$1" }
-# Parenting changing perms on / #
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chgrp='chgrp --preserve-root'
 
 if [[ "${UID}" -ge 1000 ]]; then
   # gpg-agent
@@ -43,11 +36,6 @@ if [[ "${UID}" -ge 1000 ]]; then
 		export SSH_AUTH_SOCK
 		export SSH_AGENT_PID
 		export GPG_TTY
-	fi
-
-  # start Xorg
-	if [[ ! ${DISPLAY} ]]; then
-		: exec startx
 	fi
 
   # Auto start tmux if shell is interactive
@@ -64,6 +52,5 @@ fi
 
 [[ -f ~/dotfiles/zsh/env ]] \
   && source ~/dotfiles/zsh/env
-
-# OPAM configuration
-. /home/leat/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+[[ -f ~/dotfiles/zsh/aliases.zsh ]] \
+  && source ~/dotfiles/zsh/aliases.zsh
