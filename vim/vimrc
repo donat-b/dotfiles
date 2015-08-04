@@ -15,9 +15,9 @@ syntax on
 filetype off
 " Set color scheme
 colorscheme elflord
-" Auto indent on a new line
+
+" Ruby community standart indentation
 set autoindent
-" Tabs are expanded to spaces
 set expandtab
 set shiftwidth=2
 set softtabstop=2
@@ -43,6 +43,9 @@ filetype indent on
 Bundle 'tpope/vim-sensible'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'noahfrederick/vim-skeleton'
+Bundle 'itchyny/calendar.vim'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'wellbredgrapefruit/tomdoc.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
@@ -52,6 +55,8 @@ Bundle 'noahfrederick/vim-skeleton'
 nmap <F2> :update<CR>
 vmap <F2> <Esc><F2>gv
 imap <F2> <c-o><F2>
+" F5 to insert current date
+:inoremap <F5> <C-R>=strftime("%F")<CR>
 
 " Movement keys for dvorak
 " qjkx
@@ -71,8 +76,8 @@ nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Run current script in shell
-command R !%:p
+" Execute current file
+nmap <F10> :!%:p<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
