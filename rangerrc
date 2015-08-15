@@ -140,7 +140,10 @@ map yp shell -d echo -n %d/%f | xsel -i
 map yd shell -d echo -n %d    | xsel -i
 map yn shell -d echo -n %f    | xsel -i
 # personal bindings
-map .m shell -d DRI_PRIME=1 VDPAU_DRIVER=nouveau mpv %f
+map .p shell picard .
+map .u shell sox --show-progress *.flac -n spectrogram -x 1000 -Y 600 -z 180 && feh spectrogram.png; [[ -d '00 - Data' ]] && mv -v spectrogram.png '00 - Data'
+map .o shell find . -name \*.flac | parallel --ungroup -j+0 opusenc --vbr --bitrate 260 --comp 10 {} {.}.opus && rm -v *.flac
+map .e shell -f easytag .
 
 # Filesystem Operations
 map =  chmod
