@@ -91,6 +91,13 @@ au CursorHoldI * stopinsert
 "au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
 "au InsertEnter * let &updatetime=updaterestore
 
+highlight Normal guibg=#32322f ctermbg=236
+highlight NonText guibg=#32322f ctermbg=236
+highlight ColorColumn guibg=#000000 ctermbg=0
+" it was 2015 year, the year of fire... the year of destruction
+let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="80,".join(range(133,999),",")
+
 " Automatically create directories on save
 function s:MkNonExDir(file, buf)
   if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
