@@ -9,18 +9,33 @@ setopt share_history
 # Allow comments in shell
 setopt interactivecomments
 
+# prompt
+autoload -U promptinit
+promptinit
+prompt clint
+
 # Bindings
-bindkey -e
+bindkey -v
+
 bindkey '^r' history-incremental-search-backward
+bindkey '^P' up-history
+bindkey '^N' down-history
+bindkey '^?' backward-delete-char
+bindkey '^h' backward-delete-char
+bindkey '^w' backward-kill-word
+
+function zle-line-init zle-keymap-select {
+  VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]%  %{$reset_color%}"
+  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $EPS1"
+  zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # completion
 autoload -Uz compinit
 compinit
-
-# prompt
-autoload -U promptinit
-promptinit
-prompt gentoo
 
 # The following lines were added by compinstall
 zstyle :compinstall filename '/etc/zsh/zshrc'
@@ -29,21 +44,21 @@ take() { mkdir "$1" && cd "$1" }
 
 if [[ "${UID}" -ge 1000 ]]; then
   # gpg-agent
-	if [[ -f "${HOME}/.gpg-agent-info" ]]; then
-		GPG_TTY=$(tty)
-		source "${HOME}/.gpg-agent-info"
-		export GPG_AGENT_INFO
-		export SSH_AUTH_SOCK
-		export SSH_AGENT_PID
-		export GPG_TTY
-	fi
+  if [[ -f "${HOME}/.gpg-agent-info" ]]; then
+    GPG_TTY=$(tty)
+    source "${HOME}/.gpg-agent-info"
+    export GPG_AGENT_INFO
+    export SSH_AUTH_SOCK
+    export SSH_AGENT_PID
+    export GPG_TTY
+  fi
 
   # Auto start tmux if shell is interactive
-	if [[ -o interactive && -z "$TMUX" ]]; then
-		hash tmux 2>/dev/null \
-			&& tmux attach \
-			|| exec tmux
-	fi
+  if [[ -o interactive && -z "$TMUX" ]]; then
+    hash tmux 2>/dev/null \
+      && tmux attach \
+      || exec tmux
+  fi
 
   autoload -U tetris
   zle -N tetris
