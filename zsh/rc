@@ -6,7 +6,7 @@ setopt INTERACTIVECOMMENTS # Allow comments even in interactive shells
 setopt NOCLOBBER           # Do not allows  '>'  redirection  to  truncate  existing files, and '>>' to create files
 setopt NOTIFY              # Report the status of background jobs immediately
 setopt PROMPT_SUBST        # Enable parameter expansion, command substitution and arithmetic expansion in prompt
-setopt SHARE_HISTORY       # Imports new commands from the history file, and causes typed commands to be appended to the history file
+setopt SHARE_HISTORY       # Import new commands from the history file, and causes typed commands to be appended to the history file
 
 # Prompt
 autoload -U promptinit
@@ -47,6 +47,8 @@ bindkey '^N' down-history                             # [Ctrl-n]    - Move to th
 bindkey '^?' backward-delete-char                     # [Backspace] - Delete the character behind the cursor
 bindkey '^h' backward-delete-char                     # [Ctrl-h]    - ″
 bindkey '^w' backward-kill-word                       # [Ctrl-w]    - Kill the word behind the cursor
+bindkey '^a' vi-beginning-of-line                     # [Ctrl-a]    - Move to the beginning of the line, without changing lines
+bindkey '^e' vi-end-of-line                           # [Ctrl-e]    - Move to the end of the line
 bindkey '\ew' kill-region                             # [Esc-w]     - Kill from the cursor to the mark
 bindkey -s '\el' 'ls\n'                               # [Esc-l]     - run command: ls
 bindkey -s '\ell' 'ls -lh\n'                          # [Esc-ll]    - run command: ls -lh
