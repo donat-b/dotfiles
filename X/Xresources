@@ -1,7 +1,7 @@
 URxvt*background: black
 URxvt*foreground: white
 ! black
-*color0:  #111111
+*color0:  #151515
 *color8:  #555753
 ! red
 *color1:  #a40000
@@ -32,3 +32,31 @@ URxvt.scrollBar: false
 
 URxvt.font:     xft:Terminus:pixelsize=17
 URxvt.boldFont: xft:Terminus:bold:pixelsize=17
+
+!URxvt.font:     xft:Ubuntu Mono:pixelsize=15
+!URxvt.boldFont: xft:Ubuntu Mono:bold:pixelsize=15
+
+!-*- Perl extensions -*-
+URxvt.perl-ext-common:clipboard,default,font-size,keyboard-select,matcher,url-select
+URxvt.iso14755: False
+URxvt.font-size.step: 2
+URxvt.url-launcher: /usr/bin/firefox
+URxvt.URxvt.url-select.launcher: /usr/bin/firefox -no-remote
+URxvt.url-select.underline: True
+URxvt.url-select.button: 2
+URxvt.matcher.rend.0: Uline fg5
+! URxvt.clipboard.copycmd:  xsel -ib
+! URxvt.clipboard.pastecmd: xsel -ob
+! keyboard select
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.M-u:      perl:url-select:select_next
+URxvt.keysym.C-Delete: perl:matcher:last
+URxvt.keysym.M-Delete: perl:matcher:list
+! clipboard
+URxvt.keysym.M-c:     perl:clipboard:copy
+URxvt.keysym.M-v:     perl:clipboard:paste
+! font-size
+URxvt.keysym.M-Up:     perl:font-size:increase
+URxvt.keysym.M-Down:   perl:font-size:decrease
+URxvt.keysym.M-S-Up:   perl:font-size:incglobal
+URxvt.keysym.M-S-Down: perl:font-size:decglobal
