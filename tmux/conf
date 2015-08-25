@@ -23,8 +23,8 @@ bind P paste-buffer
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
 # Switching windows
-bind-key j previous-window
-bind-key k next-window
+bind-key -n 'M-,' previous-window
+bind-key -n 'M-.' next-window
 unbind p
 unbind n
 
@@ -35,5 +35,3 @@ set -g status-utf8 on
 set -g status-style 'bg=black'
 set -ag status-style 'fg=cyan,bold'
 set-window-option -g window-status-current-fg 'magenta'
-
-new-session
