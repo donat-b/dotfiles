@@ -98,6 +98,11 @@ highlight ColorColumn guibg=#000000 ctermbg=0
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(133,999),",")
 
+" Add/change file extension in current buffer
+" http://vim.wikia.com/wiki/Add/change_file_extension_in_current_buffer
+command! -nargs=1 AddExt execute "saveas ".expand("%:p").<q-args>
+command! -nargs=1 ChgExt execute "saveas ".expand("%:p:r").<q-args>
+
 " Automatically create directories on save
 function s:MkNonExDir(file, buf)
   if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
