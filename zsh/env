@@ -13,6 +13,6 @@ export SAVEHIST=15000
 
 export EDITOR=$(which vim)
 #export GIT_PROXY_COMMAND=~/bin/proxy-wrapper.sh
-export SCIPY_PIL_IMAGE_VIEWER=feh
-export RUBYOPT="-w $RUBYOPT"
 export KEYTIMEOUT=2
+export RUBYOPT="-w $RUBYOPT"
+export SCIPY_PIL_IMAGE_VIEWER=feh
