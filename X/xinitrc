@@ -1,4 +1,4 @@
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
 [[ -f /etc/profile ]] && source /etc/profile
 
-exec i3
+exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3 -V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
