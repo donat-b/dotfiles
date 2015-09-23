@@ -58,17 +58,6 @@ imap <F2> <c-o><F2>
 " F5 to insert current date
 :inoremap <F5> <C-R>=strftime("%F")<CR>
 
-" Movement keys for dvorak
-" qjkx
-nnoremap q h
-nnoremap Q H
-nnoremap h x
-nnoremap H X
-nnoremap x l
-nnoremap X L
-nnoremap l q
-nnoremap L Q
-
 " Remove trailing whitespaces
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
