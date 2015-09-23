@@ -35,6 +35,9 @@ floating_modifier $mod
 # Default workspace layout
 workspace_layout tabbed
 
+# 
+popup_during_fullscreen leave_fullscreen
+
 # Player
 set $pmethod 'org.mpris.MediaPlayer2.clementine'
 set $ppath '/org/mpris/MediaPlayer2'
@@ -55,15 +58,15 @@ bindsym XF86AudioMute exec amixer -c0 set Master toggle
 # Browser
 set $browser firefox
 bindsym $mod+w exec --no-startup-id $browser
-bindsym $mod+mod1+w exec $browser "$(xclip -o)"
+bindsym $mod+Shift+w exec $browser "$(xclip -o)"
 bindsym Control+$mod+w exec optirun -- $browser --ProfileManager --no-remote
 #bindsym Control+$mod+w exec $browser -no-remote -P safe
 #==============================================================================
 
-# Mail
-#bindsym XF86Mail exec sylpheed
+# calculator
+bindsym Control+F12 exec speedcrunch
 
-bindsym $mod+mod1+b exec nice -19 ~/opt/bin/bitcoin-qt -splash=0
+#bindsym $mod+mod1+b exec nice -19 ~/opt/bin/bitcoin-qt -splash=0
 
 # Screenshot
 bindsym Control+Print exec --no-startup-id ~/bin/screenshot.sh -u
@@ -71,18 +74,18 @@ bindsym shift+Print exec --no-startup-id ~/bin/screenshot.sh -cd 3
 bindsym Mod1+Print exec --no-startup-id ~/bin/screenshot.sh -s
 
 # Misc
-bindsym Control+$mod+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o -selection clipboard)"
-bindsym mod1+$mod+m exec --no-startup-id "~/bin/mpv-play.sh --dash $(xclip -o)"
+bindsym $mod+Control+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o -selection clipboard)"
+bindsym $mod+Shift+m exec --no-startup-id "~/bin/mpv-play.sh --dash $(xclip -o)"
 bindsym $mod+m exec --no-startup-id "~/bin/mpv-play.sh $(xclip -o)"
 bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
 bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
 bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
 
 # Brightness
-bindsym XF86MonBrightnessUp exec xbacklight -inc 3
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3
-bindsym mod1+XF86MonBrightnessUp exec xbacklight -set 100
-bindsym mod1+XF86MonBrightnessDown exec xbacklight -set 2
+bindsym XF86MonBrightnessUp exec xbacklight -inc 3
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 2
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100
 
 # Touchpad
 bindsym Mod1+F9 exec ~/dotfiles/scripts/toggle-touchpad.sh
@@ -174,16 +177,27 @@ bindsym control+Mod1+Down workspace next
 bindsym control+Mod1+Up workspace prev
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace 1, workspace 1
+bindsym $mod+Shift+2 move container to workspace 2, workspace 2
+bindsym $mod+Shift+3 move container to workspace 3, workspace 3
+bindsym $mod+Shift+4 move container to workspace 4, workspace 4
+bindsym $mod+Shift+5 move container to workspace 5, workspace 5
+bindsym $mod+Shift+6 move container to workspace 6, workspace 6
+bindsym $mod+Shift+7 move container to workspace 7, workspace 7
+bindsym $mod+Shift+8 move container to workspace 8, workspace 8
+bindsym $mod+Shift+9 move container to workspace 9, workspace 9
+bindsym $mod+Shift+0 move container to workspace 10, workspace 10
+
+bindsym $mod+Shift+Control+1 move container to workspace 1
+bindsym $mod+Shift+Control+2 move container to workspace 2
+bindsym $mod+Shift+Control+3 move container to workspace 3
+bindsym $mod+Shift+Control+4 move container to workspace 4
+bindsym $mod+Shift+Control+5 move container to workspace 5
+bindsym $mod+Shift+Control+6 move container to workspace 6
+bindsym $mod+Shift+Control+7 move container to workspace 7
+bindsym $mod+Shift+Control+8 move container to workspace 8
+bindsym $mod+Shift+Control+9 move container to workspace 9
+bindsym $mod+Shift+Control+0 move container to workspace 10
 
 # scratchpad
 # Make the currently focused window a scratchpad
@@ -239,8 +253,13 @@ for_window [class="Bitcoin-qt"] floating enable
 for_window [class="Gxmessage"] floating enable
 for_window [class="Psi-plus"] floating enable
 for_window [class="Shutter"] floating enable
+# intended for DTA
+#for_window [class="Firefox"] floating enable
 
 #assign [class="^URxvt$"] 2
+#assign [class="^mpv$"] media
+assign [class="^Clementine$"] media
+for_window [class="^mpv$"] focus
 
 workspace 1 output LVDS1
 
@@ -251,9 +270,8 @@ exec --no-startup-id ~/bin/lid_locker.sh
 exec --no-startup-id ~/bin/proxy.sh
 exec --no-startup-id urxvt
 exec --no-startup-id xcompmgr
-exec --no-startup-id qlipper
-# enable touchpad palm detection
-exec --no-startup-id synclient PalmDetect=1
+exec --no-startup-id qlipper                # clipboard manager
+exec --no-startup-id synclient PalmDetect=1 # enable touchpad palm detection
 
 exec_always --no-startup-id nitrogen --restore
 #exec_always --no-startup-id xrandr --output VGA1 --mode 1920x1080 --above LVDS1 --rotate normal --rate 60
@@ -275,16 +293,16 @@ bar {
   tray_output LVDS1
   #tray_output HDMI1
 }
-bar {
-  colors {
-    background #111115
-  }
-  font pango:Miriam Mono 10
-  position bottom
-  mode hide
-  hidden_state hide
-  modifier Mod4
-  workspace_buttons no
-  status_command ~/bin/i3status-bottom.sh
-  tray_output none
-}
+#bar {
+#  colors {
+#    background #111115
+#  }
+#  font pango:Miriam Mono 10
+#  position bottom
+#  mode hide
+#  hidden_state hide
+#  modifier Mod4
+#  workspace_buttons no
+#  status_command ~/bin/i3status-bottom.sh
+#  tray_output none
+#}
