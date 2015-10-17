@@ -80,6 +80,7 @@ bindsym $mod+m exec --no-startup-id "~/bin/mpv-play.sh $(xclip -o)"
 bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
 bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
 bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
+bindsym $mod+j exec --no-startup-id "~/bin/pyrit-toggle.sh"
 
 # Brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3
@@ -263,13 +264,14 @@ workspace 1 output LVDS1
 
 #==============================================================================
 
-exec --no-startup-id ~/bin/locker.sh
-exec --no-startup-id ~/bin/lid_locker.sh
-exec --no-startup-id ~/bin/proxy.sh
-exec --no-startup-id urxvt
-exec --no-startup-id xcompmgr
 exec --no-startup-id qlipper                # clipboard manager
 exec --no-startup-id synclient PalmDetect=1 # enable touchpad palm detection
+exec --no-startup-id trysterobiff           # email notifier
+exec --no-startup-id urxvt
+exec --no-startup-id xcompmgr
+exec --no-startup-id ~/bin/lid_locker.sh
+exec --no-startup-id ~/bin/locker.sh
+exec --no-startup-id ~/bin/proxy.sh
 
 exec_always --no-startup-id nitrogen --restore
 #exec_always --no-startup-id xrandr --output VGA1 --mode 1920x1080 --above LVDS1 --rotate normal --rate 60
@@ -288,7 +290,8 @@ bar {
   position top
   font pango:Miriam Mono 10
   status_command ~/bin/i3status-wrapper.sh
-  tray_output LVDS1
+  tray_output VGA1
+  #tray_output LVDS1
   #tray_output HDMI1
 }
 #bar {
