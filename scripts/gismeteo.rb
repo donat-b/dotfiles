@@ -11,8 +11,9 @@ require 'ap'
 
 city =
   [ 4368, # Moscow
+    4445, # Penza
   ]
-URL = "http://d6a5c954.services.gismeteo.ru/inform-service/0f14315098daad405ded9270d1500bcb/forecast/?city=#{city[0].to_s}&lang=en"
+URL = "http://d6a5c954.services.gismeteo.ru/inform-service/0f14315098daad405ded9270d1500bcb/forecast/?city=#{city[1].to_s}&lang=en"
 CACHE_FILE = '/tmp/gismeteo.tmp'
 
 xml = IO.read CACHE_FILE rescue nil
