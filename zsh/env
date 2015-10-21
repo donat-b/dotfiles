@@ -11,6 +11,7 @@ export HISTFILE=~/.zsh_history
 export HISTSIZE=15000
 export SAVEHIST=15000
 
+export REPORTTIME=1
 export EDITOR=$(which vim)
 #export GIT_PROXY_COMMAND=~/bin/proxy-wrapper.sh
 export KEYTIMEOUT=2
