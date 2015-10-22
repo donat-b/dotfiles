@@ -27,6 +27,9 @@ bind-key -n 'M-,' previous-window
 bind-key -n 'M-.' next-window
 unbind p
 unbind n
+# scrolling
+bind -t emacs-copy -n 'x' page-up
+bind -t emacs-copy -n 'j' page-down
 
 # Aggressive resize
 setw -g aggressive-resize on
