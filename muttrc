@@ -1,0 +1,54 @@
+set config_charset='utf-8'
+set charset='utf-8'
+set editor='vim +11'
+set mbox_type = 'MH'
+set pager_stop
+set sort=reverse-date-received
+set sort_aux=last-date-received
+
+# Define the = shortcut, and the entry point for the folder browser (c?)
+set postponed = '=Drafts'
+set record = '=Sent'
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.mutt/certificates
+set mail_check=15
+# Don't wait to enter mailbox manually
+unset imap_passive
+# Automatically poll subscribed mailboxes for new mail
+set imap_check_subscribed
+# Keep copies of outgoing mail
+set copy = yes
+set trash="=Trash"
+set signature="~/.signature"
+
+auto_view text/html
+
+# ignore unwanted headers
+ignore *
+unignore from date subject to cc
+unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
+unignore posted-to:
+
+# colors
+color header yellow default Subject:
+color header cyan default .
+color body brightyellow default [_a-z\.\$A-Z0-9-]+@[a-zA-Z0-9\./\-]+
+color body yellow default (http|ftp)://[_a-zA-Z0-9\./~\-]+
+color quoted green default
+color signature green default
+color indicator yellow blue
+color attachment yellow default
+color tree red default
+color indicator black cyan
+color status yellow black
+color tilde blue default
+color normal default default
+
+# binds
+#bind browser G next-unread-mailbox
+
+source ~/dotfiles/mutt/crypto
+source ~/dotfiles/mutt/gpg.rc
+source ~/dotfiles/mutt/aliases.rc
+source ~/dotfiles/mutt/opmbx.rc
