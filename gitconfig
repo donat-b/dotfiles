@@ -12,6 +12,9 @@
   cp  = cherry-pick
   # commit with diff
   c     = commit --verbose
+  ca     = commit --all --verbose
+  # checkout
+  co    = checkout
   dup   = !git fetch upstream && git diff upstream/master --
   # sholt log
   l     = log --graph --decorate --oneline
@@ -47,8 +50,8 @@
 [push]
   default = simple
 
-[https]
-  proxy = 'socks5://127.0.0.1:9080'
+#[https]
+#  proxy = 'socks5://127.0.0.1:9080'
 
 [url "https://bitbucket.org/"]
   insteadOf = bb:
