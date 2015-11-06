@@ -69,9 +69,12 @@ bindsym Control+F12 exec speedcrunch
 #bindsym $mod+mod1+b exec nice -19 ~/opt/bin/bitcoin-qt -splash=0
 
 # Screenshot
+# region
+bindsym Print exec --no-startup-id "~/bin/screenshot.sh -d 3 --select"
+# focused window
 bindsym Control+Print exec --no-startup-id ~/bin/screenshot.sh -u
-bindsym shift+Print exec --no-startup-id ~/bin/screenshot.sh -cd 3
-bindsym Mod1+Print exec --no-startup-id ~/bin/screenshot.sh -s
+# with 3 second delay
+bindsym shift+Print exec "~/bin/screenshot.sh -cd 3"
 
 # Misc
 bindsym $mod+Control+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o -selection clipboard)"
@@ -81,6 +84,7 @@ bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
 bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
 bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
 bindsym $mod+j exec --no-startup-id "~/bin/pyrit-toggle.sh"
+bindsym $mod+b exec --no-startup-id "optirun -- blender"
 
 # Brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3
