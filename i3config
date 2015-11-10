@@ -85,6 +85,7 @@ bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
 bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
 bindsym $mod+j exec --no-startup-id "~/bin/pyrit-toggle.sh"
 bindsym $mod+b exec --no-startup-id "optirun -- blender"
+bindsym $mod+g exec --no-startup-id "optirun -- gimp"
 
 # Brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3
