@@ -100,7 +100,7 @@ bindsym Mod1+F9 exec ~/dotfiles/scripts/toggle-touchpad.sh
 bindsym $mod+Control+o exec xrandr --output VGA1 --off
 
 # Lockscreen
-bindsym Control+Mod1+l exec i3lock -d -c 331111 --nofork
+bindsym Control+Mod1+l exec "~/dotfiles/scripts/lockscreen.sh"
 
 # start a terminal
 bindsym $mod+Return exec urxvt -tr -sh 14 -blr 5x5
