@@ -3,33 +3,35 @@
   # list all configured aliases
   aliases = !git config --list | grep '^alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
   # amend last commit
-  amend = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
+  amend   = !git log -n 1 --pretty=tformat:%s%n%n%b | git commit -F - --amend
   # delete a branch
-  brdel = branch -D
+  brdel   = branch -D
   # shallow clone
-  clsh  = clone --depth 1
+  clsh    = clone --depth 1
   # cherry pick
-  cp  = cherry-pick
+  cp      = cherry-pick
   # commit with diff
-  c     = commit --verbose
-  ca     = commit --all --verbose
+  c       = commit --verbose
+  ca      = commit --all --verbose
   # checkout
-  co    = checkout
-  dup   = !git fetch upstream && git diff upstream/master --
+  co      = checkout
+  dup     = !git fetch upstream && git diff upstream/master --
   # sholt log
-  l     = log --graph --decorate --oneline
+  l       = log --graph --decorate --oneline
   # full log
-  ll    = log --graph --decorate --stat
+  ll      = log --graph --decorate --stat
   # status
-  s     = status
+  s       = status
   # status with untracked files
-  su     = status --untracked-files
+  su      = status --untracked-files
   # update submodule
-  subup = submodule update --init
+  subup   = submodule update --init
   # list tags
-  tags = tag -l
+  tags    = tag -l
+  # undo add
+  unadd   = reset HEAD
   # Start a new local repository and perform initial commit
-  this  = !git init && git add . && git commmit -m \"Initial commit\"
+  this    = !git init && git add . && git commmit -m \"Initial commit\"
 
 [color]
   ui = true
