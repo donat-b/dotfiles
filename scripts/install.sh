@@ -34,7 +34,7 @@ sl mpv/input.conf .config/mpv/input.conf
 sl muttrc .muttrc
 
 # ranger
-sl rangerrc .config/ranger/rc.conf
+sl ranger/rc .config/ranger/rc.conf
 sl ranger/rifle.conf .config/ranger/rifle.conf
 
 # tmux
