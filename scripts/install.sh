@@ -53,3 +53,6 @@ sl X/Xresources .Xresources
 sl zsh/env .zshenv
 sl zsh/rc .zshrc
 sl zsh/profile .zprofile
+
+# gimp
+sl gimp/rc .gimp-2.8/gimprc
