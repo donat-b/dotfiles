@@ -135,6 +135,7 @@ map gp cd /tmp
 
 # External Programs
 map E  edit
+map X  shell xxd -a -c30 %f | less
 map du shell -p du --max-depth=1 -h --apparent-size
 map dU shell -p du --max-depth=1 -h --apparent-size | sort -rh
 map yp shell -d echo -n %d/%f | xsel -i
