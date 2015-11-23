@@ -269,10 +269,11 @@ workspace 1 output LVDS1
 
 #==============================================================================
 
+exec --no-startup-id goldendict             # dictionary
 exec --no-startup-id qlipper                # clipboard manager
 exec --no-startup-id synclient PalmDetect=1 # enable touchpad palm detection
 exec --no-startup-id trysterobiff           # email notifier
-exec --no-startup-id urxvt
+exec --no-startup-id urxvt                  # terminal emulator
 exec --no-startup-id xcompmgr
 exec --no-startup-id ~/bin/lid_locker.sh
 exec --no-startup-id ~/bin/locker.sh
