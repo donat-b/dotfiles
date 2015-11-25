@@ -56,3 +56,6 @@ sl zsh/profile .zprofile
 
 # gimp
 sl gimp/rc .gimp-2.8/gimprc
+
+# weechat
+sl weechat/alias.conf .weechat/alias.conf
