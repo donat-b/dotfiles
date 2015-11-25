@@ -1,5 +1,21 @@
-URxvt*background: black
-URxvt*foreground: white
+!-*- Base -*-
+
+URxvt.scrollBar:       false
+URxvt.cursorBlink:     true
+URxvt.cursorColor:     #f2f2f2
+URxvt.cursorUnderline: false
+URxvt.pointerBlank:    true
+
+URxvt*background:      #000000
+URxvt*foreground:      #f2f2f2
+
+URxvt.font:            xft:Terminus:pixelsize=17
+URxvt.boldFont:        xft:Terminus:bold:pixelsize=17
+
+!URxvt.font:     xft:Droid Sans Mono:size=11
+!URxvt.boldfont: xft:Droid Sans Mono:style=bold:size=11
+
+!-*- Colors -*-
 ! black
 *color0:  #151515
 *color8:  #555753
@@ -24,17 +40,6 @@ URxvt*foreground: white
 ! white
 *color7:  #babdb9
 *color15: #EEEEEC
-
-URxvt.scrollBar: false
-
-!URxvt.font:     xft:Droid Sans Mono:size=11
-!URxvt.boldfont: xft:Droid Sans Mono:style=bold:size=11
-
-URxvt.font:     xft:Terminus:pixelsize=17
-URxvt.boldFont: xft:Terminus:bold:pixelsize=17
-
-!URxvt.font:     xft:Ubuntu Mono:pixelsize=15
-!URxvt.boldFont: xft:Ubuntu Mono:bold:pixelsize=15
 
 !-*- Perl extensions -*-
 URxvt.perl-ext-common:clipboard,default,font-size,keyboard-select,matcher,url-select
