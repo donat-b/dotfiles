@@ -7,11 +7,22 @@ alias -g GP='|grep -i'
 alias -g NL='> /dev/null'
 
 # List direcory contents
-alias lsa='ls -lah'
+alias lha='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
 alias lh='ls -lh'
 alias la='ls -lA'
+
+alias lad='ls -d -- .*(/)'   # only dot-directories
+alias lsa='ls -a -- .*(.)'   # only dot-files
+alias lsd='ls -d -- *(/)'    # only directories
+alias lse='ls -ld -- *(/^F)' # only empty directories
+alias lsen='ls -d *(/om[1])' # newest directory
+alias lsx='ls -l -- *(*) | head $@ 2&>/dev/null'       # only executables
+alias lsnew='=ls -rtlh -- *(.) | tail $@ 2&>/dev/null' # only the newest files
+alias lsold="=ls -rtl -- *(.) | head $@ 2&>/dev/null"  # display the oldest files
+alias lssmall="=ls -Sl -- *(.) | tail $@ 2&>/dev/null" # display the smallest files
+alias lsbig="ls -lSh -- *(.) | grep -v total | head $@ 2&>/dev/null" # display the biggest files
 
 alias rr=ranger
 alias sprunge='pastebinit -b sprunge.us'
