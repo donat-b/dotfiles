@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 typeset -U path
-path=( $HOME/bin $HOME/opt/bin $path )
+path=( $HOME/dotfiles/scripts $HOME/bin $HOME/opt/bin $path )
 
 # add custom completion scripts
 fpath=(~/dotfiles/zsh/completion $fpath)
