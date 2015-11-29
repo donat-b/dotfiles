@@ -54,6 +54,8 @@
 
 #[https]
 #  proxy = 'socks5://127.0.0.1:9080'
+[http]
+  lowSpeedTime = 900
 
 [url "https://bitbucket.org/"]
   insteadOf = bb:
@@ -65,5 +67,5 @@
 [user]
   email = donat@opmbx.org
   name = donat-b
-[http]
-	lowSpeedTime = 900
+[github]
+  user = donat-b
