@@ -57,6 +57,9 @@ vmap <F2> <Esc><F2>gv
 imap <F2> <c-o><F2>
 " F5 to insert current date
 :inoremap <F5> <C-R>=strftime("%F")<CR>
+nnoremap <F4> :set invpaste paste?<CR>
+set pastetoggle=<F4>
+set showmode
 
 " Remove trailing whitespaces
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
