@@ -20,6 +20,7 @@
   l       = log --graph --decorate --oneline
   # full log
   ll      = log --graph --decorate --stat
+  ps      = push
   # status
   s       = status
   # status with untracked files
