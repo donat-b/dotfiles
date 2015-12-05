@@ -70,11 +70,11 @@ bindsym Control+F12 exec speedcrunch
 
 # Screenshot
 # region
-bindsym Print exec --no-startup-id "~/bin/screenshot.sh -d 3 --select"
+#bindsym Mod1+Print exec --no-startup-id "~/bin/screenshot.sh -d 3 --select"
 # focused window
-bindsym Control+Print exec --no-startup-id ~/bin/screenshot.sh -u
+#bindsym Control+Print exec --no-startup-id ~/bin/screenshot.sh -u
 # with 3 second delay
-bindsym shift+Print exec "~/bin/screenshot.sh -cd 3"
+#bindsym shift+Print exec "~/bin/screenshot.sh -cd 3"
 
 # Misc
 bindsym $mod+Control+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o -selection clipboard)"
@@ -103,7 +103,7 @@ bindsym $mod+Control+o exec xrandr --output VGA1 --off
 bindsym Control+Mod1+l exec "~/dotfiles/scripts/lockscreen.sh"
 
 # start a terminal
-bindsym $mod+Return exec urxvt -tr -sh 14 -blr 5x5
+bindsym $mod+Return exec urxvt -tr -sh 13 -blr 4x4
 
 # kill focused window
 bindsym $mod+Shift+apostrophe kill
@@ -218,7 +218,7 @@ bindsym $mod+Shift+j reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+p restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+greater exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+greater exec "i3-nagbar -t warning -m 'Do you really want to exit i3?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -261,7 +261,7 @@ for_window [class="Shutter"] floating enable
 #for_window [class="Firefox"] floating enable
 
 #assign [class="^URxvt$"] 2
-assign [class="^mpv$"] 5
+#assign [class="^mpv$"] 5
 assign [class="^Clementine$"] 5
 for_window [class="^mpv$"] focus
 
@@ -274,7 +274,7 @@ exec --no-startup-id qlipper                # clipboard manager
 exec --no-startup-id synclient PalmDetect=1 # enable touchpad palm detection
 exec --no-startup-id trysterobiff           # email notifier
 exec --no-startup-id urxvt                  # terminal emulator
-exec --no-startup-id xcompmgr
+exec --no-startup-id xcompmgr               # composite manager
 exec --no-startup-id ~/bin/lid_locker.sh
 exec --no-startup-id ~/bin/locker.sh
 exec --no-startup-id ~/bin/proxy.sh
