@@ -46,6 +46,7 @@ Bundle 'noahfrederick/vim-skeleton'
 Bundle 'itchyny/calendar.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'wellbredgrapefruit/tomdoc.vim'
+Bundle 'https://bitbucket.org/mortonfox/twitvim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
