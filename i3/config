@@ -64,7 +64,7 @@ bindsym Control+$mod+w exec optirun -- $browser --ProfileManager --no-remote
 #==============================================================================
 
 # calculator
-bindsym Control+F12 exec speedcrunch
+bindsym XF86Calculator exec speedcrunch
 
 #bindsym $mod+mod1+b exec nice -19 ~/opt/bin/bitcoin-qt -splash=0
 
