@@ -22,6 +22,8 @@
   grep    = grep -Ii
   # short log
   l       = log --graph --decorate --oneline
+  # last tag
+  lasttag = describe --tags --abbrev=0
   # full log
   ll      = log --graph --decorate --stat
   # list all configured aliases
@@ -45,7 +47,7 @@
   # undo add
   unadd   = reset HEAD
   # Start a new local repository and perform initial commit
-  this    = !git init && git add . && git commmit -m \"Initial commit\"
+  this    = !git init && git add . && git commit -m \"Initial commit\"
 
 [color]
   ui = true
