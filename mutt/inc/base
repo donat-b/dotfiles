@@ -6,3 +6,9 @@ set mbox_type = 'MH'
 set pager_stop
 set sort=reverse-date-received
 set sort_aux=last-date-received
+
+unset imap_passive
+set imap_check_subscribed
+set copy = yes # keep copies of sent mail
+set trash="=Trash"
+set signature="~/.signature"

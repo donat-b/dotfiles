@@ -1,0 +1,3 @@
+# -*- Mode: muttrc -*-
+bind index G imap-fetch-mail
+macro pager d '<delete-message><exit>'
