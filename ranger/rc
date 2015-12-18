@@ -148,6 +148,7 @@ map .p shell -f picard .
 map .u shell -f mkdir -p '00 - Data' && nice -19 sox --show-progress *.flac -n spectrogram -x 1000 -Y 600 -z 180 && feh spectrogram.png; find . -maxdepth 1 \( -name '*.cue' -or -name '*.txt' -or -name '*.log' -or -name 'spectrogram.png' \) -type f -exec mv -vt '00 - Data' -- '{}' +
 map .o shell find . -name \*.flac | parallel --ungroup -j+0 nice -19 opusenc --vbr --bitrate 260 --comp 10 {} {.}.opus && rm -v *.flac
 map .e shell -f easytag .
+map .a shell -f mkdir '00 - Artwork' && mv -vt '00 - Artwork' -- *jpg 
 
 # Filesystem Operations
 map =  chmod
