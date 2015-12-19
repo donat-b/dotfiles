@@ -1,3 +1,4 @@
+# -*- Mode: muttrc -*-
 source ~/dotfiles/mutt/opmbx.rc
 source ~/dotfiles/mutt/gpg.rc
 source ~/dotfiles/mutt/aliases.rc
@@ -16,13 +17,3 @@ set certificate_file = ~/.mutt/certificates
 set mailcap_path=~/dotfiles/mutt/mailcap
 set mail_check=15
 
-auto_view text/html
-
-# ignore unwanted headers
-ignore *
-unignore from date subject to cc
-unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
-unignore posted-to:
-
-# binds
-#bind browser G next-unread-mailbox

@@ -12,3 +12,10 @@ set imap_check_subscribed
 set copy = yes # keep copies of sent mail
 set trash="=Trash"
 set signature="~/.signature"
+auto_view text/html
+
+# ignore unwanted headers
+ignore *
+unignore from date subject to cc
+unignore organization organisation x-mailer: x-newsreader: x-mailing-list:
+unignore posted-to:
