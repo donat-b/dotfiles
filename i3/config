@@ -68,14 +68,6 @@ bindsym XF86Calculator exec speedcrunch
 
 #bindsym $mod+mod1+b exec nice -19 ~/opt/bin/bitcoin-qt -splash=0
 
-# Screenshot
-# region
-#bindsym Mod1+Print exec --no-startup-id "~/bin/screenshot.sh -d 3 --select"
-# focused window
-#bindsym Control+Print exec --no-startup-id ~/bin/screenshot.sh -u
-# with 3 second delay
-#bindsym shift+Print exec "~/bin/screenshot.sh -cd 3"
-
 # Misc
 bindsym $mod+Control+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o -selection clipboard)"
 bindsym $mod+Shift+m exec --no-startup-id "~/bin/mpv-play.sh --dash $(xclip -o)"
