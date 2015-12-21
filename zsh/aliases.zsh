@@ -24,13 +24,13 @@ alias lsold="=ls -rtl -- *(.) | head $@ 2&>/dev/null"  # display the oldest file
 alias lssmall="=ls -Sl -- *(.) | tail $@ 2&>/dev/null" # display the smallest files
 alias lsbig="ls -lSh -- *(.) | grep -v total | head $@ 2&>/dev/null" # display the biggest files
 
-alias rr=ranger
-alias sprunge='pastebinit -b sprunge.us'
+alias rg=ranger
 
 # Parenting changing perms on / #
 alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
+alias chmodx='chmod --preserve-root u+x'
 
 # Get external IP
 alias myip="curl -s http://icanhazip.com"
