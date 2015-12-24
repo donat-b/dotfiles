@@ -69,9 +69,9 @@ bindsym XF86Calculator exec speedcrunch
 #bindsym $mod+mod1+b exec nice -19 ~/opt/bin/bitcoin-qt -splash=0
 
 # Misc
-bindsym $mod+Control+m exec --no-startup-id "~/bin/mpv-play.sh --intel $(xclip -o -selection clipboard)"
-bindsym $mod+Shift+m exec --no-startup-id "~/bin/mpv-play.sh --dash $(xclip -o)"
-bindsym $mod+m exec --no-startup-id "~/bin/mpv-play.sh $(xclip -o)"
+bindsym $mod+Control+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh --intel"
+bindsym $mod+Shift+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh --fullhd"
+bindsym $mod+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh"
 bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
 bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
 bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
