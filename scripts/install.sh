@@ -34,6 +34,7 @@ config_paths=(
   [mpv/mpv.conf]=.config/mpv/mpv.conf
   [mpv/input.conf]=.config/mpv/input.conf
   [mutt/rc]=.muttrc
+  [newsbeuter]=.newsbeuter/config
   [ranger/rc]=.config/ranger/rc.conf
   [ranger/rifle.conf]=.config/ranger/rifle.conf
   [tmux/conf]=.tmux.conf
