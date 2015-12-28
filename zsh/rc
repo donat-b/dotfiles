@@ -97,8 +97,6 @@ fi
 # The following lines were added by compinstall
 zstyle :compinstall filename '/etc/zsh/zshrc'
 
-take() { mkdir "$1" && cd "$1" }
-
 if [[ "${UID}" -ge 1000 ]]; then
   # gpg-agent
   if [[ -f "${HOME}/.gpg-agent-info" ]]; then
@@ -128,3 +126,6 @@ fi
   && source ~/dotfiles/zsh/aliases.zsh
 [[ -f ~/dotfiles/zsh/functions.zsh ]] \
   && source ~/dotfiles/zsh/functions.zsh
+
+# added by travis gem
+[ -f /home/leat/.travis/travis.sh ] && source /home/leat/.travis/travis.sh
