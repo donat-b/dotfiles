@@ -26,6 +26,7 @@
   lasttag = describe --tags --abbrev=0
   # full log
   ll      = log --graph --decorate --stat
+  lp      = log --graph --decorate --stat --cc -p
   # list all configured aliases
   lsali   = !git config --list | grep '^alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
   ps      = push
