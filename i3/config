@@ -71,6 +71,7 @@ bindsym XF86Calculator exec speedcrunch
 # Misc
 bindsym $mod+Control+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh --intel"
 bindsym $mod+Shift+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh --fullhd"
+bindsym $mod+mod1+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh --best"
 bindsym $mod+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh"
 bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
 bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
