@@ -41,3 +41,14 @@ alias lw='loadwatch -l 1 -h 2.5 --'
 
 # Copy-paste friendly mtr output
 alias mtrp="mtr -rwc 5"
+
+# udiskctl mount/unmount for block devices
+alias udmount="udisksctl mount -b $@"
+alias udumount="udisksctl unmount -b $@"
+
+# task
+alias t='task'
+alias ta='task add'
+
+# emerge
+alias es='emerge -s'
