@@ -1,12 +1,15 @@
 #!/usr/bin/env sh
+
 function main() {
   unset http_proxy https_proxy
-  FORMAT=best
-  OPTIMUS='optirun --'
+  local FORMAT=best
+  local OPTIMUS='optirun --'
+  local URL=''
 
+  # TODO auto select FullHD
   while :; do
     case "$1" in
-      --best)
+      --bestdash)
         FORMAT='bestvideo+bestaudio/best'
         shift
         ;;
@@ -23,8 +26,9 @@ function main() {
         ;;
     esac
   done
-  F='ytdl://'$(xclip -o) # -selection clipboard)
+  URL="ytdl://$(xclip -o)" # -selection clipboard)
 
-  $OPTIMUS mpv --no-resume-playback --ytdl-format "$FORMAT" "$F" > /tmp/mpv.log 2>&1
+  $OPTIMUS mpv --no-resume-playback --ytdl-format="$FORMAT" "$URL" > /tmp/mpv.log 2>&1
 }
-main
+
+main "$@"
