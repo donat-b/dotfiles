@@ -51,4 +51,5 @@ alias t='task'
 alias ta='task add'
 
 # emerge
-alias es='emerge -s'
+alias ems='emerge -s'
+alias emS='emerge --searchdesc'
