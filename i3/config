@@ -79,6 +79,7 @@ bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
 bindsym $mod+j exec --no-startup-id "~/bin/pyrit-toggle.sh"
 bindsym $mod+b exec --no-startup-id "optirun -- blender"
 bindsym $mod+g exec --no-startup-id "optirun -- gimp"
+bindsym $mod+x exec --no-startup-id "xmind"
 
 # Brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 3
@@ -252,9 +253,11 @@ for_window [class="Psi-plus"] floating enable
 for_window [class="Shutter"] floating enable
 # intended for DTA
 #for_window [class="Firefox"] floating enable
+for_window [title="XMind"] floating enable
 
 #assign [class="^URxvt$"] 2
 #assign [class="^mpv$"] 5
+assign [class="^Qemu-system-x86_64$"] 6
 assign [class="^Clementine$"] 5
 for_window [class="^mpv$"] focus
 
