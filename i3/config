@@ -44,8 +44,8 @@ set $ppath '/org/mpris/MediaPlayer2'
 bindsym XF86AudioMedia exec clementine
 bindsym XF86AudioPlay exec qdbus $pmethod $ppath PlayPause
 bindsym XF86AudioStop exec qdbus $pmethod $ppath Stop
-bindsym Mod1+XF86AudioPlay exec qdbus $pmethod $ppath Next
-bindsym Mod1+XF86AudioStop exec qdbus $pmethod $ppath Previous
+bindsym XF86AudioNext exec qdbus $pmethod $ppath Next
+bindsym XF86AudioPrev exec qdbus $pmethod $ppath Previous
 
 #==============================================================================
 
