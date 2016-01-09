@@ -54,6 +54,8 @@ Bundle 'itchyny/calendar.vim'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'wellbredgrapefruit/tomdoc.vim'
 Bundle 'https://bitbucket.org/mortonfox/twitvim'
+" draw ascii charts
+Bundle 'vim-scripts/DrawIt'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
