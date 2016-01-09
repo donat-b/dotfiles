@@ -47,16 +47,6 @@ filetype plugin on
 " Enable file-type specific indenting
 filetype indent on
 
-Bundle 'tpope/vim-sensible'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'noahfrederick/vim-skeleton'
-Bundle 'itchyny/calendar.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'wellbredgrapefruit/tomdoc.vim'
-Bundle 'https://bitbucket.org/mortonfox/twitvim'
-" draw ascii charts
-Bundle 'vim-scripts/DrawIt'
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -80,6 +70,41 @@ nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " Execute current file
 nmap <F10> :!%:p<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Sensible defaults
+Bundle 'tpope/vim-sensible'
+
+" Ruby support
+" :help Ruby
+Bundle 'vim-ruby/vim-ruby'
+
+" File-type-specific templates
+" :help skeleton
+Bundle 'noahfrederick/vim-skeleton'
+
+" Ultimate calendar application
+" :help calendar
+Bundle 'itchyny/calendar.vim'
+
+" Commenting operations and styles
+" :help NERDCommenter
+Bundle 'scrooloose/nerdcommenter'
+
+" TomDoc syntax support
+Bundle 'wellbredgrapefruit/tomdoc.vim'
+
+" Twitter client
+" :help TwitVim
+Bundle 'https://bitbucket.org/mortonfox/twitvim'
+
+" ASCII drawing
+" :help drawit
+" \di to start
+" \ds to leave
+Bundle 'vim-scripts/DrawIt'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
