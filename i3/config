@@ -91,7 +91,7 @@ bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100
 bindsym Mod1+F9 exec ~/dotfiles/scripts/toggle-touchpad.sh
 
 # Turn off VGA
-bindsym $mod+Control+o exec xrandr --output VGA1 --off
+#bindsym $mod+Control+o exec xrandr --output VGA1 --off
 
 # Lockscreen
 bindsym Control+Mod1+l exec "~/dotfiles/scripts/lockscreen.sh"
@@ -253,7 +253,7 @@ for_window [class="Psi-plus"] floating enable
 for_window [class="Shutter"] floating enable
 # intended for DTA
 #for_window [class="Firefox"] floating enable
-for_window [title="XMind"] floating enable
+for_window [title="^XMind$"] floating enable
 
 #assign [class="^URxvt$"] 2
 #assign [class="^mpv$"] 5
