@@ -145,11 +145,13 @@ map yd shell -d echo -n %d    | xsel -i
 map yn shell -d echo -n %f    | xsel -i
 # personal bindings
 map .p shell -f picard .
-map .u shell -f mkdir -p '00 - Data' && nice -19 sox --show-progress *.flac -n spectrogram -x 1000 -Y 600 -z 180 && feh spectrogram.png; find . -maxdepth 1 \( -name '*.cue' -or -name '*.txt' -or -name '*.log' -or -name 'spectrogram.png' \) -type f -exec mv -vt '00 - Data' -- '{}' +
+map .s shell -w split2flac -nd .
+map .u shell -f mkdir -p '00 - Data' && nice -19 sox --show-progress *.flac -n spectrogram -x 1000 -Y 600 -z 180 && feh spectrogram.png; find . -maxdepth 1 \( -iname '*.cue' -or -iname '*.txt' -or -iname '*.log' -or -iname '*.pdf' -or -name 'spectrogram.png' \) -type f -exec mv -vt '00 - Data' -- '{}' +
 map .o shell find . -name \*.flac | parallel --ungroup -j+0 nice -19 opusenc --vbr --bitrate 260 --comp 10 {} {.}.opus && rm -v *.flac
 map .e shell -f easytag .
 map .a shell -f mkdir '00 - Artwork' && mv -vt '00 - Artwork' -- *jpg 
 map .f shell -w dn=.favorites; [[ -d $dn ]] || mkdir -v $dn; ln -sv %f $dn/
+map .g shell -f gimp %f
 
 # Filesystem Operations
 map =  chmod
