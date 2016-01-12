@@ -29,6 +29,7 @@ function sl() {
 config_paths=(
 # [source]=destination
 # destination can be a dot if a source has the same name
+  [gdbinit]=.gdbinit
   [gimp/rc]=.gimp-2.8/gimprc
   [gitconfig]=.
   [mpv/mpv.conf]=.config/mpv/mpv.conf
