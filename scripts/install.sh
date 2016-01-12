@@ -26,32 +26,36 @@ function sl() {
   fi
 }
 
-config_paths=(
-# [source]=destination
-# destination can be a dot if a source has the same name
-  [gdbinit]=.gdbinit
-  [gimp/rc]=.gimp-2.8/gimprc
-  [gitconfig]=.
-  [mpv/mpv.conf]=.config/mpv/mpv.conf
-  [mpv/input.conf]=.config/mpv/input.conf
-  [mutt/rc]=.muttrc
-  [newsbeuter]=.newsbeuter/config
-  [ranger/rc]=.config/ranger/rc.conf
-  [ranger/rifle.conf]=.config/ranger/rifle.conf
-  [tmux/conf]=.tmux.conf
-  [vim/vimrc]=.vimrc
-  [i3/config]=.i3/config
-  [i3/i3status]=.config/i3status/config
-  [X/xinitrc]=.xinitrc
-  [X/Xresources]=.Xresources
-  [zsh/env]=.zshenv
-  [zsh/rc]=.zshrc
-  [zsh/profile]=.zprofile
-  [weechat/alias.conf]=.weechat/alias.conf
-  )
+function main() {
+  config_paths=(
+  # [source]=destination
+  # destination can be '.' in which case it links the file using same name, prefixed with '.'
+    [gdbinit]=.gdbinit
+    [gimp/rc]=.gimp-2.8/gimprc
+    [gitconfig]=.
+    [mpv/mpv.conf]=.config/mpv/mpv.conf
+    [mpv/input.conf]=.config/mpv/input.conf
+    [mutt/rc]=.muttrc
+    [newsbeuter.conf]=.newsbeuter/config
+    [ranger/rc]=.config/ranger/rc.conf
+    [ranger/rifle.conf]=.config/ranger/rifle.conf
+    [tmux/conf]=.tmux.conf
+    [vim/vimrc]=.vimrc
+    [i3/config]=.i3/config
+    [i3/i3status]=.config/i3status/config
+    [X/xinitrc]=.xinitrc
+    [X/Xresources]=.Xresources
+    [zsh/env]=.zshenv
+    [zsh/rc]=.zshrc
+    [zsh/profile]=.zprofile
+    [weechat/alias.conf]=.weechat/alias.conf
+    )
 
-for i in "${!config_paths[@]}"; do
-  [ "${config_paths[$i]}" == '.' ] && \
-    config_paths[$i]=".$i"
-  sl "$i" "${config_paths[$i]}"
-done
+  for i in "${!config_paths[@]}"; do
+    [ "${config_paths[$i]}" == '.' ] && \
+      config_paths[$i]=".$i"
+    sl "$i" "${config_paths[$i]}"
+  done
+}
+
+main
