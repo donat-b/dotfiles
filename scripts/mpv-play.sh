@@ -28,7 +28,7 @@ function main() {
   done
   URL="ytdl://$(xclip -o)" # -selection clipboard)
 
-  $OPTIMUS mpv --no-resume-playback --ytdl-format="$FORMAT" "$URL" > /tmp/mpv.log 2>&1
+  $OPTIMUS mpv --log-file=/tmp/mpv.log --no-resume-playback --ytdl-format="$FORMAT" "$URL"
 }
 
 main "$@"
