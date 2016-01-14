@@ -149,9 +149,14 @@ map .s shell -w split2flac -nd .
 map .u shell -f mkdir -p '00 - Data' && nice -19 sox --show-progress *.flac -n spectrogram -x 1000 -Y 600 -z 180 && feh spectrogram.png; find . -maxdepth 1 \( -iname '*.cue' -or -iname '*.txt' -or -iname '*.log' -or -iname '*.pdf' -or -name 'spectrogram.png' \) -type f -exec mv -vt '00 - Data' -- '{}' +
 map .o shell find . -name \*.flac | parallel --ungroup -j+0 nice -19 opusenc --vbr --bitrate 260 --comp 10 {} {.}.opus && rm -v *.flac
 map .e shell -f easytag .
-map .a shell -f mkdir '00 - Artwork' && mv -vt '00 - Artwork' -- *jpg 
+map .a shell -f mkdir '00 - Scans' && mv -vt '00 - Scans' -- *.jpg && mv -vt '00 - Scans' -- *.JPG
 map .f shell -w dn=.favorites; [[ -d $dn ]] || mkdir -v $dn; ln -sv %f $dn/
 map .g shell -f gimp %f
+
+map xx shell -w xz -9ev %f
+map xX shell -w xz -dv %f
+map xR shell -w unrar x %f
+map xZ shell -w unzip %f
 
 # Filesystem Operations
 map =  chmod
@@ -383,3 +388,13 @@ tmap <delete>   eval -q fm.ui.taskview.task_remove()
 # Basic
 tmap <ESC> taskview_close
 copytmap <ESC> q Q w <C-c>
+
+set display_size_in_main_column true
+set max_console_history_size 1000
+set preview_directories false
+set tilde_in_titlebar true
+set unicode_ellipsis true
+set update_title false
+set update_tmux_title true
+set vcs_aware true
+set vcs_backend_git local
