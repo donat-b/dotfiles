@@ -102,9 +102,17 @@ Bundle 'https://bitbucket.org/mortonfox/twitvim'
 
 " ASCII drawing
 " :help drawit
-" \di to start
-" \ds to leave
+" <leader>di to start
+" <leader>ds to leave
 Bundle 'vim-scripts/DrawIt'
+
+" Personal wiki for vim
+" :help vimwiki
+Bundle 'vimwiki/vimwiki'
+
+" Markdown
+Bundle 'plasticboy/vim-markdown'
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
