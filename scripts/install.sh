@@ -37,6 +37,7 @@ function main() {
     [mpv/input.conf]=.config/mpv/input.conf
     [mutt/rc]=.muttrc
     [newsbeuter.conf]=.newsbeuter/config
+    [qxkb.cfg]=.config/qxkb.cfg
     [ranger/rc]=.config/ranger/rc.conf
     [ranger/rifle.conf]=.config/ranger/rifle.conf
     [tmux/conf]=.tmux.conf
