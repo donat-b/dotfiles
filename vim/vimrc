@@ -124,6 +124,9 @@ Bundle 'vimwiki/vimwiki'
 " Markdown
 Bundle 'plasticboy/vim-markdown'
 
+" View man pages in vim
+Bundle 'vim-utils/vim-man'
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
