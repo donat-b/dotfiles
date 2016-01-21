@@ -6,14 +6,21 @@ URxvt.cursorColor:     #f2f2f2
 URxvt.cursorUnderline: false
 URxvt.pointerBlank:    true
 
-URxvt*background:      #000000
-URxvt*foreground:      #f2f2f2
+URxvt.background:      #000000
+URxvt.foreground:      #f2f2f2
 
-URxvt.font:            xft:Terminus:pixelsize=17
-URxvt.boldFont:        xft:Terminus:bold:pixelsize=17
+!-*- Xft -*-
+Xft.dpi:        96
+Xft.antialias:  true
+Xft.rgba:       rgb
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
 
-!URxvt.font:     xft:Droid Sans Mono:size=11
-!URxvt.boldfont: xft:Droid Sans Mono:style=bold:size=11
+URxvt.font:     xft:Droid Sans Mono:size=10
+URxvt.boldfont: xft:Droid Sans Mono:style=bold:size=10
+
+!URxvt.font:     xft:Terminus:pixelsize=17
+!URxvt.boldFont: xft:Terminus:bold:pixelsize=17
 
 !-*- Colors -*-
 ! black

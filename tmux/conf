@@ -1,3 +1,4 @@
+set default-term rxvt-unicode-256color
 # History
 set-option -g history-limit 15000
 # Start window numbering at 1
