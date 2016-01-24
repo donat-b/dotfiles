@@ -10,7 +10,7 @@ URxvt.background:      #000000
 URxvt.foreground:      #f2f2f2
 
 !-*- Xft -*-
-Xft.dpi:        96
+Xft.dpi:        93
 Xft.antialias:  true
 Xft.rgba:       rgb
 Xft.hinting:    true
