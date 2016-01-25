@@ -152,6 +152,7 @@ map .e shell -f easytag .
 map .a shell -f mkdir '00 - Scans' && mv -vt '00 - Scans' -- *.jpg && mv -vt '00 - Scans' -- *.JPG
 map .f shell -w dn=.favorites; [[ -d $dn ]] || mkdir -v $dn; ln -sv %f $dn/
 map .g shell -f gimp %f
+map .h shell -f feh -D2 *
 
 map xx shell -w xz -9ev %f
 map xX shell -w xz -dv %f
