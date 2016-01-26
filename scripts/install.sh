@@ -31,6 +31,7 @@ function main() {
   # [source]=destination
   # destination can be '.' in which case it links the file using same name, prefixed with '.'
     [gdbinit]=.gdbinit
+    [ghci]=.
     [gimp/rc]=.gimp-2.8/gimprc
     [gitconfig]=.
     [mpv/mpv.conf]=.config/mpv/mpv.conf
