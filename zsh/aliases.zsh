@@ -23,6 +23,7 @@ alias lsnew='=ls -rtlh -- *(.) | tail $@ 2&>/dev/null' # only the newest files
 alias lsold="=ls -rtl -- *(.) | head $@ 2&>/dev/null"  # display the oldest files
 alias lssmall="=ls -Sl -- *(.) | tail $@ 2&>/dev/null" # display the smallest files
 alias lsbig="ls -lSh -- *(.) | grep -v total | head $@ 2&>/dev/null" # display the biggest files
+alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'"
 
 alias rg=ranger
 
@@ -53,3 +54,9 @@ alias ta='task add'
 # emerge
 alias ems='emerge -s'
 alias emS='emerge --searchdesc'
+
+# qemu-img with progress bar
+alias qemu-img='qemu-img -p'
+
+# xzip extreme compression
+alias xzec='xz -9ev --no-adjust'
