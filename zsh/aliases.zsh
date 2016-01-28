@@ -11,6 +11,7 @@ alias lha='ls -lah'
 alias l='ls -la'
 alias ll='ls -l'
 alias lh='ls -lh'
+alias lhs='ls -lhS'
 alias la='ls -lA'
 
 alias lad='ls -d -- .*(/)'   # only dot-directories

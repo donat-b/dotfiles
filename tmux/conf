@@ -1,8 +1,9 @@
 set default-term rxvt-unicode-256color
 # History
 set-option -g history-limit 15000
-# Start window numbering at 1
+# Start numbering at 1
 set -g base-index 1
+set -g pane-base-index 1
 # Faster command sequence
 set -s escape-time 0
 set-option -g repeat-time 205
