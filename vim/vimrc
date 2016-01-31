@@ -132,6 +132,10 @@ Bundle 'vim-utils/vim-man'
 " Execute program with options.
 Bundle 'thinca/vim-quickrun'
 
+" Creating gists on http://gist.github.com
+" :Help Gist
+Bundle 'mattn/gist-vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
