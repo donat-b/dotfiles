@@ -4,7 +4,7 @@
 " No useless compatability with vi
 set nocompatible
 
-" Always use unicode
+" Unicode
 scriptencoding utf-8
 set encoding=utf-8
 set fileformat=unix
@@ -16,7 +16,7 @@ filetype off
 " Set color scheme
 colorscheme elflord
 
-" Ruby community standart indentation
+" Ruby community standard indentation
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -60,8 +60,10 @@ imap <F2> <c-o><F2>
 nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
 set showmode
+" Toggle spell-check
+:map <leader>sc :setlocal spell! spelllang=en_us,is-hyph<CR>
 
-" Remove trailing whitespaces
+" Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " Quick movements in insert mode
@@ -127,6 +129,8 @@ Bundle 'plasticboy/vim-markdown'
 " View man pages in vim
 Bundle 'vim-utils/vim-man'
 
+" Execute program with options.
+Bundle 'thinca/vim-quickrun'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
@@ -144,7 +148,6 @@ highlight Normal guibg=#32322f ctermbg=236
 highlight NonText guibg=#32322f ctermbg=236
 highlight ColorColumn guibg=#000000 ctermbg=0
 highlight Search ctermbg=cyan ctermfg=black
-" it was 2015 year, the year of fire... the year of destruction
 let &colorcolumn=join(range(81,999),",")
 let &colorcolumn="80,".join(range(133,999),",")
 
