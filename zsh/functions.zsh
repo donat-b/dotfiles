@@ -1,12 +1,19 @@
+# remove current working directory recursively
 function rmwd {
   local d=$(pwd)
   cd ..
   rm -rvf -- "$d"
 }
 
+# cd to a directory, creating if it doesn't exist
 function take() {
   [ ! -e "$1" ] && mkdir -pv "$1"
   cd "$1"
+}
+
+# utimer countdown with bell
+function utimerc() {
+  utimer -c $1 && play -q /usr/share/sounds/freedesktop/stereo/complete.oga
 }
 
 # git
@@ -37,6 +44,8 @@ abbreviations=(
   "Iv"    "| ${VISUAL:-${EDITOR}}"
   "Iw"    "| wc"
   "Ix"    "| xargs"
+  "TX"    "tar xvf"
+  "TC"    "tar cvf"
 )
 
 magic-abbrev-expand() {

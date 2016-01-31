@@ -24,7 +24,7 @@ alias lsnew='=ls -rtlh -- *(.) | tail $@ 2&>/dev/null' # only the newest files
 alias lsold="=ls -rtl -- *(.) | head $@ 2&>/dev/null"  # display the oldest files
 alias lssmall="=ls -Sl -- *(.) | tail $@ 2&>/dev/null" # display the smallest files
 alias lsbig="ls -lSh -- *(.) | grep -v total | head $@ 2&>/dev/null" # display the biggest files
-alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'"
+alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal
 
 alias rg=ranger
 
@@ -45,8 +45,8 @@ alias lw='loadwatch -l 1 -h 2.5 --'
 alias mtrp="mtr -rwc 5"
 
 # udiskctl mount/unmount for block devices
-alias udmount="udisksctl mount -b $@"
-alias udumount="udisksctl unmount -b $@"
+alias udmount="udisksctl mount -b"
+alias udumount="udisksctl unmount -b"
 
 # task
 alias t='task'
