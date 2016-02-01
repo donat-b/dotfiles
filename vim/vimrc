@@ -136,6 +136,11 @@ Bundle 'thinca/vim-quickrun'
 " :Help Gist
 Bundle 'mattn/gist-vim'
 
+" A simple vim plugin for quickly create and insert templates
+" :VBTemplate [template]
+" :VBEdit [template]
+Bundle 'kabbamine/vbox.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -148,8 +153,8 @@ au CursorHoldI * stopinsert
 "au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
 "au InsertEnter * let &updatetime=updaterestore
 
-highlight Normal guibg=#32322f ctermbg=236
-highlight NonText guibg=#32322f ctermbg=236
+"highlight Normal guibg=#32322f ctermbg=236
+"highlight NonText guibg=#32322f ctermbg=236
 highlight ColorColumn guibg=#000000 ctermbg=0
 highlight Search ctermbg=cyan ctermfg=black
 let &colorcolumn=join(range(81,999),",")
