@@ -8,6 +8,7 @@ order += 'volume master'
 order += 'disk /'
 order += 'disk /mnt/btr'
 order += 'disk /home'
+order += 'disk /mnt/usb-2aa3'
 #order += "ipv6"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
@@ -107,11 +108,12 @@ load {
 disk "/" {
   format = "R: %avail"
 }
-
 disk "/mnt/btr" {
   format = 'B: %avail'
 }
-
 disk "/home" {
   format = "H: %avail"
+}
+disk "/mnt/usb-2aa3" {
+  format = "T: %avail"
 }
