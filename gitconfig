@@ -11,6 +11,7 @@
   # commit with diff
   c       = commit --verbose
   ca      = commit --all --verbose
+  ci      = commit --interactive --verbose
   # checkout
   co      = checkout
   # diff for last commit
