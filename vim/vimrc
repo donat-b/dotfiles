@@ -141,6 +141,10 @@ Bundle 'mattn/gist-vim'
 " :VBEdit [template]
 Bundle 'kabbamine/vbox.vim'
 
+" Querying of the RFC database and loading RFC/STD documents into a Vim buffer
+" :help RFC
+Bundle 'mhinz/vim-rfc'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
