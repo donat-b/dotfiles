@@ -31,6 +31,8 @@
   # list all configured aliases
   lsali   = !git config --list | grep '^alias' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\ \t => \\2/' | sort
   ps      = push
+  # reflog
+  rfs     = reflog show
   # reset
   r       = reset
   r1      = reset HEAD^
