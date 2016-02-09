@@ -37,13 +37,6 @@ set undodir=~/.vim/undo
 set undolevels=1000
 set undoreload=10000
 
-" Vundle
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-
-" Enable file-type specific plugins
-filetype plugin on
 " Enable file-type specific indenting
 filetype indent on
 
@@ -87,63 +80,71 @@ nmap <F10> :!%:p<CR>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
 " Sensible defaults
-Bundle 'tpope/vim-sensible'
+Plugin 'tpope/vim-sensible'
 
 " Ruby support
 " :help Ruby
-Bundle 'vim-ruby/vim-ruby'
+Plugin 'vim-ruby/vim-ruby'
 
 " File-type-specific templates
 " :help skeleton
-Bundle 'noahfrederick/vim-skeleton'
+Plugin 'noahfrederick/vim-skeleton'
 
 " Ultimate calendar application
 " :help calendar
-Bundle 'itchyny/calendar.vim'
+Plugin 'itchyny/calendar.vim'
 
 " Commenting operations and styles
 " :help NERDCommenter
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 
 " TomDoc syntax support
-Bundle 'wellbredgrapefruit/tomdoc.vim'
+Plugin 'wellbredgrapefruit/tomdoc.vim'
 
 " Twitter client
 " :help TwitVim
-Bundle 'https://bitbucket.org/mortonfox/twitvim'
+Plugin 'https://bitbucket.org/mortonfox/twitvim'
 
 " ASCII drawing
 " :help drawit
 " <leader>di to start
 " <leader>ds to leave
-Bundle 'vim-scripts/DrawIt'
+Plugin 'vim-scripts/DrawIt'
 
 " Personal wiki for vim
 " :help vimwiki
-Bundle 'vimwiki/vimwiki'
+Plugin 'vimwiki/vimwiki'
 
 " Markdown
-Bundle 'plasticboy/vim-markdown'
+Plugin 'plasticboy/vim-markdown'
 
 " View man pages in vim
-Bundle 'vim-utils/vim-man'
+Plugin 'vim-utils/vim-man'
 
 " Execute program with options.
-Bundle 'thinca/vim-quickrun'
+Plugin 'thinca/vim-quickrun'
 
 " Creating gists on http://gist.github.com
 " :Help Gist
-Bundle 'mattn/gist-vim'
+Plugin 'mattn/gist-vim'
 
 " A simple vim plugin for quickly create and insert templates
 " :VBTemplate [template]
 " :VBEdit [template]
-Bundle 'kabbamine/vbox.vim'
+Plugin 'kabbamine/vbox.vim'
 
 " Querying of the RFC database and loading RFC/STD documents into a Vim buffer
 " :help RFC
-Bundle 'mhinz/vim-rfc'
+Plugin 'mhinz/vim-rfc'
+
+call vundle#end()
+filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc

@@ -43,7 +43,7 @@ function main() {
     [ranger/rifle.conf]=.config/ranger/rifle.conf
     [tmux/conf]=.tmux.conf
     [vim/vimrc]=.vimrc
-    [vim/vundle]=.vim/bundle/vundle
+    [vim/Vundle.vim]=.vim/bundle/Vundle.vim
     [i3/config]=.i3/config
     [i3/i3status]=.config/i3status/config
     [X/xinitrc]=.xinitrc
