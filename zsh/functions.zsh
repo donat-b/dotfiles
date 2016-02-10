@@ -23,6 +23,9 @@ function current_branch() {
   echo ${ref#refs/heads/}
 }
 
+function eeb() {
+  $EDITOR "/usr/portage/$1"
+}
 # vim-like abbreviations
 # taken from:
 # http://zshwiki.org/home/examples/zleiab
