@@ -13,8 +13,6 @@ set fileformat=unix
 syntax on
 " Required by vundle
 filetype off
-" Set color scheme
-colorscheme elflord
 
 " Ruby community standard indentation
 set autoindent
@@ -143,12 +141,24 @@ Plugin 'kabbamine/vbox.vim'
 " :help RFC
 Plugin 'mhinz/vim-rfc'
 
+" Lean & mean status/tabline for vim that's light as air
+" :help airline
+Plugin 'vim-airline/vim-airline'
+
+" Color schemes
+Plugin 'trevorrjohn/vim-obsidian'
+Plugin 'petelewis/vim-evolution'
+Plugin 'joshdick/onedark.vim'
+
 call vundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set color scheme
+colorscheme evolution
 
 " Highlight trailing whitespaces
 match ErrorMsg '\s\+$'
@@ -162,8 +172,8 @@ au CursorHoldI * stopinsert
 "highlight NonText guibg=#32322f ctermbg=236
 highlight ColorColumn guibg=#000000 ctermbg=0
 highlight Search ctermbg=cyan ctermfg=black
-let &colorcolumn=join(range(81,999),",")
-let &colorcolumn="80,".join(range(133,999),",")
+"let &colorcolumn=join(range(81,999),",")
+"let &colorcolumn="80,".join(range(133,999),",")
 
 " Add/change file extension in current buffer
 " http://vim.wikia.com/wiki/Add/change_file_extension_in_current_buffer
