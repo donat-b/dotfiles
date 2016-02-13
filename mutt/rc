@@ -15,5 +15,5 @@ set header_cache = ~/.mutt/cache/headers
 set message_cachedir = ~/.mutt/cache/bodies
 set certificate_file = ~/.mutt/certificates
 set mailcap_path=~/dotfiles/mutt/mailcap
-set mail_check=15
+set mail_check=25
 
