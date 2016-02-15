@@ -111,8 +111,7 @@ if [[ "${UID}" -ge 1000 ]]; then
   # Auto start tmux if shell is interactive
   if [[ -o interactive && -z "$TMUX" ]]; then
     hash tmux 2>/dev/null \
-      && tmux attach \
-      || exec tmux
+      && tmux attach
   fi
 
   autoload -U tetris
