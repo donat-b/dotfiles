@@ -158,6 +158,7 @@ map xx shell -w xz -9ev %f
 map xX shell -w xz -dv %f
 map xR shell -w unrar x %f
 map xZ shell -w unzip %f -d "$(cut -d. -f1 <<< %f)"
+map xT shell -w tar xpvf %f
 
 # Filesystem Operations
 map =  chmod
