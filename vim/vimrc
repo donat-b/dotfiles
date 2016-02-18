@@ -145,6 +145,11 @@ Plugin 'mhinz/vim-rfc'
 " :help airline
 Plugin 'vim-airline/vim-airline'
 
+" Automatically open popup menu for completions when you enter characters or
+" move the cursor in Insert mode
+" :help acp
+Plugin 'AutoComplPop'
+
 " Color schemes
 Plugin 'trevorrjohn/vim-obsidian'
 Plugin 'petelewis/vim-evolution'
