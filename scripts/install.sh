@@ -9,6 +9,9 @@ declare -r DOTDIR=$HOME/dotfiles
 declare -A config_paths
 
 function link() {
+  local ddir=$(dirname "$2")
+  [ ! -e "$ddir" ] && \
+    mkdir -pv "$ddir"
   ln -sv --force "$1" "$2"
 }
 
@@ -22,6 +25,7 @@ function sl() {
     # decide what is the appropriate action in the case
     printf 'warn: %s exists -%s\n' "$1" "$(file "$HOME/$2" | cut -d: -f2)"
   else
+
     link "$DOTDIR/$1" "$HOME/$2"
   fi
 }
