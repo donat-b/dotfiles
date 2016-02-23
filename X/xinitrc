@@ -1,6 +1,6 @@
 [[ -s ~/.Xresources ]] && xrdb -merge ~/.Xresources
 [[ -s /etc/profile ]] && source /etc/profile
-[[ -s ~/dotfiles/X/modmap ]] && xmodmap ~/dotfiles/X/modmap
+[[ -s ~/dotfiles/X/modmap ]] && which xmodmap && xmodmap ~/dotfiles/X/modmap
 #setxkbmap -model pc104 -layout is,ru -variant dvorak, -option 'grp:caps_toggle'
 
-exec ck-launch-session dbus-launch --sh-syntax --exit-with-session i3 #-V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
+exec dbus-launch --sh-syntax --exit-with-session i3 #-V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
