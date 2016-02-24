@@ -1,4 +1,4 @@
-set default-term rxvt-unicode-256color
+set default-term screen-256color
 # History
 set-option -g history-limit 15000
 # Start numbering at 1
