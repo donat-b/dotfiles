@@ -57,9 +57,9 @@ bindsym XF86AudioMute exec amixer -c0 set Master toggle
 
 # Browser
 set $browser firefox
-bindsym $mod+w exec --no-startup-id optirun -- $browser
+bindsym $mod+w exec --no-startup-id $browser
 bindsym $mod+Shift+w exec $browser "$(xclip -o)"
-bindsym Control+$mod+w exec optirun -- $browser --ProfileManager --no-remote
+bindsym Control+$mod+w exec $browser --ProfileManager --no-remote
 #bindsym Control+$mod+w exec $browser -no-remote -P safe
 #==============================================================================
 
@@ -75,8 +75,6 @@ bindsym $mod+Shift+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh --full
 bindsym $mod+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh"
 bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
 bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
-bindsym Control+Mod1+z exec ~/apps/dontstarve/bin/dontstarve.sh
-bindsym $mod+j exec --no-startup-id "~/bin/pyrit-toggle.sh"
 bindsym $mod+b exec --no-startup-id "optirun -- blender"
 bindsym $mod+g exec --no-startup-id "optirun -- gimp"
 bindsym $mod+x exec --no-startup-id "xmind"
@@ -88,7 +86,7 @@ bindsym Shift+XF86MonBrightnessDown exec xbacklight -set 2
 bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100
 
 # Touchpad
-bindsym Mod1+F9 exec ~/dotfiles/scripts/toggle-touchpad.sh
+bindsym Mod1+F9 exec toggle-touchpad
 
 # Turn off VGA
 #bindsym $mod+Control+o exec xrandr --output VGA1 --off
@@ -277,7 +275,7 @@ exec --no-startup-id ~/bin/lid_locker.sh
 exec --no-startup-id ~/bin/locker.sh
 exec --no-startup-id ~/bin/proxy.sh
 
-exec_always --no-startup-id nitrogen --restore
+#exec_always --no-startup-id nitrogen --restore
 #exec_always --no-startup-id xrandr --output VGA1 --mode 1920x1080 --above LVDS1 --rotate normal --rate 60
 exec_always --no-startup-id xrandr --output LVDS1 --auto --rotate normal --output VGA1 --mode 1920x1080 --above LVDS1
 exec_always --no-startup-id unclutter
