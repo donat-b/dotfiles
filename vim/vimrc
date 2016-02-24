@@ -90,12 +90,23 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-" Sensible defaults
-Plugin 'tpope/vim-sensible'
-
-" Ruby support
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntax/language
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Ruby
 " :help Ruby
 Plugin 'vim-ruby/vim-ruby'
+" Scala
+" :help scala
+Plugin 'derekwyatt/vim-scala'
+" Markdown
+" :help vim-markdown
+Plugin 'plasticboy/vim-markdown'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Sensible defaults
+Plugin 'tpope/vim-sensible'
 
 " File-type-specific templates
 " :help skeleton
