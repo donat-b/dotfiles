@@ -120,9 +120,6 @@ Plugin 'itchyny/calendar.vim'
 " :help NERDCommenter
 Plugin 'scrooloose/nerdcommenter'
 
-" TomDoc syntax support
-Plugin 'wellbredgrapefruit/tomdoc.vim'
-
 " Twitter client
 " :help TwitVim
 Plugin 'https://bitbucket.org/mortonfox/twitvim'
@@ -137,13 +134,11 @@ Plugin 'vim-scripts/DrawIt'
 " :help vimwiki
 Plugin 'vimwiki/vimwiki'
 
-" Markdown
-Plugin 'plasticboy/vim-markdown'
-
 " View man pages in vim
 Plugin 'vim-utils/vim-man'
 
 " Execute program with options.
+" :help quickrun
 Plugin 'thinca/vim-quickrun'
 
 " Creating gists on http://gist.github.com
@@ -167,6 +162,9 @@ Plugin 'vim-airline/vim-airline'
 " move the cursor in Insert mode
 " :help acp
 Plugin 'AutoComplPop'
+
+" Shell reverse search emulation
+Plugin 'goldfeld/ctrlr.vim'
 
 " Color schemes
 Plugin 'trevorrjohn/vim-obsidian'
