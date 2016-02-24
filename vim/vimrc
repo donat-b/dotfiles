@@ -35,6 +35,9 @@ set undodir=~/.vim/undo
 set undolevels=1000
 set undoreload=10000
 
+" Automatically re-read files
+set autoread
+
 " Enable file-type specific indenting
 filetype indent on
 
