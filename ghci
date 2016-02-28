@@ -1,2 +1,3 @@
 :set -XOverloadedStrings
-import Turtle
+:def hoogle \str -> return $ ":! hoogle --count=15 \"" ++ str ++ "\""
+:def doc \x -> return $ ":!hoogle --info \"" ++ x ++ "\""
