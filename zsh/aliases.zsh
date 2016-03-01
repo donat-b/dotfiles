@@ -61,3 +61,7 @@ alias qemu-img='qemu-img -p'
 
 # xzip extreme compression
 alias xzec='xz -9ev --no-adjust'
+
+# docker
+alias dps='docker ps -lq'
+
