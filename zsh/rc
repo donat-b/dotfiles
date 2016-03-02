@@ -99,9 +99,10 @@ zstyle :compinstall filename '/etc/zsh/zshrc'
 
 if [[ "${UID}" -ge 1000 ]]; then
   # gpg-agent
-  if [[ -f "${HOME}/.gpg-agent-info" ]]; then
+  envfile=${HOME}/.gnupg/gpg-agent.env
+  if [[ -f "${envfile}" ]]; then
     GPG_TTY=$(tty)
-    source "${HOME}/.gpg-agent-info"
+    source "${envfile}"
     export GPG_AGENT_INFO
     export SSH_AUTH_SOCK
     export SSH_AGENT_PID
