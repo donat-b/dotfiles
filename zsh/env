@@ -8,6 +8,8 @@ fpath=(~/dotfiles/zsh/completion $fpath)
 
 # History
 export HISTFILE=~/.zsh_history
+export HISTORY_IGNORE='(ls|pass|rm) *'
+export HIST_IGNORE_DUPS
 export HISTSIZE=15000
 export SAVEHIST=15000
 
