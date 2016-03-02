@@ -1,6 +1,24 @@
 [[ -s ~/.Xresources ]] && xrdb -merge ~/.Xresources
 [[ -s /etc/profile ]] && source /etc/profile
 [[ -s ~/dotfiles/X/modmap ]] && which xmodmap && xmodmap ~/dotfiles/X/modmap
-#setxkbmap -model pc104 -layout is,ru -variant dvorak, -option 'grp:caps_toggle'
 
+function gnupg {
+    envfile = "$HOME/.gnupg/gpg-agent.env"
+
+    if [ "$1" == "start" ]; then
+        [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null
+
+        eval "$(gpg-agent --daemon --enable-ssh-support --write-env-file "$envfile")"
+
+    elif [ "$1" == "stop" ]; then
+        [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null;
+    fi
+
+    export GPG_AGENT_INFO  # the env file does not contain the export statement
+    export SSH_AUTH_SOCK   # enable gpg-agent for ssh
+}
+
+gnupg start
+
+xrandr --output LVDS1 --auto --rotate normal --output VGA1 --mode 1920x1080 --above LVDS1
 exec dbus-launch --sh-syntax --exit-with-session i3 #-V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
