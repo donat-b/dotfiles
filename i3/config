@@ -275,8 +275,6 @@ exec --no-startup-id ~/bin/locker.sh
 exec --no-startup-id ~/bin/proxy.sh
 
 #exec_always --no-startup-id nitrogen --restore
-#exec_always --no-startup-id xrandr --output VGA1 --mode 1920x1080 --above LVDS1 --rotate normal --rate 60
-exec_always --no-startup-id xrandr --output LVDS1 --auto --rotate normal --output VGA1 --mode 1920x1080 --above LVDS1
 exec_always --no-startup-id unclutter
 exec_always --no-startup-id xmodmap ~/dotfiles/xmodmaprc
 
