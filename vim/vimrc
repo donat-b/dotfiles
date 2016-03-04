@@ -170,6 +170,16 @@ Plugin 'goldfeld/ctrlr.vim'
 " :help syntastic
 Plugin 'scrooloose/syntastic'
 
+" tcomment provides easy to use, file-type sensible comments for Vim
+" :help tcomment.txt
+Plugin 'tomtom/tcomment_vim'
+
+" Global Replace plugin 
+Plugin 'vim-scripts/Greplace.vim'
+
+" Ansible
+Plugin 'pearofducks/ansible-vim'
+
 " Color schemes
 Plugin 'trevorrjohn/vim-obsidian'
 Plugin 'petelewis/vim-evolution'
