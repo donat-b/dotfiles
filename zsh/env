@@ -4,7 +4,9 @@ typeset -U path
 path=( $HOME/dotfiles/scripts $HOME/bin $HOME/opt/bin $path )
 
 # add custom completion scripts
-fpath=(~/dotfiles/zsh/completion $fpath)
+if [[ "${UID}" -ge 1000 ]]; then
+  fpath=(~/dotfiles/zsh/completion $fpath)
+fi
 
 # History
 export HISTFILE=~/.zsh_history
