@@ -289,9 +289,6 @@ bar {
   position top
   font pango:Miriam Mono 10
   status_command i3status
-  #tray_output VGA1
-  tray_output LVDS1
-  #tray_output HDMI1
 }
 #bar {
 #  colors {
