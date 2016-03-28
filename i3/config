@@ -288,7 +288,7 @@ bar {
   }
   position top
   font pango:Miriam Mono 10
-  status_command ~/bin/i3status-wrapper.sh
+  status_command i3status
   #tray_output VGA1
   tray_output LVDS1
   #tray_output HDMI1
