@@ -10,7 +10,7 @@ order += 'disk /home'
 #order += "ipv6"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
-order += 'ethernet lan'
+order += 'ethernet eth0'
 #order += 'ethernet usb0'
 order += 'wireless wlan'
 order += 'cpu_temperature 1'
@@ -45,7 +45,7 @@ ethernet usb0 {
   color_bad = "#AAAAAA"
 }
 
-ethernet lan {
+ethernet eth0 {
   format_up = "E: %ip, %speed"
   format_down = ""
   color_bad = "#AAAAAA"
