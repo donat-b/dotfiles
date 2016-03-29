@@ -92,7 +92,7 @@ bindsym Mod1+F9 exec toggle-touchpad
 #bindsym $mod+Control+o exec xrandr --output VGA1 --off
 
 # Lockscreen
-bindsym Control+Mod1+l exec "~/dotfiles/scripts/lockscreen.sh"
+bindsym $mod+F4 exec "~/dotfiles/scripts/lockscreen.sh"
 
 # start a terminal
 bindsym $mod+Return exec gnome-terminal
