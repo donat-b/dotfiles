@@ -19,8 +19,6 @@ Xft.hintstyle:  hintslight
 URxvt.font:     xft:Droid Sans Mono:size=10
 URxvt.boldfont: xft:Droid Sans Mono:style=bold:size=10
 
-!URxvt.font:     xft:Terminus:pixelsize=17
-!URxvt.boldFont: xft:Terminus:bold:pixelsize=17
 
 !-*- Colors -*-
 ! black
