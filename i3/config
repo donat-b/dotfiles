@@ -240,6 +240,7 @@ bindsym $mod+p mode "resize"
 # Assigns
 for_window [class="Skype-bin"] floating enable
 for_window [class="URxvt"] border none
+for_window [class="Gnome-terminal"] border none
 for_window [class="feh"] floating enable
 for_window [class="mpv"] floating enable
 
