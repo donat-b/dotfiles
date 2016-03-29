@@ -7,14 +7,11 @@ general {
 order += 'volume master'
 order += 'disk /'
 order += 'disk /home'
-order += 'disk /mnt/usb-2aa3'
 #order += "ipv6"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
 order += 'ethernet lan'
-#order += 'ethernet yota'
 #order += 'ethernet usb0'
-#order += 'ethernet ppp0'
 order += 'wireless wlan'
 order += 'cpu_temperature 1'
 #order += 'cpu_temperature 2'
@@ -48,30 +45,10 @@ ethernet usb0 {
   color_bad = "#AAAAAA"
 }
 
-ethernet ppp0 {
-  format_up = "ppp: %ip"
-  format_down = ""
-  color_good = "#008BF5"
-  color_bad = "#AAAAAA"
-}
-
 ethernet lan {
   format_up = "E: %ip, %speed"
   format_down = ""
   color_bad = "#AAAAAA"
-}
-
-ethernet yota {
-  format_up = "ι: %ip"
-  format_down = ""
-  color_good = "#008BF5"
-  color_bad = "#AAAAAA"
-}
-
-battery 0 {
-  format = "%status %percentage %remaining %consumption"
-  low_threshold = 15
-  threshold_type = "time"
 }
 
 run_watch DHCP {
@@ -105,7 +82,4 @@ disk "/" {
 }
 disk "/home" {
   format = "H: %avail"
-}
-disk "/mnt/usb-2aa3" {
-  format = "T: %avail"
 }
