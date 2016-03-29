@@ -5,7 +5,7 @@
 
 declare -r lockscreen_bg=/tmp/ls_bg.png
 declare -r overlay="$HOME/dotfiles/media/dx_triangles.png"
-declare -r i3lock_cmd='i3lock --nofork -c 000000 --ignore-empty-password --show-failed-attempts'
+declare -r i3lock_cmd='i3lock --nofork -c 000000 --ignore-empty-password'
 declare -r c_blur=4x3
 declare -r c_cmp_method=linearlight
 
