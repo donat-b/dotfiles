@@ -95,7 +95,7 @@ bindsym Mod1+F9 exec toggle-touchpad
 bindsym Control+Mod1+l exec "~/dotfiles/scripts/lockscreen.sh"
 
 # start a terminal
-bindsym $mod+Return exec urxvt -tr -sh 13 -blr 4x4
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+apostrophe kill
