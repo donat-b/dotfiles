@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 # Locks screen with i3lock using DXHR themed background
 # req: imagemagick, i3lock
 # 2015-11-15
