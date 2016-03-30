@@ -268,6 +268,7 @@ workspace 1 output LVDS1
 exec --no-startup-id goldendict             # dictionary
 exec --no-startup-id qlipper                # clipboard manager
 exec --no-startup-id qxkb                   # layout indicator
+exec --no-startup-id skype
 exec --no-startup-id synclient PalmDetect=1 # enable touchpad palm detection
 exec --no-startup-id trysterobiff           # email notifier
 exec --no-startup-id gnome-terminal         # terminal emulator
