@@ -76,7 +76,8 @@ bindsym $mod+m exec --no-startup-id "~/dotfiles/scripts/mpv-play.sh"
 bindsym $mod+f exec --no-startup-id ~/bin/image-view.sh
 bindsym $mod+q exec --no-startup-id {xclip -o | xclip -selection c}
 bindsym $mod+b exec --no-startup-id "optirun -- blender"
-bindsym $mod+g exec --no-startup-id "optirun -- gimp"
+bindsym $mod+g exec --no-startup-id "gimp"
+bindsym $mod+v exec --no-startup-id "~/dotfiles/scripts/virt-manager.sh"
 bindsym $mod+x exec --no-startup-id "xmind"
 
 # Brightness
