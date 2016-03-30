@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-docker run --rm -v \
+docker run --rm \
     -v $HOME/.docker-libvirt-config:/home/app/.config/dconf \
     -v $HOME/.ssh/known_hosts:/home/app/.ssh/known_hosts \
     -v $SSH_AUTH_SOCK:$SSH_AUTH_SOCK -e SSH_AUTH_SOCK=$SSH_AUTH_SOCK \
