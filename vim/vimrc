@@ -54,6 +54,10 @@ imap <F2> <c-o><F2>
 inoremap <F5> <C-R>=strftime("%F")<CR>
 nnoremap <F4> :set invpaste paste?<CR>
 set pastetoggle=<F4>
+" Toggle line numbers
+nmap <leader>nn :set invnumber<CR>
+" Toggle relative numbers
+nmap <leader>nr :set invrelativenumber<CR>
 set showmode
 " Toggle spell-check
 map <leader>sc :setlocal spell! spelllang=en_us,is-hyph<CR>
@@ -72,8 +76,8 @@ inoremap <leader>S <Esc>S
 inoremap <leader>D <Esc>dd
 inoremap <leader>U <Esc>u
 
-" Cross-out a box
-map X :s/\[ \]/\[X\]/<CR>
+" Explore directory of current file
+map <leader>k :Explore<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
