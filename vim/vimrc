@@ -291,7 +291,7 @@ command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 command! -nargs=0 -range SortWords call SortWords()
 
 " Automatically create directories on save
-function s:MkNonExDir(file, buf)
+function! s:MkNonExDir(file, buf)
   if empty(getbufvar(a:buf, '&buftype')) && a:file!~#'\v^\w+\:\/'
     let dir=fnamemodify(a:file, ':h')
     if !isdirectory(dir)
