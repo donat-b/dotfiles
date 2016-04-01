@@ -165,7 +165,25 @@ Plugin 'vim-airline/vim-airline'
 " Automatically open popup menu for completions when you enter characters or
 " move the cursor in Insert mode
 " :help acp
-Plugin 'AutoComplPop'
+" obsolete by neocomplete
+"Plugin 'AutoComplPop'
+
+" A code-completion engine
+" Disabled as not useful right now
+"Plugin 'valloric/YouCompleteMe'
+
+" Dark powered asynchronous completion framework for neovim
+if has('nvim')
+  Plugin 'Shougo/deoplete.nvim'
+endif
+
+" completion framework for vim
+if !has('nvim')
+  Plugin 'Shougo/neocomplete.vim'
+endif
+
+" completion plugin for Haskell, using ghc-mod
+Plugin 'eagletmt/neco-ghc'
 
 " Shell reverse search emulation
 Plugin 'goldfeld/ctrlr.vim'
@@ -184,6 +202,13 @@ Plugin 'vim-scripts/Greplace.vim'
 " Ansible
 Plugin 'pearofducks/ansible-vim'
 
+" Full path fuzzy file, buffer, mru, tag, ... finder
+" :help CtrlP@en
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" git wrapper
+Plugin 'tpope/vim-fugitive'
+
 " Color schemes
 Plugin 'trevorrjohn/vim-obsidian'
 Plugin 'petelewis/vim-evolution'
@@ -191,6 +216,47 @@ Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
 filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+"let g:syntastic_enable_perl_checker = 1
+"let g:syntastic_perl_checkers = ['perl']
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Neocomplete
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#enable_auto_select = 0
+" Show detailed information (type) of symbols.
+let g:necoghc_enable_detailed_browse = 1
+
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
+let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-wiki
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <Leader>wv <Plug>VimwikiVSplitLink
+
+" netrw (network oriented reading, writing, and browsing)
+" Quick reference map:
+" :help netrw-quickmap
+let g:netrw_liststyle=3
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
