@@ -38,6 +38,13 @@ set undoreload=10000
 " Automatically re-read files
 set autoread
 
+" Default window position when splitting
+set splitbelow
+set splitright
+
+" alias unnamed register to the + register
+"set clipboard=unnamedplus
+
 " Enable file-type specific indenting
 filetype indent on
 
