@@ -20,5 +20,5 @@ function gnupg {
 
 gnupg start
 
-xrandr --output LVDS1 --auto --rotate normal --output VGA1 --mode 1920x1080 --above LVDS1
+setxkbmap -model pc104 -layout is,ru -variant dvorak, -option 'grp:caps_toggle'
 exec dbus-launch --sh-syntax --exit-with-session i3 #-V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
