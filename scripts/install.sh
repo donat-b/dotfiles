@@ -50,7 +50,7 @@ function main() {
     [vim/Vundle.vim]=.vim/bundle/Vundle.vim
     [i3/config]=.i3/config
     [i3/i3status]=.config/i3status/config
-    [X/xinitrc]=.xinitrc
+    [X/xprofile]=.xprofile
     [X/Xresources]=.Xresources
     [zsh/env]=.zshenv
     [zsh/rc]=.zshrc
