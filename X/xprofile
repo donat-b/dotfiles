@@ -2,7 +2,7 @@
 [[ -s ~/dotfiles/X/modmap ]] && which xmodmap && xmodmap ~/dotfiles/X/modmap
 
 function gnupg {
-    envfile = "$HOME/.gnupg/gpg-agent.env"
+    envfile="$HOME/.gnupg/gpg-agent.env"
 
     if [ "$1" == "start" ]; then
         [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null
