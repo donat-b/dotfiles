@@ -19,4 +19,4 @@ function gnupg {
 
 gnupg start
 
-setxkbmap -model pc104 -layout is,ru -variant dvorak, -option 'grp:caps_toggle'
+setxkbmap -model pc104 -layout is,ru -variant dvorak, -option 'grp:shift_caps_switch,grp_led:caps'
