@@ -34,6 +34,7 @@ function main() {
   config_paths=(
   # [source]=destination
   # destination can be '.' in which case it links the file using same name, prefixed with '.'
+    [dunstrc]=.config/dunst/dunstrc
     [gdbinit]=.gdbinit
     [ghci]=.
     [gimp/rc]=.gimp-2.8/gimprc
