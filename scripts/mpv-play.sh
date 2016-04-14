@@ -3,7 +3,8 @@
 function main() {
   unset http_proxy https_proxy
   local FORMAT=best
-  local OPTIMUS='optirun --'
+#  local OPTIMUS='optirun --'
+  export DRI_PRIME=1
   local URL=''
 
   # TODO auto select FullHD
