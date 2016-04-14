@@ -152,6 +152,9 @@ Plugin 'vim-utils/vim-man'
 " :help quickrun
 Plugin 'thinca/vim-quickrun'
 
+" An Interface to WEB APIs
+Plugin 'mattn/webapi-vim'
+
 " Creating gists on http://gist.github.com
 " :Help Gist
 Plugin 'mattn/gist-vim'
@@ -212,6 +215,7 @@ Plugin 'pearofducks/ansible-vim'
 " Full path fuzzy file, buffer, mru, tag, ... finder
 " :help CtrlP@en
 Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
 
 " git wrapper
 Plugin 'tpope/vim-fugitive'
@@ -254,7 +258,11 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-wiki
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
 nmap <Leader>wv <Plug>VimwikiVSplitLink
+
+" CtrlP
+let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 
 " netrw (network oriented reading, writing, and browsing)
 " Quick reference map:
