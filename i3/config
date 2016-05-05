@@ -10,6 +10,7 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
+set $xrandr_eout HDMI1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -89,8 +90,8 @@ bindsym Shift+XF86MonBrightnessUp exec xbacklight -set 100
 # Touchpad
 bindsym Mod1+F9 exec toggle-touchpad
 
-# Turn off VGA
-#bindsym $mod+Control+o exec xrandr --output VGA1 --off
+# Turn off external output
+bindsym $mod+Control+o exec xrandr --output $xrandr_eout --off
 
 # Lockscreen
 bindsym $mod+F4 exec "~/dotfiles/scripts/lockscreen.sh"
@@ -193,7 +194,7 @@ bindsym $mod+Shift+Control+9 move container to workspace 9
 bindsym $mod+Shift+Control+0 move container to workspace 10
 
 # move workspaces
-bindsym $mod+Control+v move workspace to output VGA1
+bindsym $mod+Control+e move workspace to output $xrandr_eout
 bindsym $mod+Control+l move workspace to output LVDS1
 
 # scratchpad
@@ -245,6 +246,7 @@ for_window [class="URxvt"] border none
 for_window [class="Gnome-terminal"] border none
 for_window [class="feh"] floating enable
 for_window [class="mpv"] floating enable
+for_window [title="glxgears"] floating enable
 
 for_window [class="Bitcoin-qt"] floating enable
 #for_window [class="Gimp"] floating enable
@@ -281,7 +283,7 @@ exec --no-startup-id ~/.fehbg
 exec_always --no-startup-id unclutter
 #exec_always --no-startup-id xmodmap ~/dotfiles/xmodmaprc
 
-workspace 1 output VGA1
+workspace 1 output $xrandr_eout
 workspace 10 output LVDS1
 #==============================================================================
 # Start i3bar to display a workspace bar (plus the system information i3status
