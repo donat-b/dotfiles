@@ -20,5 +20,5 @@ function gnupg {
 
 gnupg start
 
-xrandr --output LVDS1 --auto --rotate normal --output VGA1 --mode 1920x1080 --above LVDS1
+xrandr --output HDMI1 --auto --rotate normal --output VGA1 --mode 1920x1080 --above LVDS1
 exec dbus-launch --sh-syntax --exit-with-session i3 #-V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
