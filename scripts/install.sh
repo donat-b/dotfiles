@@ -64,6 +64,9 @@ function main() {
       config_paths[$i]=".$i"
     sl "$i" "${config_paths[$i]}"
   done
+
+  # Custom paths for vim
+  mkdir -vp ~/.vim/.{backup,swp,undo}
 }
 
 main

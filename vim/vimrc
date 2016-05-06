@@ -31,7 +31,6 @@ set history=5000
 
 " Persistent undo
 set undofile
-set undodir=~/.vim/undo
 set undolevels=1000
 set undoreload=10000
 
@@ -47,6 +46,13 @@ set splitright
 
 " Enable file-type specific indenting
 filetype indent on
+
+" Unclutter current working directory
+" // means that file names will be built from the complete path to
+" the file with all path separators substituted to percent signs.
+set backupdir=~/.vim/.backup//,/tmp//
+set directory=~/.vim/.swp//,/tmp//
+set undodir=~/.vim/undo//,/tmp//
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
