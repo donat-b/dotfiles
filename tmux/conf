@@ -16,7 +16,7 @@ unbind C-b
 # Open man
 bind-key m command-prompt "split-window 'exec man %%'"
 # Root
-bind-key R split-window 'exec su -'
+bind-key R split-window 'exec sudo -s'
 # Reload config
 bind-key r source-file ~/.tmux.conf \; display-message 'configuration reloaded'
 # Copy-paste
