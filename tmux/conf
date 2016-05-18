@@ -32,6 +32,8 @@ unbind n
 # scrolling
 bind -t emacs-copy -n 'x' page-up
 bind -t emacs-copy -n 'j' page-down
+# Toggle pane synchronization
+bind S set-window-option synchronize-panes
 
 # Aggressive resize
 setw -g aggressive-resize on
