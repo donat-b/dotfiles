@@ -92,12 +92,13 @@ inoremap <leader>U <Esc>u
 " Explore directory of current file
 map <leader>k :Explore<CR>
 
+" Execute current file
+nnoremap <F10> :!%:p<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Execute current file
-nmap <F10> :!%:p<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -225,6 +226,9 @@ Plugin 'FelikZ/ctrlp-py-matcher'
 
 " git wrapper
 Plugin 'tpope/vim-fugitive'
+
+" Vim sugar for UNIX shell commands
+Plugin 'tpope/vim-eunuch'
 
 " Color schemes
 Plugin 'trevorrjohn/vim-obsidian'
