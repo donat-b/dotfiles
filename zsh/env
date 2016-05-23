@@ -17,6 +17,7 @@ export SAVEHIST=15000
 
 export REPORTTIME=1
 export EDITOR=$(which vim)
+export VISUAL='vi'
 #export GIT_PROXY_COMMAND=~/bin/proxy-wrapper.sh
 export KEYTIMEOUT=2
 export RUBYOPT="-w $RUBYOPT"
