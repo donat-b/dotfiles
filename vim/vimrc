@@ -230,6 +230,9 @@ Plugin 'tpope/vim-fugitive'
 " Vim sugar for UNIX shell commands
 Plugin 'tpope/vim-eunuch'
 
+" Highlight matches
+Plugin 'qstrahl/vim-matchmaker'
+
 " Color schemes
 Plugin 'trevorrjohn/vim-obsidian'
 Plugin 'petelewis/vim-evolution'
