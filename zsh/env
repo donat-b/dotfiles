@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 typeset -U path
-path=( $HOME/dotfiles/scripts $HOME/bin $HOME/opt/bin $path )
+path=( $HOME/dotfiles/{qfc/bin,scripts} $HOME/bin $HOME/opt/bin $path )
 
 # add custom completion scripts
 if [[ "${UID}" -ge 1000 ]]; then
