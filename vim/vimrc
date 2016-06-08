@@ -178,6 +178,7 @@ Plugin 'mhinz/vim-rfc'
 " Lean & mean status/tabline for vim that's light as air
 " :help airline
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Automatically open popup menu for completions when you enter characters or
 " move the cursor in Insert mode
