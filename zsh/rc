@@ -126,6 +126,8 @@ fi
   && source ~/dotfiles/zsh/aliases.zsh
 [[ -f ~/dotfiles/zsh/functions.zsh ]] \
   && source ~/dotfiles/zsh/functions.zsh
+[[ -s ~/dotfiles/qfc/bin/qfc.sh ]] \
+  && source ~/dotfiles/qfc/bin/qfc.sh
 
 # added by travis gem
 [ -f /home/leat/.travis/travis.sh ] && source /home/leat/.travis/travis.sh
