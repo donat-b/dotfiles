@@ -16,10 +16,10 @@ export HISTSIZE=15000
 export SAVEHIST=15000
 
 #export GIT_PROXY_COMMAND=~/bin/proxy-wrapper.sh
+#export RUBYOPT="-w $RUBYOPT"
 export EDITOR=$(which vim)
 export KEYTIMEOUT=2
 export REPORTTIME=1
-export RUBYOPT="-w $RUBYOPT"
 export SCIPY_PIL_IMAGE_VIEWER=feh
 export TERM='screen-256color'
 export VISUAL='vi'
