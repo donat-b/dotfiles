@@ -111,9 +111,6 @@ Plugin 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax/language
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ruby
-" :help Ruby
-Plugin 'vim-ruby/vim-ruby'
 " Scala
 " :help scala
 Plugin 'derekwyatt/vim-scala'
