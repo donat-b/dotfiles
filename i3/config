@@ -80,6 +80,7 @@ bindsym $mod+b exec --no-startup-id "optirun -- blender"
 bindsym $mod+g exec --no-startup-id "gimp"
 bindsym $mod+v exec --no-startup-id "~/dotfiles/scripts/virt-manager.sh"
 bindsym $mod+x exec --no-startup-id "xmind"
+bindsym $mod+F2 exec --no-startup-id "skype"
 
 # Brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
