@@ -231,6 +231,9 @@ Plugin 'tpope/vim-eunuch'
 " Highlight matches
 Plugin 'qstrahl/vim-matchmaker'
 
+" quoting/parenthesizing
+Plugin 'tpope/vim-surround'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
