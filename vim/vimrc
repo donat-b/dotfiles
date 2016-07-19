@@ -211,7 +211,7 @@ Plugin 'scrooloose/syntastic'
 " :help tcomment.txt
 Plugin 'tomtom/tcomment_vim'
 
-" Global Replace plugin 
+" Global Replace plugin
 Plugin 'vim-scripts/Greplace.vim'
 
 " Ansible
@@ -233,6 +233,8 @@ Plugin 'qstrahl/vim-matchmaker'
 
 " quoting/parenthesizing
 Plugin 'tpope/vim-surround'
+
+Plugin 'nginx.vim'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -364,7 +366,7 @@ function! NaturalOrder(firstNr, secondNr)
     return -1
   elseif a:firstNr > a:secondNr
     return 1
-  else 
+  else
     return 0
   endif
 endfunction
