@@ -23,3 +23,6 @@ export REPORTTIME=1
 export SCIPY_PIL_IMAGE_VIEWER=feh
 export TERM='screen-256color'
 export VISUAL='vi'
+
+# gpg-agent workaround
+export SSH_AUTH_SOCK=0
