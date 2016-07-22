@@ -286,6 +286,7 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 let g:netrw_liststyle=3
 
 let g:airline_powerline_fonts=1
+let g:airline_theme = 'dark'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
