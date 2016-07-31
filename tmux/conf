@@ -7,10 +7,18 @@ set -g pane-base-index 1
 # Faster command sequence
 set -s escape-time 0
 set-option -g repeat-time 205
-# Rebind profix to Ctrl-A
+
+# Status line style
+set -g status-utf8 on
+set -g status-style 'bg=colour234'
+set -ag status-style 'fg=colour214,bold'
+set -wg window-status-current-fg 'colour204'
+
+
+unbind C-b
 set-option -g prefix C-a
 bind-key C-a send-prefix
-unbind C-b
+
 # Last active window
 #bind-key C-a last-window
 # Open man
@@ -18,27 +26,56 @@ bind-key m command-prompt "split-window 'exec man %%'"
 # Root
 bind-key R split-window 'exec sudo -s'
 # Reload config
-bind-key r source-file ~/.tmux.conf \; display-message 'configuration reloaded'
+bind-key r source-file ~/.tmux.conf \; display-message 'configuration loaded'
+
 # Copy-paste
 bind P paste-buffer
+
 # Vi-like selection and yank
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
+
+bind -n C-t new-window -a
+
 # Switching windows
-bind-key -n 'M-,' previous-window
-bind-key -n 'M-.' next-window
 unbind p
 unbind n
+bind -n S-left  prev
+bind -n S-right next
+
+bind -n S-C-left  swap-window -t -1
+bind -n S-C-right swap-window -t +1
+
 # scrolling
 bind -t emacs-copy -n 'x' page-up
 bind -t emacs-copy -n 'j' page-down
+
 # Toggle pane synchronization
 bind S set-window-option synchronize-panes
 
 # Aggressive resize
 setw -g aggressive-resize on
-# Status line style
-set -g status-utf8 on
-set -g status-style 'bg=black'
-set -ag status-style 'fg=cyan,bold'
-set-window-option -g window-status-current-fg 'magenta'
+
+# Nested session mangling
+bind -n M-F11 set -wg window-status-current-fg 'colour214'
+bind -n M-F12 set -wg window-status-current-fg 'colour204'
+
+bind -n S-up \
+  send-keys M-F12 \; \
+  set -wg window-status-current-fg 'colour214' \; \
+  unbind -n S-left \; \
+  unbind -n S-right \; \
+  unbind -n S-C-left \; \
+  unbind -n S-C-right \; \
+  unbind -n C-t \; \
+  set -g prefix C-b
+
+bind -n S-down \
+  send-keys M-F11 \; \
+  set -wg window-status-current-fg 'colour204' \; \
+  bind -n S-left  prev \; \
+  bind -n S-right next \; \
+  bind -n S-C-left swap-window -t -1 \; \
+  bind -n S-C-right swap-window -t +1 \; \
+  bind -n C-t new-window -a -c "#{pane_current_path}" \; \
+  set -g prefix C-a
