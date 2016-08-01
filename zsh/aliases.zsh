@@ -65,3 +65,4 @@ alias xzec='xz -9ev --no-adjust'
 # docker
 alias dps='docker ps -lq'
 
+alias _=sudo
