@@ -236,6 +236,9 @@ Plugin 'tpope/vim-surround'
 
 Plugin 'nginx.vim'
 
+" undo history visualizer
+Plugin 'mbbill/undotree'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
