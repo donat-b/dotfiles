@@ -58,22 +58,25 @@ set undodir=~/.vim/undo//,/tmp//
 " Key bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-nmap <F1> :tabnew<CR>
-" F2 saves a file if necessary
-nmap <F2> :update<CR>
-vmap <F2> <Esc><F2>gv
-imap <F2> <c-o><F2>
-" F5 to insert current date
+
+nnoremap <leader>uu :update<CR>
+
+" Insert current date
 inoremap <F5> <C-R>=strftime("%F")<CR>
-nnoremap <F4> :set invpaste paste?<CR>
-set pastetoggle=<F4>
+nmap <leader>tp :set invpaste paste?<CR>
+
 " Toggle line numbers
 nmap <leader>nn :set invnumber<CR>
+
 " Toggle relative numbers
 nmap <leader>nr :set invrelativenumber<CR>
 set showmode
+
 " Toggle spell-check
-map <leader>sc :setlocal spell! spelllang=en_us,is-hyph<CR>
+map <leader>sc :setlocal spell! spelllang=en_us<CR>
+
+" New tab
+nmap <leader>tn :tabnew<CR>
 
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
