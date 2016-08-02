@@ -2,18 +2,20 @@ set-option -g default-term "screen-256color"
 # History
 set-option -g history-limit 15000
 # Start numbering at 1
-set -g base-index 1
-set -g pane-base-index 1
+set-option -g base-index 1
+set-option -g pane-base-index 1
 # Faster command sequence
-set -s escape-time 0
+set-option -s escape-time 0
 set-option -g repeat-time 205
 
-# Status line style
-set -g status-utf8 on
-set -g status-style 'bg=colour234'
-set -ag status-style 'fg=colour214,bold'
-set -wg window-status-current-fg 'colour204'
-
+# Status line
+set-option -g status-keys 'vi'
+set-option -g status-utf8 on
+set-option -g status-style 'bg=colour234'
+set-option -ag status-style 'fg=colour214,bold'
+set-option -wg window-status-current-fg 'colour204'
+set-option -g status-right '#{=21:pane_title}|#(uptime -p|tr -d ",")|%H:%M'
+set-option -g status-right-length 52
 
 unbind C-b
 set-option -g prefix C-a
@@ -22,60 +24,72 @@ bind-key C-a send-prefix
 # Last active window
 #bind-key C-a last-window
 # Open man
-bind-key m command-prompt "split-window 'exec man %%'"
+bind-key m command-prompt 'split-window 'exec man %%''
 # Root
 bind-key R split-window 'exec sudo -s'
 # Reload config
 bind-key r source-file ~/.tmux.conf \; display-message 'configuration loaded'
 
 # Copy-paste
-bind P paste-buffer
+bind-key P paste-buffer
 
 # Vi-like selection and yank
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
 
-bind -n C-t new-window -a
+bind-key -n C-t new-window -a
+
+bind-key -n 'C-F1' select-window -t 1
+bind-key -n 'C-F2' select-window -t 2
+bind-key -n 'C-F3' select-window -t 3
+bind-key -n 'C-F4' select-window -t 4
+bind-key -n 'C-F5' select-window -t 5
+bind-key -n 'C-F6' select-window -t 6
+bind-key -n 'C-F7' select-window -t 7
+bind-key -n 'C-F8' select-window -t 8
+bind-key -n 'C-F9' select-window -t 9
+bind-key -n 'C-F10' select-window -t 10
+bind-key -n 'C-F11' select-window -t 11
+bind-key -n 'C-F12' select-window -t 12
 
 # Switching windows
-unbind p
-unbind n
-bind -n S-left  prev
-bind -n S-right next
+bind-key -n S-left  prev
+bind-key -n S-right next
 
-bind -n S-C-left  swap-window -t -1
-bind -n S-C-right swap-window -t +1
+# Swap tabs
+bind-key -n M-S-left  swap-window -t -1
+bind-key -n M-S-right swap-window -t +1
 
 # scrolling
-bind -t emacs-copy -n 'x' page-up
-bind -t emacs-copy -n 'j' page-down
+bind-key -t emacs-copy -n 'x' page-up
+bind-key -t emacs-copy -n 'j' page-down
 
 # Toggle pane synchronization
-bind S set-window-option synchronize-panes
+bind-key S set-window-option synchronize-panes
 
 # Aggressive resize
 setw -g aggressive-resize on
 
 # Nested session mangling
-bind -n M-F11 set -wg window-status-current-fg 'colour214'
-bind -n M-F12 set -wg window-status-current-fg 'colour204'
+bind-key -n M-F11 set -wg window-status-current-fg 'colour214'
+bind-key -n M-F12 set -wg window-status-current-fg 'colour204'
 
-bind -n S-up \
+bind-key -n S-up \
   send-keys M-F12 \; \
-  set -wg window-status-current-fg 'colour214' \; \
   unbind -n S-left \; \
   unbind -n S-right \; \
   unbind -n S-C-left \; \
   unbind -n S-C-right \; \
   unbind -n C-t \; \
+  set -wg window-status-current-fg 'colour214' \; \
   set -g prefix C-b
 
-bind -n S-down \
+bind-key -n S-down \
   send-keys M-F11 \; \
-  set -wg window-status-current-fg 'colour204' \; \
   bind -n S-left  prev \; \
   bind -n S-right next \; \
   bind -n S-C-left swap-window -t -1 \; \
   bind -n S-C-right swap-window -t +1 \; \
   bind -n C-t new-window -a -c "#{pane_current_path}" \; \
+  set -wg window-status-current-fg 'colour204' \; \
   set -g prefix C-a
