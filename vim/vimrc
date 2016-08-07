@@ -63,20 +63,20 @@ nnoremap <leader>uu :update<CR>
 
 " Insert current date
 inoremap <F5> <C-R>=strftime("%F")<CR>
-nmap <leader>tp :set invpaste paste?<CR>
+nnoremap <leader>tp :set invpaste paste?<CR>
 
 " Toggle line numbers
-nmap <leader>nn :set invnumber<CR>
+nnoremap <leader>nn :set invnumber<CR>
 
 " Toggle relative numbers
-nmap <leader>nr :set invrelativenumber<CR>
+nnoremap <leader>nr :set invrelativenumber<CR>
 set showmode
 
 " Toggle spell-check
 map <leader>sc :setlocal spell! spelllang=en_us<CR>
 
 " New tab
-nmap <leader>tn :tabnew<CR>
+nnoremap <leader>tn :tabnew<CR>
 
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
@@ -281,7 +281,7 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 " vim-wiki
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
-nmap <Leader>wv <Plug>VimwikiVSplitLink
+nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
 " CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
