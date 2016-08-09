@@ -63,20 +63,20 @@ nnoremap <leader>uu :update<CR>
 
 " Insert current date
 inoremap <F5> <C-R>=strftime("%F")<CR>
-nmap <leader>tp :set invpaste paste?<CR>
+nnoremap <leader>tp :set invpaste paste?<CR>
 
 " Toggle line numbers
-nmap <leader>nn :set invnumber<CR>
+nnoremap <leader>nn :set invnumber<CR>
 
 " Toggle relative numbers
-nmap <leader>nr :set invrelativenumber<CR>
+nnoremap <leader>nr :set invrelativenumber<CR>
 set showmode
 
 " Toggle spell-check
 map <leader>sc :setlocal spell! spelllang=en_us<CR>
 
 " New tab
-nmap <leader>tn :tabnew<CR>
+nnoremap <leader>tn :tabnew<CR>
 
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
@@ -251,8 +251,10 @@ call vundle#end()
 filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntastic
+" Configure plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Syntastic
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -264,9 +266,7 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Neocomplete
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:neocomplete#enable_at_startup = 1
 let g:neocomplete#enable_smart_case = 1
 let g:neocomplete#enable_auto_select = 0
@@ -277,11 +277,9 @@ let g:necoghc_enable_detailed_browse = 1
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vim-wiki
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
-nmap <Leader>wv <Plug>VimwikiVSplitLink
+nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
 " CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
@@ -291,8 +289,12 @@ let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
 " :help netrw-quickmap
 let g:netrw_liststyle=3
 
+" Airline
 let g:airline_powerline_fonts=1
 let g:airline_theme = 'dark'
+
+" Skeleton
+let g:skeleton_template_dir = '~/dotfiles/vim/templates'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
@@ -479,4 +481,12 @@ function! SortWords()
         " Write it out
         call setline(StartPosition[1], NewLine)
     endif
+endfunction
+
+" Add argument (can be negative, default 1) to global variable i.
+" Return value of i before the change.
+function Inc(...)
+  let result = g:i
+  let g:i += a:0 > 0 ? a:1 : 1
+  return result
 endfunction
