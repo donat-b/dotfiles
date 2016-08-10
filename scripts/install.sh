@@ -40,6 +40,7 @@ function main() {
     [ghci]=.
     [gimp/rc]=.gimp-2.8/gimprc
     [gitconfig]=.
+    [monky.hs]=.monky/monky.hs
     [mpv/mpv.conf]=.config/mpv/mpv.conf
     [mpv/input.conf]=.config/mpv/input.conf
     [mutt/rc]=.muttrc
