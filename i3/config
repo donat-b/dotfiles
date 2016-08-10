@@ -298,7 +298,7 @@ bar {
   }
   position top
   font pango:Miriam Mono 10
-  status_command i3status
+  status_command ~/.cabal/bin/monky
 }
 #bar {
 #  colors {
