@@ -7,6 +7,7 @@ general {
 order += 'volume master'
 order += 'disk /'
 order += 'disk /home'
+order += 'disk /mnt/ssd'
 #order += "ipv6"
 #order += "run_watch DHCP"
 #order += "run_watch VPN"
@@ -82,4 +83,7 @@ disk "/" {
 }
 disk "/home" {
   format = "H: %avail"
+}
+disk "/mnt/ssd" {
+  format = "S: %avail"
 }
