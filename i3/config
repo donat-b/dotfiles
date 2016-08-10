@@ -52,7 +52,7 @@ bindsym XF86AudioPrev exec qdbus $pmethod $ppath Previous
 
 # Volume settings
 bindsym XF86AudioLowerVolume exec amixer -c 0 set Master 3-
-bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 3+
+bindsym XF86AudioRaiseVolume exec amixer -c 0 set Master 3+ unmute
 bindsym XF86AudioMute exec amixer -c0 set Master toggle
 #==============================================================================
 
