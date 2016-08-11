@@ -293,6 +293,10 @@ bar {
   colors {
     separator #FFFF5F
     background #111115
+    focused_workspace #ffc780 #3c3b37 #ffc780
+    active_workspace #ffcfaf #3c3b37 #ffcfaf
+    inactive_workspace #636363 #3c3b37 #dcdccc
+    urgent_workspace #dca3a3 #3c3b37 #dca3a3
   }
   position top
   font pango:Miriam Mono 10
