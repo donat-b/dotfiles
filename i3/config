@@ -297,7 +297,7 @@ bar {
     background #111115
   }
   position top
-  font pango:Miriam Mono 10
+  font pango:Roboto, Icons 11
   status_command ~/.cabal/bin/monky
 }
 #bar {
