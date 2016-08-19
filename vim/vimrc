@@ -248,6 +248,9 @@ Plugin 'tpope/vim-speeddating'
 " Changes working directory to project root
 Plugin 'airblade/vim-rooter'
 
+" Handling column separated data with Vim
+Plugin 'chrisbra/csv.vim'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
