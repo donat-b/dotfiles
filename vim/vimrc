@@ -251,6 +251,9 @@ Plugin 'airblade/vim-rooter'
 " Handling column separated data with Vim
 Plugin 'chrisbra/csv.vim'
 
+" dim inactive windows
+Plugin 'blueyed/vim-diminactive'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
