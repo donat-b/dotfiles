@@ -41,6 +41,9 @@ set autoread
 set splitbelow
 set splitright
 
+" Default shell
+set shell=sh
+
 " alias unnamed register to the + register
 "set clipboard=unnamedplus
 
