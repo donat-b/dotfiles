@@ -254,6 +254,9 @@ Plugin 'chrisbra/csv.vim'
 " dim inactive windows
 Plugin 'blueyed/vim-diminactive'
 
+" interactive scratchpad
+Plugin 'metakirby5/codi.vim'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
