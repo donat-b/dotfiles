@@ -41,7 +41,7 @@
     # Don't remove messages, if the user is idle (no mouse or keyboard input)
     # for longer than idle_threshold seconds.
     # Set to 0 to disable.
-    idle_threshold = 120
+    idle_threshold = 60
 
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.

@@ -105,6 +105,10 @@ nnoremap <Leader>gr "='Release' . system('grep -m1 "+version:" '.expand('%').'\|
 " commit currently open file
 nnoremap <Leader>gcv :Gcommit -v %<CR>
 
+" Fugitive
+" commit currently open file
+nnoremap <Leader>gcv :Gcommit -v %<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
