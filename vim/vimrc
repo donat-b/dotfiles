@@ -98,8 +98,8 @@ inoremap <leader>U <Esc>u
 " Explore directory of current file
 map <leader>k :Explore<CR>
 
-" Execute current file
-nnoremap <F10> :!%:p<CR>
+" Release button xD
+nnoremap <Leader>gr "='Release' . system('grep -m1 "+version:" '.expand('%').'\|cut -d: -f2')<C-M>P
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
