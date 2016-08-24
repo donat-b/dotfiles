@@ -257,6 +257,9 @@ Plugin 'blueyed/vim-diminactive'
 " interactive scratchpad
 Plugin 'metakirby5/codi.vim'
 
+" Run commands in tmux
+Plugin 'benmills/vimux'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
