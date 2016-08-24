@@ -101,6 +101,10 @@ map <leader>k :Explore<CR>
 " Release button xD
 nnoremap <Leader>gr "='Release' . system('grep -m1 "+version:" '.expand('%').'\|cut -d: -f2')<C-M>P
 
+" Fugitive
+" commit currently open file
+nnoremap <Leader>gcv :Gcommit -v %<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -212,10 +216,6 @@ Plugin 'goldfeld/ctrlr.vim'
 " Syntastic syntax checking plugin
 " :help syntastic
 Plugin 'scrooloose/syntastic'
-
-" tcomment provides easy to use, file-type sensible comments for Vim
-" :help tcomment.txt
-Plugin 'tomtom/tcomment_vim'
 
 " Global Replace plugin
 Plugin 'vim-scripts/Greplace.vim'
