@@ -98,6 +98,10 @@ map <leader>k :Explore<CR>
 " Execute current file
 nnoremap <F10> :!%:p<CR>
 
+" Fugitive
+" commit currently open file
+nnoremap <Leader>gcv :Gcommit -v %<CR>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -209,10 +213,6 @@ Plugin 'goldfeld/ctrlr.vim'
 " Syntastic syntax checking plugin
 " :help syntastic
 Plugin 'scrooloose/syntastic'
-
-" tcomment provides easy to use, file-type sensible comments for Vim
-" :help tcomment.txt
-Plugin 'tomtom/tcomment_vim'
 
 " Global Replace plugin
 Plugin 'vim-scripts/Greplace.vim'
