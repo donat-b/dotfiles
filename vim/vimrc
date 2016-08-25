@@ -107,7 +107,13 @@ nnoremap <Leader>gcv :Gcommit -v %<CR>
 
 " Fugitive
 " commit currently open file
-nnoremap <Leader>gcv :Gcommit -v %<CR>
+nnoremap <Leader>gcv :w\|:Gcommit -v %<CR>
+
+" vimux
+nnoremap <Leader>vr :call VimuxRunCommand(getline('.'), 0)<CR>
+nnoremap <Leader>vrd :call VimuxRunCommandInDir(getline('.'), expand('%:p'))<CR>
+nnoremap <Leader>vnr :call VimuxRunCommand(getline('.'), 0)<CR>
+nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
