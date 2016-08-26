@@ -14,7 +14,10 @@ syntax on
 " Required by vundle
 filetype off
 
-" Ruby community standard indentation
+" screen lines to use for the command-line
+set cmdheight=4
+
+" indentation
 set autoindent
 set expandtab
 set shiftwidth=2
@@ -58,6 +61,8 @@ set undodir=~/.vim/undo//,/tmp//
 " Key bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 nnoremap <leader>uu :update<CR>
 
