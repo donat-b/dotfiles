@@ -258,6 +258,9 @@ Plugin 'metakirby5/codi.vim'
 " Run commands in tmux
 Plugin 'benmills/vimux'
 
+" Render the buffer list instead of a tab list
+Plugin 'ap/vim-buftabline'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
