@@ -105,10 +105,11 @@ nnoremap <Leader>ggm :Git stash save\|:Git checkout master<CR>
 nnoremap <Leader>gs  :Gstatus<CR>
 
 " vimux
-nnoremap <Leader>vr  :call VimuxRunCommand(getline('.'))<CR>
-nnoremap <Leader>vrd :call VimuxRunCommandInDir(getline('.'), expand('%:p'))<CR>
+nnoremap <Leader>vr  :VimuxRunCommand getline('.')<CR>
+nnoremap <Leader>vdr :call VimuxRunCommandInDir(getline('.'), expand('%:p'))<CR>
 nnoremap <Leader>vnr :call VimuxRunCommand(getline('.'), 0)<CR>
-nnoremap <Leader>vz  :call VimuxZoomRunner()<CR>
+nnoremap <Leader>vz  :VimuxZoomRunner<CR>
+nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
