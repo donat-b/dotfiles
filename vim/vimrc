@@ -66,6 +66,8 @@ nnoremap <silent> <F12> :bnext<CR>
 nnoremap <silent> <M-F12> :bprev<CR>
 " Open new buffer
 nnoremap <leader>T :enew<CR>
+" Close the current buffer and move to the previous one
+nmap <leader>bq :bp <BAR> bdelete! #<CR>
 
 nnoremap <leader>uu :update<CR>
 
@@ -94,8 +96,8 @@ nnoremap <F10> :!%:p<CR>
 
 " Fugitive
 " commit currently open file
-nnoremap <Leader>gcv :update\|:Gcommit -v %<CR>
-nnoremap <Leader>ggm :Git stash save\|:Git checkout master<CR>
+nnoremap <Leader>gcv :update <BAR> Gcommit -v %<CR>
+nnoremap <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
 nnoremap <Leader>gs  :Gstatus<CR>
 
 " vimux
@@ -112,6 +114,7 @@ nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
+" :help local-additions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -121,12 +124,37 @@ Plugin 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax/language
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Scala
-" :help scala
-Plugin 'derekwyatt/vim-scala'
 " Markdown
-" :help vim-markdown
 Plugin 'plasticboy/vim-markdown'
+
+" Syntastic syntax checking plugin
+Plugin 'scrooloose/syntastic'
+
+" Completion plugin for Haskell, using ghc-mod
+Plugin 'eagletmt/neco-ghc'
+
+" Ansible yaml syntax
+Plugin 'pearofducks/ansible-vim'
+
+" Nginx syntax
+Plugin 'nginx.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Windows/navigation
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Full path fuzzy file, buffer, mru, tag, ... finder
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'FelikZ/ctrlp-py-matcher'
+
+" Run commands in tmux
+Plugin 'benmills/vimux'
+
+" Shell reverse search emulation
+Plugin 'goldfeld/ctrlr.vim'
+
+" Dim inactive windows
+Plugin 'blueyed/vim-diminactive'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -134,7 +162,6 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'tpope/vim-sensible'
 
 " File-type-specific templates
-" :help skeleton
 Plugin 'noahfrederick/vim-skeleton'
 
 " Ultimate calendar application
@@ -142,48 +169,33 @@ Plugin 'noahfrederick/vim-skeleton'
 Plugin 'itchyny/calendar.vim'
 
 " Commenting operations and styles
-" :help NERDCommenter
 Plugin 'scrooloose/nerdcommenter'
 
-" Twitter client
-" :help TwitVim
-Plugin 'https://bitbucket.org/mortonfox/twitvim'
-
 " ASCII drawing
-" :help drawit
-" <leader>di to start
-" <leader>ds to leave
 Plugin 'vim-scripts/DrawIt'
 
 " Personal wiki for vim
-" :help vimwiki
 Plugin 'vimwiki/vimwiki'
 
 " View man pages in vim
 Plugin 'vim-utils/vim-man'
 
 " Execute program with options.
-" :help quickrun
 Plugin 'thinca/vim-quickrun'
 
 " An Interface to WEB APIs
 Plugin 'mattn/webapi-vim'
 
 " Creating gists on http://gist.github.com
-" :Help Gist
 Plugin 'mattn/gist-vim'
 
 " A simple vim plugin for quickly create and insert templates
-" :VBTemplate [template]
-" :VBEdit [template]
 Plugin 'kabbamine/vbox.vim'
 
 " Querying of the RFC database and loading RFC/STD documents into a Vim buffer
-" :help RFC
 Plugin 'mhinz/vim-rfc'
 
 " Lean & mean status/tabline for vim that's light as air
-" :help airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -207,28 +219,10 @@ if !has('nvim')
   Plugin 'Shougo/neocomplete.vim'
 endif
 
-" completion plugin for Haskell, using ghc-mod
-Plugin 'eagletmt/neco-ghc'
-
-" Shell reverse search emulation
-Plugin 'goldfeld/ctrlr.vim'
-
-" Syntastic syntax checking plugin
-" :help syntastic
-Plugin 'scrooloose/syntastic'
-
 " Global Replace plugin
 Plugin 'vim-scripts/Greplace.vim'
 
-" Ansible
-Plugin 'pearofducks/ansible-vim'
-
-" Full path fuzzy file, buffer, mru, tag, ... finder
-" :help CtrlP@en
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
-
-" git wrapper
+" Git wrapper
 Plugin 'tpope/vim-fugitive'
 
 " Vim sugar for UNIX shell commands
@@ -237,15 +231,13 @@ Plugin 'tpope/vim-eunuch'
 " Highlight matches
 Plugin 'qstrahl/vim-matchmaker'
 
-" quoting/parenthesizing
+" Quoting/parenthesizing
 Plugin 'tpope/vim-surround'
 
-Plugin 'nginx.vim'
-
-" undo history visualizer
+" Undo history visualizer
 Plugin 'mbbill/undotree'
 
-" increment dates, times, and more
+" Increment dates, times, and more
 Plugin 'tpope/vim-speeddating'
 
 " Changes working directory to project root
@@ -254,14 +246,8 @@ Plugin 'airblade/vim-rooter'
 " Handling column separated data with Vim
 Plugin 'chrisbra/csv.vim'
 
-" dim inactive windows
-Plugin 'blueyed/vim-diminactive'
-
-" interactive scratchpad
+" Interactive scratchpad
 Plugin 'metakirby5/codi.vim'
-
-" Run commands in tmux
-Plugin 'benmills/vimux'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
