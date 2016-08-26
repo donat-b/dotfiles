@@ -101,12 +101,14 @@ nnoremap <F10> :!%:p<CR>
 " Fugitive
 " commit currently open file
 nnoremap <Leader>gcv :w\|:Gcommit -v %<CR>
+nnoremap <Leader>ggm :Git stash save\|:Git checkout master<CR>
+nnoremap <Leader>gs  :Gstatus<CR>
 
 " vimux
-nnoremap <Leader>vr :call VimuxRunCommand(getline('.'))<CR>
+nnoremap <Leader>vr  :call VimuxRunCommand(getline('.'))<CR>
 nnoremap <Leader>vrd :call VimuxRunCommandInDir(getline('.'), expand('%:p'))<CR>
 nnoremap <Leader>vnr :call VimuxRunCommand(getline('.'), 0)<CR>
-nnoremap <Leader>vz :call VimuxZoomRunner()<CR>
+nnoremap <Leader>vz  :call VimuxZoomRunner()<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
