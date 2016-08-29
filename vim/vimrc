@@ -102,7 +102,11 @@ nnoremap <F10> :!%:p<CR>
 
 " Fugitive
 " commit currently open file
+nnoremap <Leader>ga  :Git add %<CR>
+nnoremap <Leader>gb  :Gblame<CR>
 nnoremap <Leader>gcv :update <BAR> Gcommit -v %<CR>
+nnoremap <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
+nnoremap <Leader>gd  :Gdiff<CR>
 nnoremap <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
 nnoremap <Leader>gs  :Gstatus<CR>
 
