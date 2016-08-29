@@ -57,6 +57,8 @@ set backupdir=~/.vim/.backup//,/tmp//
 set directory=~/.vim/.swp//,/tmp//
 set undodir=~/.vim/undo//,/tmp//
 
+set verbosefile=~/.vim/verbose.log
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Key bindings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
