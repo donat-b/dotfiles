@@ -326,18 +326,6 @@ colorscheme gruvbox
 " Highlight trailing whitespaces
 match ErrorMsg '\s\+$'
 
-" Leave insert mode on idle
-au CursorHoldI * stopinsert
-"au InsertEnter * let updaterestore=&updatetime | set updatetime=10000
-"au InsertEnter * let &updatetime=updaterestore
-
-"highlight Normal guibg=#32322f ctermbg=236
-"highlight NonText guibg=#32322f ctermbg=236
-highlight ColorColumn guibg=#000000 ctermbg=0
-highlight Search ctermbg=cyan ctermfg=black
-"let &colorcolumn=join(range(81,999),",")
-"let &colorcolumn="80,".join(range(133,999),",")
-
 " Add/change file extension in current buffer
 " http://vim.wikia.com/wiki/Add/change_file_extension_in_current_buffer
 command! -nargs=1 AddExt execute "saveas ".expand("%:p").<q-args>
