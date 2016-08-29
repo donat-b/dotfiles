@@ -69,7 +69,7 @@ set verbosefile=~/.vim/verbose.log
 
 " Switching buffers
 nnoremap <silent> <F12> :bnext<CR>
-nnoremap <silent> <M-F12> :bprev<CR>
+nnoremap <silent> <F11> :bprev<CR>
 " Open new buffer
 nnoremap <leader>T :enew<CR>
 " Close the current buffer and move to the previous one
