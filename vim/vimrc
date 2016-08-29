@@ -106,7 +106,11 @@ nnoremap <Leader>gcv :Gcommit -v %<CR>
 
 " Fugitive
 " commit currently open file
+nnoremap <Leader>ga  :Git add %<CR>
+nnoremap <Leader>gb  :Gblame<CR>
 nnoremap <Leader>gcv :update <BAR> Gcommit -v %<CR>
+nnoremap <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
+nnoremap <Leader>gd  :Gdiff<CR>
 nnoremap <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
 nnoremap <Leader>gs  :Gstatus<CR>
 
@@ -331,6 +335,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " Set color scheme
 set background=dark
 colorscheme gruvbox
+
+" unclutter netrw buffers
+autocmd FileType netrw setl bufhidden=wipe
 
 " Add/change file extension in current buffer
 " http://vim.wikia.com/wiki/Add/change_file_extension_in_current_buffer
