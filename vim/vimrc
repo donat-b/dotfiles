@@ -94,9 +94,6 @@ nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 " Explore directory of current file
 map <leader>k :Explore<CR>
 
-" Release button xD
-nnoremap <Leader>gr "='Release' . system('grep -m1 "+version:" '.expand('%').'\|cut -d: -f2')<C-M>P
-
 " Fugitive
 " commit currently open file
 nnoremap <Leader>gcv :Gcommit -v %<CR>
@@ -350,6 +347,14 @@ command! -nargs=1 ChgExt execute "saveas ".expand("%:p:r").<q-args>
 command! -range=% WordFrequency <line1>,<line2>call WordFrequency()
 " Sort words
 command! -nargs=0 -range SortWords call SortWords()
+
+" Commit release version
+function! ReleaseCommit()
+  update
+  Gcommit -v %
+  let release=system("grep -m1 '+version:' " . expand('%:p') . ' | cut -d: -f2')
+  call setline(1, 'Release'.release)
+endfunction
 
 " Automatically create directories on save
 function! s:MkNonExDir(file, buf)
