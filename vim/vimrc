@@ -23,8 +23,9 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
-" Show extra whitespace
-set list listchars=tab:>-
+" Whitespace characters
+set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
+set list
 
 " Show line numbers
 set number
@@ -251,6 +252,9 @@ Plugin 'chrisbra/csv.vim'
 " Interactive scratchpad
 Plugin 'metakirby5/codi.vim'
 
+" Highlight trailing whitespace characters
+Plugin 'ntpeters/vim-better-whitespace'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'petelewis/vim-evolution'
@@ -320,9 +324,6 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 " Set color scheme
 set background=dark
 colorscheme gruvbox
-
-" Highlight trailing whitespaces
-match ErrorMsg '\s\+$'
 
 " Add/change file extension in current buffer
 " http://vim.wikia.com/wiki/Add/change_file_extension_in_current_buffer
