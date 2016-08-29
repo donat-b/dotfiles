@@ -332,6 +332,9 @@ inoremap <expr><C-l>     neocomplete#complete_common_string()
 set background=dark
 colorscheme gruvbox
 
+" unclutter netrw buffers
+autocmd FileType netrw setl bufhidden=wipe
+
 " Add/change file extension in current buffer
 " http://vim.wikia.com/wiki/Add/change_file_extension_in_current_buffer
 command! -nargs=1 AddExt execute "saveas ".expand("%:p").<q-args>
