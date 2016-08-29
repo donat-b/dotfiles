@@ -74,8 +74,11 @@ nmap <leader>bq :bp <BAR> bdelete! #<CR>
 
 nnoremap <leader>uu :update<CR>
 
-" Insert current date
-inoremap <F5> <C-R>=strftime("%F")<CR>
+" Insert current date/time
+inoremap <silent> <C-D>D <C-R>=strftime("%F")<CR>
+inoremap <silent> <C-D>T <C-R>=strftime("%T")<CR>
+
+" Toggle paste mode
 nnoremap <leader>tp :set invpaste paste?<CR>
 
 " Toggle line numbers
