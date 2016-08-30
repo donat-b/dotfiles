@@ -104,6 +104,7 @@ nnoremap <F10> :!%:p<CR>
 " commit currently open file
 nnoremap <Leader>ga  :Git add %<CR>
 nnoremap <Leader>gb  :Gblame<CR>
+nnoremap <Leader>gcc :Gcommit -v<CR>
 nnoremap <Leader>gcv :update <BAR> Gcommit -v %<CR>
 nnoremap <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
 nnoremap <Leader>gd  :Gdiff<CR>
