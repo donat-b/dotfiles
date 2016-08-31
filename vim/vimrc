@@ -120,6 +120,9 @@ nnoremap <Leader>vnr :call VimuxRunCommand(getline('.'), 0)<CR>
 nnoremap <Leader>vz  :VimuxZoomRunner<CR>
 nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 
+" vim-wiki
+nnoremap <Leader>wv <Plug>VimwikiVSplitLink
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -302,7 +305,9 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " vim-wiki
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
-nnoremap <Leader>wv <Plug>VimwikiVSplitLink
+
+" Markdown
+let g:vim_markdown_folding_disabled = 1
 
 " CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
