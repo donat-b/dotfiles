@@ -319,6 +319,8 @@ let g:vim_markdown_folding_disabled = 1
 
 " CtrlP
 let g:ctrlp_match_func = { 'match': 'pymatcher#PyMatch' }
+" file name matching by default
+let g:ctrlp_by_filename = 1
 
 " netrw (network oriented reading, writing, and browsing)
 " Quick reference map:
