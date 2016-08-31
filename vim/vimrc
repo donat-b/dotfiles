@@ -128,8 +128,9 @@ nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 " vim-wiki
 nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
-" MRU files in CtrlP
+" CtrlP
 nnoremap <Leader>bo :CtrlPMRUFiles<CR>
+nnoremap <Leader>bf :CtrlPBuffer<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
