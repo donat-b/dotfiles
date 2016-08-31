@@ -110,10 +110,11 @@ nnoremap <Leader>gcv :Gcommit -v %<CR>
 nnoremap <Leader>ga  :Git add %<CR>
 nnoremap <Leader>gb  :Gblame<CR>
 nnoremap <Leader>gcc :Gcommit -v<CR>
-nnoremap <Leader>gcv :update <BAR> Gcommit -v %<CR>
 nnoremap <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
+nnoremap <Leader>gcv :update <BAR> Gcommit -v %<CR>
 nnoremap <Leader>gd  :Gdiff<CR>
 nnoremap <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
+nnoremap <Leader>gps :Gpush<CR>
 nnoremap <Leader>gs  :Gstatus<CR>
 
 " vimux
