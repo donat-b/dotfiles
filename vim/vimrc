@@ -112,6 +112,7 @@ nnoremap <Leader>gs  :Gstatus<CR>
 
 " vimux
 nnoremap <Leader>vr  :VimuxRunCommand getline('.')<CR>
+nnoremap <Leader>vrz :call VimuxRunCommand(getline('.')) <BAR> VimuxZoomRunner<CR>
 nnoremap <Leader>vdr :call VimuxRunCommandInDir(getline('.'), expand('%:p'))<CR>
 nnoremap <Leader>vnr :call VimuxRunCommand(getline('.'), 0)<CR>
 nnoremap <Leader>vz  :VimuxZoomRunner<CR>
