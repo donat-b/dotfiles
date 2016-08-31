@@ -50,6 +50,8 @@ set splitright
 " Enable file-type specific indenting
 filetype indent on
 
+set viminfo='100,<50,s10,h,%
+
 " Unclutter current working directory
 " // means that file names will be built from the complete path to
 " the file with all path separators substituted to percent signs.
