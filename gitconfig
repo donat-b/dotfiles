@@ -42,6 +42,8 @@
   rh      = reset --hard
   rh1     = reset HEAD^ --hard
   rh2     = reset HEAD^^ --hard
+  # branches by recently commited
+  recent  = for-each-ref --sort=committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
   # status
   s       = status
   # status with untracked files
