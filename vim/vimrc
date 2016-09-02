@@ -368,8 +368,8 @@ command! -nargs=0 -range SortWords call SortWords()
 function! ReleaseCommit()
   update
   Gcommit -v %
-  let release=system("grep -m1 '+version:' " . expand('%:p') . ' | cut -d: -f2')
-  call setline(1, 'Release'.release)
+  let release = systemlist("grep -m1 '+version:' " . expand('%:p') . ' | cut -d: -f2')
+  call setline(1, 'Release' . release[0])
 endfunction
 
 " Automatically create directories on save
