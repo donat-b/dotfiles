@@ -98,6 +98,10 @@ map <leader>sc :setlocal spell! spelllang=en_us<CR>
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
+" wordwise yank from line above
+" sauce: http://vim.wikia.com/wiki/Wordwise_Ctrl-Y_in_insert_mode
+inoremap <expr> <C-Y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(\k\+\\|.\)')
+
 " Explore directory of current file
 map <leader>k :Explore<CR>
 
@@ -163,6 +167,9 @@ Plugin 'pearofducks/ansible-vim'
 
 " Nginx syntax
 Plugin 'nginx.vim'
+
+" Add end keywords in various languages
+Plugin 'tpope/vim-endwise'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
