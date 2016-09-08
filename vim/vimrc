@@ -76,7 +76,7 @@ nnoremap <leader>T :enew<CR>
 " Close the current buffer and move to the previous one
 nmap <leader>bq :bp <BAR> bdelete! #<CR>
 
-nnoremap <leader>uu :update<CR>
+nnoremap <C-W><C-W> :update<CR>
 
 " Insert current date/time
 inoremap <silent> <C-D>D <C-R>=strftime("%F")<CR>

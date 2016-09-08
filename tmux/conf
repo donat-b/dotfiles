@@ -95,3 +95,6 @@ bind-key -n S-down \
   bind -n C-t new-window -a -c "#{pane_current_path}" \; \
   set -wg window-status-current-fg 'colour204' \; \
   set -g prefix C-a
+
+# plugins
+run-shell ~/dotfiles/tmux/plugins/resurrect/resurrect.tmux
