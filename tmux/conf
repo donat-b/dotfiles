@@ -95,4 +95,5 @@ bind-key -n S-down \
   set -g prefix C-a
 
 # plugins
+set -g @resurrect-capture-pane-contents 'on'
 run-shell ~/dotfiles/tmux/plugins/resurrect/resurrect.tmux
