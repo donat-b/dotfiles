@@ -23,8 +23,6 @@ bind-key C-a send-prefix
 
 # Last active window
 #bind-key C-a last-window
-# Open man
-bind-key m command-prompt 'split-window 'exec man %%''
 # Root
 bind-key R split-window 'exec sudo -s'
 # Reload config
