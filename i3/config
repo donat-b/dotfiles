@@ -80,7 +80,8 @@ bindsym $mod+b exec --no-startup-id "optirun -- blender"
 bindsym $mod+g exec --no-startup-id "gimp"
 bindsym $mod+v exec --no-startup-id "~/dotfiles/scripts/virt-manager.sh"
 bindsym $mod+x exec --no-startup-id "xmind"
-bindsym $mod+F2 exec --no-startup-id "skype"
+bindsym $mod+F2 exec --no-startup-id 'skype'
+bindsym $mod+F3 exec --no-startup-id "~/Telegram/Telegram"
 
 # Brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5
@@ -301,7 +302,7 @@ bar {
     urgent_workspace #dca3a3 #3c3b37 #dca3a3
   }
   position top
-  font pango:Roboto, Icons 11
+  font pango:Roboto Mono, Icons 11
   status_command ~/.cabal/bin/monky
 }
 #bar {
