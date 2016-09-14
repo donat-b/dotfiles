@@ -104,15 +104,15 @@ nnoremap <F10> :!%:p<CR>
 
 " Fugitive
 " commit currently open file
-nnoremap <Leader>ga  :Git add %<CR>
-nnoremap <Leader>gb  :Gblame<CR>
-nnoremap <Leader>gcc :Gcommit -v<CR>
-nnoremap <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
-nnoremap <Leader>gcv :update <BAR> Gcommit -v %<CR>
-nnoremap <Leader>gd  :Gdiff<CR>
-nnoremap <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
-nnoremap <Leader>gps :Gpush<CR>
-nnoremap <Leader>gs  :Gstatus<CR>
+nnoremap <silent> <Leader>ga  :Git add %<CR>
+nnoremap <silent> <Leader>gb  :Gblame<CR>
+nnoremap <silent> <Leader>gcc :Gcommit -v<CR>
+nnoremap <silent> <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
+nnoremap <silent> <Leader>gcv :update <BAR> Gcommit -v %<CR>
+nnoremap <silent> <Leader>gd  :Gdiff<CR>
+nnoremap <silent> <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
+nnoremap <silent> <Leader>gps :Gpush<CR>
+nnoremap <silent> <Leader>gs  :Gstatus<CR>
 
 " vimux
 nnoremap <Leader>vr  :VimuxRunCommand getline('.')<CR>
@@ -125,9 +125,13 @@ nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 " vim-wiki
 nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
-" CtrlP
-nnoremap <Leader>bo :CtrlPMRUFiles<CR>
-nnoremap <Leader>bf :CtrlPBuffer<CR>
+" Unite
+nnoremap <C-P> :Unite -start-insert file_rec/async<CR>
+nnoremap <silent> <Leader>G  :Unite grep:.<CR>
+nnoremap <silent> <Leader>yy :Unite history/yank<CR>
+nnoremap <silent> <Leader>bb :Unite -quick-match buffer<CR>
+nnoremap <silent> <Leader>bl :Unite buffer<CR>
+nnoremap <silent> <Leader>bp :Unite -auto-preview buffer<CR>
 
 " VimFiler
 noremap <silent> <Leader>f :VimFilerExplorer -winwidth=25 -split -toggle -no-quit<CR>
@@ -176,8 +180,8 @@ Plugin 'tpope/vim-endwise'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Full path fuzzy file, buffer, mru, tag, ... finder
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'FelikZ/ctrlp-py-matcher'
+"Plugin 'ctrlpvim/ctrlp.vim'
+"Plugin 'FelikZ/ctrlp-py-matcher'
 
 " Run commands in tmux
 Plugin 'benmills/vimux'
@@ -188,6 +192,7 @@ Plugin 'goldfeld/ctrlr.vim'
 " Dim inactive windows
 Plugin 'blueyed/vim-diminactive'
 
+Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
   " File explorer
   Plugin 'Shougo/vimfiler.vim'
@@ -352,6 +357,9 @@ let g:rooter_patterns = ['Vagrantfile', '.git/']
 
 " Vimfiler
 let g:vimfiler_as_default_explorer = 1
+
+" Unite
+let g:unite_source_history_yank_enable = 1
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
