@@ -289,6 +289,9 @@ Plugin 'vim-scripts/Greplace.vim'
 " Git wrapper
 Plugin 'tpope/vim-fugitive'
 
+" Shows a git diff in the 'gutter'
+Plugin 'airblade/vim-gitgutter'
+
 " Vim sugar for UNIX shell commands
 Plugin 'tpope/vim-eunuch'
 
