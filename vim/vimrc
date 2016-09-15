@@ -295,6 +295,9 @@ endif
 " Global Replace plugin
 Plugin 'vim-scripts/Greplace.vim'
 
+" Git runtime files
+Plugin 'tpope/vim-git'
+
 " Git wrapper
 Plugin 'tpope/vim-fugitive'
 
