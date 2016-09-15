@@ -105,6 +105,26 @@ inoremap <expr> <C-Y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(
 " Execute current file
 nnoremap <F10> :!%:p<CR>
 
+" Use gQ instead
+map Q <Nop>
+
+" copy/paste to/from x clipboard
+vmap <leader>y :!xclip -f -sel clip<CR>
+map <leader>p :r!xclip -o<CR>
+
+" buffer
+nmap <leader>s<left>  :leftabove  vnew<CR>
+nmap <leader>s<right> :rightbelow vnew<CR>
+nmap <leader>s<up>    :leftabove  new<CR>
+nmap <leader>s<down>  :rightbelow new<CR>
+
+
+" auto complete {} indent and position the cursor in the middle line
+inoremap {<CR> {<CR>}<Esc>O
+inoremap (<CR> (<CR>)<Esc>O
+inoremap [<CR> [<CR>]<Esc>O
+inoremap <<CR> <<CR>><Esc>O
+
 " Fugitive
 " commit currently open file
 nnoremap <silent> <Leader>ga  :Git add %<CR>
