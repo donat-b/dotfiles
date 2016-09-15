@@ -201,6 +201,9 @@ Plugin 'tpope/vim-endwise'
 " Text filtering and alignment
 Plugin 'godlygeek/tabular'
 
+" Code formatting in Vim by integrating existing code formatters.
+Plugin 'Chiel92/vim-autoformat'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
