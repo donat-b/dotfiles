@@ -105,6 +105,9 @@ inoremap <expr> <C-Y> matchstr(getline(line('.')-1), '\%' . virtcol('.') . 'v\%(
 " Execute current file
 nnoremap <F10> :!%:p<CR>
 
+" fast escaping
+imap ;; <ESC>
+
 " Use gQ instead
 map Q <Nop>
 
@@ -178,7 +181,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Syntax/language
+" Syntax/language/formatting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown
 Plugin 'plasticboy/vim-markdown'
@@ -197,6 +200,9 @@ Plugin 'nginx.vim'
 
 " Add end keywords in various languages
 Plugin 'tpope/vim-endwise'
+
+" Text filtering and alignment
+Plugin 'godlygeek/tabular'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
