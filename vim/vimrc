@@ -129,6 +129,7 @@ inoremap <<CR> <<CR>><Esc>O
 " commit currently open file
 nnoremap <silent> <Leader>ga  :Git add %<CR>
 nnoremap <silent> <Leader>gb  :Gblame<CR>
+nnoremap <silent> <Leader>gca :Gcommit --amend -v<CR>
 nnoremap <silent> <Leader>gcc :Gcommit -v<CR>
 nnoremap <silent> <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
 nnoremap <silent> <Leader>gcv :update <BAR> Gcommit -v %<CR>
