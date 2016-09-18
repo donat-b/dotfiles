@@ -227,6 +227,9 @@ Plugin 'Shougo/unite.vim'
   " File explorer
   Plugin 'Shougo/vimfiler.vim'
 
+" Session management
+Plugin 'xolox/vim-session'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Sensible defaults
