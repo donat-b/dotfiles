@@ -228,7 +228,8 @@ Plugin 'Shougo/unite.vim'
   Plugin 'Shougo/vimfiler.vim'
 
 " Session management
-Plugin 'xolox/vim-session'
+Plugin 'xolox/vim-misc'
+  Plugin 'xolox/vim-session'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
