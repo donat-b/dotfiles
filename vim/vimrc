@@ -135,6 +135,7 @@ nnoremap <silent> <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
 nnoremap <silent> <Leader>gcv :update <BAR> Gcommit -v %<CR>
 nnoremap <silent> <Leader>gd  :Gdiff<CR>
 nnoremap <silent> <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
+nnoremap <silent> <Leader>gpl :Gpull<CR>
 nnoremap <silent> <Leader>gps :Gpush<CR>
 nnoremap <silent> <Leader>gs  :Gstatus<CR>
 
