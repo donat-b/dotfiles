@@ -1,3 +1,4 @@
+# vi: set ft=gitconfig :
 [alias]
   a = add
   # amend last commit
