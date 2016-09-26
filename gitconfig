@@ -94,5 +94,9 @@
 [user]
   email = donat@opmbx.org
   name = donat-b
+
 [github]
   user = donat-b
+
+[include]
+  path = ~/dotfiles/gitconfig.local
