@@ -130,13 +130,15 @@ inoremap <<CR> <<CR>><Esc>O
 
 " Fugitive
 " commit currently open file
-nnoremap <silent> <Leader>ga  :Git add %<CR>
+nnoremap <silent> <Leader>ga  :Gwrite %<CR>
 nnoremap <silent> <Leader>gb  :Gblame<CR>
+nnoremap <silent> <Leader>gca :Gcommit --amend -v<CR>
 nnoremap <silent> <Leader>gcc :Gcommit -v<CR>
 nnoremap <silent> <Leader>gci :update <BAR> Gcommit --interactive --verbose<CR>
 nnoremap <silent> <Leader>gcv :update <BAR> Gcommit -v %<CR>
 nnoremap <silent> <Leader>gd  :Gdiff<CR>
 nnoremap <silent> <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
+nnoremap <silent> <Leader>gpl :Gpull<CR>
 nnoremap <silent> <Leader>gps :Gpush<CR>
 nnoremap <silent> <Leader>gs  :Gstatus<CR>
 
@@ -228,6 +230,10 @@ Plugin 'Shougo/vimproc.vim'
 Plugin 'Shougo/unite.vim'
   " File explorer
   Plugin 'Shougo/vimfiler.vim'
+
+" Session management
+Plugin 'xolox/vim-misc'
+  Plugin 'xolox/vim-session'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
