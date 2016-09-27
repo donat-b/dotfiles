@@ -404,6 +404,9 @@ let g:unite_source_history_yank_enable = 1
 " Rooter
 let g:rooter_silent_chdir = 1
 
+" session
+let g:session_autosave = 'no'
+
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
