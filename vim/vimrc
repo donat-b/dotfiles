@@ -334,6 +334,9 @@ Plugin 'chrisbra/csv.vim'
 " Interactive scratchpad
 Plugin 'metakirby5/codi.vim'
 
+" Use <Tab> for all insert completion
+Plugin 'ervandew/supertab'
+
 " Highlight trailing whitespace characters
 Plugin 'ntpeters/vim-better-whitespace'
 
