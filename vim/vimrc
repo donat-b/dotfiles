@@ -154,8 +154,9 @@ nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
 " Unite
-nnoremap <C-P> :Unite -start-insert file_rec/async<CR>
+nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
 nnoremap <silent> <Leader>G  :Unite grep:.<CR>
+nnoremap <silent> <Leader>pp :Unite -vertical-preview -winheight=50 -auto-preview file_rec/async<CR>
 nnoremap <silent> <Leader>yy :Unite history/yank<CR>
 nnoremap <silent> <Leader>bb :Unite -quick-match buffer<CR>
 nnoremap <silent> <Leader>bl :Unite buffer<CR>
@@ -403,6 +404,13 @@ let g:vimfiler_as_default_explorer = 1
 
 " Unite
 let g:unite_source_history_yank_enable = 1
+call unite#custom#source('file_rec/async', 'ignore_pattern',
+  \ join([
+  \ '\.git/',
+  \ '\.vagrant/',
+  \ '\.jpg',
+  \ '\.png',
+  \ ], '\|'))
 
 " Rooter
 let g:rooter_silent_chdir = 1
