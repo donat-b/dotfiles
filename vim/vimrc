@@ -340,7 +340,7 @@ Plugin 'ntpeters/vim-better-whitespace'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
-Plugin 'petelewis/vim-evolution'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'joshdick/onedark.vim'
 
 call vundle#end()
