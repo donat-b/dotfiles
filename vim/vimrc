@@ -112,6 +112,8 @@ imap ;; <ESC>
 map Q <Nop>
 " Screw F1 help
 map <F1> <Nop>
+nnoremap <F1> :help<Space>
+
 
 " copy/paste to/from x clipboard
 vmap <leader>y :!xclip -f -sel clip<CR>
