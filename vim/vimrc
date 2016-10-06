@@ -113,6 +113,8 @@ imap ;; <ESC>
 
 " Use gQ instead
 map Q <Nop>
+" Screw F1 help
+map <F1> <Nop>
 
 " copy/paste to/from x clipboard
 vmap <leader>y :!xclip -f -sel clip<CR>
