@@ -218,10 +218,6 @@ Plugin 'Chiel92/vim-autoformat'
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Full path fuzzy file, buffer, mru, tag, ... finder
-"Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'FelikZ/ctrlp-py-matcher'
-
 " Run commands in tmux
 Plugin 'benmills/vimux'
 
@@ -386,11 +382,6 @@ let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
 " Markdown
 let g:vim_markdown_folding_disabled = 1
 
-" netrw (network oriented reading, writing, and browsing)
-" Quick reference map:
-" :help netrw-quickmap
-let g:netrw_liststyle=3
-
 " Airline
 let g:airline_powerline_fonts=1
 let g:airline_theme = 'dark'
@@ -421,6 +412,7 @@ let g:rooter_silent_chdir = 1
 
 " session
 let g:session_autosave = 'no'
+let g:session_autoload = 'no'
 
 " Plugin key-mappings.
 inoremap <expr><C-g>     neocomplete#undo_completion()
