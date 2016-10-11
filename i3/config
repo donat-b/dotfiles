@@ -10,7 +10,8 @@
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
 set $mod Mod4
-set $xrandr_eout HDMI1
+set $xrandr_eout HDMI3
+set $xrandr_eout2 VGA1
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -197,7 +198,7 @@ bindsym $mod+Shift+Control+0 move container to workspace 10
 
 # move workspaces
 bindsym $mod+Control+e move workspace to output $xrandr_eout
-bindsym $mod+Control+l move workspace to output LVDS1
+bindsym $mod+Control+l move workspace to output $xrandr_eout2
 
 # scratchpad
 # Make the currently focused window a scratchpad
