@@ -95,6 +95,7 @@ bindsym Mod1+F9 exec toggle-touchpad
 
 # Turn off external output
 bindsym $mod+Control+o exec xrandr --output $xrandr_eout --off
+bindsym $mod+Control+Shift+o exec xrandr --output $xrandr_eout --mode 1920x1080 --above $xrandr_eout2 --rotate normal
 
 # Lockscreen
 bindsym $mod+F4 exec "~/dotfiles/scripts/lockscreen.sh"
