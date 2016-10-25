@@ -159,7 +159,8 @@ noremap <silent> <Leader>fl :VimFilerExplorer -toggle -find<CR>
 noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
 
-nnoremap <Leader><Leader> :update <BAR> source ~/.vimrc<CR>
+" Reload configuration
+nnoremap <Leader><Leader> :call ReloadVimrc()<CR>
 
 """"""""""
 " Toggles
@@ -603,3 +604,17 @@ function! Inc(...)
   let g:i += a:0 > 0 ? a:1 : 1
   return result
 endfunction
+
+if !exists("*ReloadVimrc")
+  function! ReloadVimrc()
+    try
+      if expand('%:t') == 'vimrc'
+        update
+      endif
+
+      source ~/.vimrc
+    catch /^Vim\%((\a\+)\)\=:E/	" catch all Vim errors
+      redraw | echoerr v:exception
+    endtry
+  endfunction
+endif
