@@ -1,7 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" No useless compatability with vi
 set nocompatible
 
 " Unicode
@@ -82,19 +81,6 @@ nnoremap <C-W><C-W> :update<CR>
 inoremap <silent> <C-D>D <C-R>=strftime("%F")<CR>
 inoremap <silent> <C-D>T <C-R>=strftime("%T")<CR>
 
-" Toggle paste mode
-nnoremap <leader>tp :set invpaste paste?<CR>
-
-" Toggle line numbers
-nnoremap <leader>nn :set invnumber<CR>
-
-" Toggle relative numbers
-nnoremap <leader>nr :set invrelativenumber<CR>
-set showmode
-
-" Toggle spell-check
-map <leader>sc :setlocal spell! spelllang=en_us<CR>
-
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
@@ -172,6 +158,19 @@ noremap <silent> <Leader>a :VimFilerExplorer -find -winwidth=25 -split -toggle -
 noremap <silent> <Leader>fl :VimFilerExplorer -toggle -find<CR>
 noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
+
+""""""""""
+" Toggles
+
+" Relative numbers
+nnoremap <leader>trn :set invrelativenumber<CR>
+set showmode
+" Spell checking
+map <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
+" Paste mode
+nnoremap <leader>tp :set invpaste paste?<CR>
+" Line numbers
+nnoremap <leader>tn :set invnumber<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
