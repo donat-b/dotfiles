@@ -159,6 +159,8 @@ noremap <silent> <Leader>fl :VimFilerExplorer -toggle -find<CR>
 noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
 
+nnoremap <Leader><Leader> :update <BAR> source ~/.vimrc<CR>
+
 """"""""""
 " Toggles
 
@@ -291,10 +293,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Dark powered asynchronous completion framework for neovim
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
-endif
-
-" completion framework for vim
-if !has('nvim')
+elseif has('lua')
   Plugin 'Shougo/neocomplete.vim'
 endif
 
@@ -339,6 +338,9 @@ Plugin 'ervandew/supertab'
 
 " Highlight trailing whitespace characters
 Plugin 'ntpeters/vim-better-whitespace'
+
+" Uncover usage problems in your writing
+Plugin 'reedes/vim-wordy'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
