@@ -1,7 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" No useless compatability with vi
 set nocompatible
 
 " Unicode
@@ -85,19 +84,6 @@ nnoremap <C-W><C-W> :update<CR>
 inoremap <silent> <C-D>D <C-R>=strftime("%F")<CR>
 inoremap <silent> <C-D>T <C-R>=strftime("%T")<CR>
 
-" Toggle paste mode
-nnoremap <leader>tp :set invpaste paste?<CR>
-
-" Toggle line numbers
-nnoremap <leader>nn :set invnumber<CR>
-
-" Toggle relative numbers
-nnoremap <leader>nr :set invrelativenumber<CR>
-set showmode
-
-" Toggle spell-check
-map <leader>sc :setlocal spell! spelllang=en_us<CR>
-
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
@@ -175,6 +161,22 @@ noremap <silent> <Leader>a :VimFilerExplorer -find -winwidth=25 -split -toggle -
 noremap <silent> <Leader>fl :VimFilerExplorer -toggle -find<CR>
 noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
+
+" Reload configuration
+nnoremap <Leader><Leader> :call ReloadVimrc()<CR>
+
+""""""""""
+" Toggles
+
+" Relative numbers
+nnoremap <leader>trn :set invrelativenumber<CR>
+set showmode
+" Spell checking
+map <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
+" Paste mode
+nnoremap <leader>tp :set invpaste paste?<CR>
+" Line numbers
+nnoremap <leader>tn :set invnumber<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
@@ -295,10 +297,7 @@ Plugin 'vim-airline/vim-airline-themes'
 " Dark powered asynchronous completion framework for neovim
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
-endif
-
-" completion framework for vim
-if !has('nvim')
+elseif has('lua')
   Plugin 'Shougo/neocomplete.vim'
 endif
 
@@ -343,6 +342,9 @@ Plugin 'ervandew/supertab'
 
 " Highlight trailing whitespace characters
 Plugin 'ntpeters/vim-better-whitespace'
+
+" Uncover usage problems in your writing
+Plugin 'reedes/vim-wordy'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -613,3 +615,17 @@ function! Inc(...)
   let g:i += a:0 > 0 ? a:1 : 1
   return result
 endfunction
+
+if !exists("*ReloadVimrc")
+  function! ReloadVimrc()
+    try
+      if expand('%:t') == 'vimrc'
+        update
+      endif
+
+      source ~/.vimrc
+    catch /^Vim\%((\a\+)\)\=:E/	" catch all Vim errors
+      redraw | echoerr v:exception
+    endtry
+  endfunction
+endif
