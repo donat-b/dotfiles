@@ -52,9 +52,9 @@ bindsym XF86AudioPrev exec qdbus $pmethod $ppath Previous
 #==============================================================================
 
 # Volume settings
-bindsym $mod+KP_Subtract exec --no-startup-id amixer -c 0 set Master 3-
-bindsym $mod+KP_Add exec --no-startup-id      amixer -c 0 set Master 3+ unmute
-bindsym XF86AudioMute exec --no-startup-id    amixer -c0 set Master toggle
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -c 0 set Master 3-
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -c 0 set Master 3+ unmute
+bindsym XF86AudioMute        exec --no-startup-id amixer -D pulse set Master toggle
 #==============================================================================
 
 # Browser
