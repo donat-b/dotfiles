@@ -103,6 +103,8 @@ map Q <Nop>
 map <F1> <Nop>
 nnoremap <F1> :help<Space>
 
+" Duplicate a line with increment
+nnoremap yA yyp<C-a>
 
 " copy/paste to/from x clipboard
 vmap <leader>y :!xclip -f -sel clip<CR>
