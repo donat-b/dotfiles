@@ -140,7 +140,7 @@ nnoremap <silent> <Leader>gs  :Gstatus<CR>
 " vim-session
 nnoremap <Leader>sc  :CloseSession<CR>
 nnoremap <Leader>sd  :DeleteSession<CR>
-nnoremap <Leader>so  :OpenSession
+nnoremap <Leader>so  :OpenSession<CR>
 nnoremap <Leader>ss  :SaveSession<CR>
 nnoremap <Leader>sv  :ViewSession<CR>
 
