@@ -397,6 +397,6 @@ set preview_directories false
 set tilde_in_titlebar true
 set unicode_ellipsis true
 set update_title false
-set update_tmux_title true
+set update_tmux_title false
 set vcs_aware true
 set vcs_backend_git local
