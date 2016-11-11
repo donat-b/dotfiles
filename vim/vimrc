@@ -370,6 +370,14 @@ filetype plugin indent on
 " Configure plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"
+" YouCompleteMe
+"
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_filetype_specific_completion_to_disable = {
+  \ 'gitcommit': 1
+  \}
+
 " make YCM compatible with UltiSnips (using supertab)
 " http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/22253548#22253548
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -380,6 +388,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" ---
 
 " Syntastic
 set statusline+=%#warningmsg#
