@@ -235,6 +235,9 @@ Plugin 'SirVer/ultisnips'
 " vim-snipmate default snippets
 Plugin 'honza/vim-snippets'
 
+" pandoc markdown syntax
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -351,14 +354,13 @@ Plugin 'metakirby5/codi.vim'
 " Use <Tab> for all insert completion
 Plugin 'ervandew/supertab'
 
-" Highlight trailing whitespace characters
-Plugin 'ntpeters/vim-better-whitespace'
-
 " Uncover usage problems in your writing
 Plugin 'reedes/vim-wordy'
 
+" Pandoc integration
 Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+
+Plugin 'tpope/vim-repeat'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
