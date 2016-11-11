@@ -163,12 +163,12 @@ nnoremap <Leader>vz  :VimuxZoomRunner<CR>
 nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
 " Unite
-nnoremap <C-p> :Unite -start-insert file_rec/async<CR>
+nnoremap <C-P> :Unite -start-insert file_rec/async<CR>
+nnoremap <C-K> :Unite -start-insert buffer<CR>
 nnoremap <silent> <Leader>G  :Unite grep:.<CR>
 nnoremap <silent> <Leader>pp :Unite -vertical-preview -winheight=50 -auto-preview file_rec/async<CR>
 nnoremap <silent> <Leader>yy :Unite history/yank<CR>
 nnoremap <silent> <Leader>bb :Unite -quick-match buffer<CR>
-nnoremap <silent> <Leader>bl :Unite buffer<CR>
 nnoremap <silent> <Leader>bp :Unite -auto-preview buffer<CR>
 
 " VimFiler
@@ -428,10 +428,11 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
 
 " Airline
-let g:airline_powerline_fonts=1
-let g:airline_theme = 'dark'
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts=1
 let g:airline_section_y = '%{substitute(getcwd(), "/home/".$USER, "~", "")}'
+let g:airline_theme = 'dark'
 
 " Skeleton
 let g:skeleton_template_dir = '~/dotfiles/vim/templates'
