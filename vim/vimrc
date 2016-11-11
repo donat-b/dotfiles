@@ -299,21 +299,14 @@ Plugin 'mhinz/vim-rfc'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Automatically open popup menu for completions when you enter characters or
-" move the cursor in Insert mode
-" :help acp
-" obsolete by neocomplete
-"Plugin 'AutoComplPop'
-
-" A code-completion engine
-" Disabled as not useful right now
-"Plugin 'valloric/YouCompleteMe'
-
 " Dark powered asynchronous completion framework for neovim
 if has('nvim')
   Plugin 'Shougo/deoplete.nvim'
 elseif has('lua')
   Plugin 'Shougo/neocomplete.vim'
+else
+  " A code-completion engine
+  Plugin 'valloric/YouCompleteMe'
 endif
 
 " Global Replace plugin
@@ -372,6 +365,17 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configure plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" make YCM compatible with UltiSnips (using supertab)
+" http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/22253548#22253548
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 
 " Syntastic
 set statusline+=%#warningmsg#
