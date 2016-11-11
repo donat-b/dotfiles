@@ -228,6 +228,12 @@ Plugin 'godlygeek/tabular'
 " Code formatting in Vim by integrating existing code formatters.
 Plugin 'Chiel92/vim-autoformat'
 
+" Snippet engine
+Plugin 'SirVer/ultisnips'
+
+" vim-snipmate default snippets
+Plugin 'honza/vim-snippets'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -376,6 +382,9 @@ let g:syntastic_mode_map = {
     \ "mode": "active",
     \ "active_filetypes": ['ansible'],
     \ "passive_filetypes": ['yaml', 'vim', 'bash'] }
+
+let g:syntastic_ansible_ansible_lint_exec = '/usr/local/bin/ansible-lint'
+let g:syntastic_ansible_checkers = ['ansible_lint']
 
 "let g:syntastic_enable_perl_checker = 1
 let g:syntastic_always_populate_loc_list = 1
