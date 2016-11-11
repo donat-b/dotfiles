@@ -208,8 +208,6 @@ Plugin 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax/language/formatting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Markdown
-Plugin 'plasticboy/vim-markdown'
 
 " Syntastic syntax checking plugin
 Plugin 'scrooloose/syntastic'
@@ -427,9 +425,6 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " vim-wiki
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
-
-" Markdown
-let g:vim_markdown_folding_disabled = 1
 
 " Airline
 let g:airline_powerline_fonts=1
