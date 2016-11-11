@@ -2,6 +2,7 @@
 " Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
+set noshowmode
 
 " Unicode
 scriptencoding utf-8
@@ -183,15 +184,11 @@ nnoremap <Leader><Delete>   :call ReloadVimrc()<CR>
 """"""""""
 " Toggles
 
-" Relative numbers
+nnoremap <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
+nnoremap <leader>tp  :set invpaste paste?<CR>
+nnoremap <leader>tn  :set invnumber<CR>
 nnoremap <leader>trn :set invrelativenumber<CR>
-set showmode
-" Spell checking
-map <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
-" Paste mode
-nnoremap <leader>tp :set invpaste paste?<CR>
-" Line numbers
-nnoremap <leader>tn :set invnumber<CR>
+nnoremap <leader>tut :UndotreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
