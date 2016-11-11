@@ -176,7 +176,7 @@ noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
 
 " Reload configuration
-nnoremap <Leader><Leader> :call ReloadVimrc()<CR>
+nnoremap <Leader><Delete>   :call ReloadVimrc()<CR>
 
 """"""""""
 " Toggles
