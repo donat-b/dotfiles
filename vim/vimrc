@@ -260,6 +260,8 @@ Plugin 'Shougo/unite.vim'
 Plugin 'xolox/vim-misc'
   Plugin 'xolox/vim-session'
 
+"Plugin 'Lokaltog/vim-easymotion'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Sensible defaults
@@ -357,6 +359,9 @@ Plugin 'ntpeters/vim-better-whitespace'
 
 " Uncover usage problems in your writing
 Plugin 'reedes/vim-wordy'
+
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
