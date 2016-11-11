@@ -2,6 +2,7 @@
 " Configuration
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible
+set noshowmode
 
 " Unicode
 scriptencoding utf-8
@@ -156,6 +157,8 @@ nnoremap <Leader>vp  :VimuxPromptCommand<CR>
 nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 nnoremap <Leader>vr  :VimuxRunCommand getline('.')<CR>
 nnoremap <Leader>vrz :call VimuxRunCommand(getline('.')) <BAR> VimuxZoomRunner<CR>
+nnoremap <Leader>vv  :update<BAR>call VimuxRunCommand(
+  \ 'sensible-browser '.expand('%:p'))<CR>
 nnoremap <Leader>vx  :VimuxInterruptRunner<CR>
 nnoremap <Leader>vz  :VimuxZoomRunner<CR>
 
@@ -179,20 +182,16 @@ noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
 
 " Reload configuration
-nnoremap <Leader><Leader> :call ReloadVimrc()<CR>
+nnoremap <Leader><Delete>   :call ReloadVimrc()<CR>
 
 """"""""""
 " Toggles
 
-" Relative numbers
+nnoremap <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
+nnoremap <leader>tp  :set invpaste paste?<CR>
+nnoremap <leader>tn  :set invnumber<CR>
 nnoremap <leader>trn :set invrelativenumber<CR>
-set showmode
-" Spell checking
-map <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
-" Paste mode
-nnoremap <leader>tp :set invpaste paste?<CR>
-" Line numbers
-nnoremap <leader>tn :set invnumber<CR>
+nnoremap <leader>tut :UndotreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Commands
@@ -211,8 +210,6 @@ Plugin 'VundleVim/Vundle.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax/language/formatting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Markdown
-Plugin 'plasticboy/vim-markdown'
 
 " Syntastic syntax checking plugin
 Plugin 'scrooloose/syntastic'
@@ -241,6 +238,9 @@ Plugin 'SirVer/ultisnips'
 " vim-snipmate default snippets
 Plugin 'honza/vim-snippets'
 
+" pandoc markdown syntax
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -262,6 +262,8 @@ Plugin 'Shougo/unite.vim'
 " Session management
 Plugin 'xolox/vim-misc'
   Plugin 'xolox/vim-session'
+
+"Plugin 'Lokaltog/vim-easymotion'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -355,11 +357,13 @@ Plugin 'metakirby5/codi.vim'
 " Use <Tab> for all insert completion
 Plugin 'ervandew/supertab'
 
-" Highlight trailing whitespace characters
-Plugin 'ntpeters/vim-better-whitespace'
-
 " Uncover usage problems in your writing
 Plugin 'reedes/vim-wordy'
+
+" Pandoc integration
+Plugin 'vim-pandoc/vim-pandoc'
+
+Plugin 'tpope/vim-repeat'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
@@ -373,6 +377,14 @@ filetype plugin indent on
 " Configure plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"
+" YouCompleteMe
+"
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_filetype_specific_completion_to_disable = {
+  \ 'gitcommit': 1
+  \}
+
 " make YCM compatible with UltiSnips (using supertab)
 " http://stackoverflow.com/questions/14896327/ultisnips-and-youcompleteme/22253548#22253548
 let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
@@ -383,6 +395,7 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<tab>"
 let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" ---
 
 " Syntastic
 set statusline+=%#warningmsg#
@@ -416,9 +429,6 @@ let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
 " vim-wiki
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
-
-" Markdown
-let g:vim_markdown_folding_disabled = 1
 
 " Airline
 let g:airline_powerline_fonts=1
