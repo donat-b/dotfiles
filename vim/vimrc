@@ -269,6 +269,9 @@ Plugin 'xolox/vim-misc'
 
 "Plugin 'Lokaltog/vim-easymotion'
 
+" Multiple Selection in vim
+Plugin 'terryma/vim-multiple-cursors'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Sensible defaults
