@@ -281,11 +281,10 @@ exec --no-startup-id trysterobiff           # email notifier
 exec --no-startup-id gnome-terminal         # terminal emulator
 exec --no-startup-id xcompmgr               # composite manager
 exec --no-startup-id nm-applet              # network manager applet
-exec --no-startup-id ~/bin/lid_locker.sh
 exec --no-startup-id ~/bin/locker.sh
 exec --no-startup-id ~/bin/proxy.sh
-exec --no-startup-id ~/.fehbg
-exec --no-startup-id ~/.screenlayout/sbs.sh
+exec --no-startup-id sh ~/.fehbg
+exec --no-startup-id sh ~/.screenlayout/sbs.sh
 
 exec_always --no-startup-id unclutter
 #exec_always --no-startup-id xmodmap ~/dotfiles/xmodmaprc
