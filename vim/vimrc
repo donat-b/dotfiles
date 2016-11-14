@@ -23,6 +23,8 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+set textwidth=99
+
 " case insensitive searching
 set ignorecase
 
