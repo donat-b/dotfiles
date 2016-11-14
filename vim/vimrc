@@ -23,6 +23,11 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 
+" case insensitive searching
+set ignorecase
+
+set iskeyword+=_,$,@,%,#
+
 " Whitespace characters
 set listchars=eol:¬,tab:>·,trail:~,extends:>,precedes:<,space:␣
 
@@ -360,6 +365,7 @@ Plugin 'reedes/vim-wordy'
 " Pandoc integration
 Plugin 'vim-pandoc/vim-pandoc'
 
+" enable repeating supported plugin maps with .
 Plugin 'tpope/vim-repeat'
 
 " Color schemes
