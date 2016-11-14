@@ -145,9 +145,9 @@ nnoremap <silent> <Leader>gps :Gpush<CR>
 nnoremap <silent> <Leader>gs  :Gstatus<CR>
 
 " vim-session
-nnoremap <Leader>sc  :CloseSession<CR>
 nnoremap <Leader>sd  :DeleteSession<CR>
 nnoremap <Leader>so  :OpenSession<CR>
+nnoremap <Leader>sq  :CloseSession<CR>
 nnoremap <Leader>ss  :SaveSession<CR>
 nnoremap <Leader>sv  :ViewSession<CR>
 
