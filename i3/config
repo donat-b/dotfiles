@@ -285,6 +285,7 @@ exec --no-startup-id ~/bin/lid_locker.sh
 exec --no-startup-id ~/bin/locker.sh
 exec --no-startup-id ~/bin/proxy.sh
 exec --no-startup-id ~/.fehbg
+exec --no-startup-id ~/.screenlayout/sbs.sh
 
 exec_always --no-startup-id unclutter
 #exec_always --no-startup-id xmodmap ~/dotfiles/xmodmaprc
