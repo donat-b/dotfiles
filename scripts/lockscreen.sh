@@ -10,7 +10,8 @@ declare -r c_blur=8x6
 declare -r c_cmp_method=linearlight
 
 function genbg {
-  import -window root -quality 70 -define jpeg:dct-method=fastest -compress none jpeg:- -gaussian-blur $c_blur "$lockscreen_bg"
+  import -window root -quality 75 -define jpeg:dct-method=fastest -compress none jpeg:- \
+    | convert - -gaussian-blur $c_blur "$lockscreen_bg"
 }
 
 #xset dpms force suspend
