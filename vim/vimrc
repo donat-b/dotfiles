@@ -272,8 +272,28 @@ Plugin 'xolox/vim-misc'
 
 "Plugin 'Lokaltog/vim-easymotion'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Controls
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+ 
 " Multiple Selection in vim
 Plugin 'terryma/vim-multiple-cursors'
+
+if has('nvim')
+  " Dark powered asynchronous completion framework for neovim
+  Plugin 'Shougo/deoplete.nvim'
+elseif has('lua')
+  Plugin 'Shougo/neocomplete.vim'
+else
+  " A code-completion engine
+  Plugin 'valloric/YouCompleteMe'
+endif
+
+" Use <Tab> for all insert completion
+Plugin 'ervandew/supertab'
+
+" enable repeating supported plugin maps with .
+Plugin 'tpope/vim-repeat'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -318,16 +338,6 @@ Plugin 'mhinz/vim-rfc'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" Dark powered asynchronous completion framework for neovim
-if has('nvim')
-  Plugin 'Shougo/deoplete.nvim'
-elseif has('lua')
-  Plugin 'Shougo/neocomplete.vim'
-else
-  " A code-completion engine
-  Plugin 'valloric/YouCompleteMe'
-endif
-
 " Global Replace plugin
 Plugin 'vim-scripts/Greplace.vim'
 
@@ -364,17 +374,11 @@ Plugin 'chrisbra/csv.vim'
 " Interactive scratchpad
 Plugin 'metakirby5/codi.vim'
 
-" Use <Tab> for all insert completion
-Plugin 'ervandew/supertab'
-
 " Uncover usage problems in your writing
 Plugin 'reedes/vim-wordy'
 
 " Pandoc integration
 Plugin 'vim-pandoc/vim-pandoc'
-
-" enable repeating supported plugin maps with .
-Plugin 'tpope/vim-repeat'
 
 " Color schemes
 Plugin 'morhetz/gruvbox'
