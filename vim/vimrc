@@ -251,6 +251,9 @@ Plugin 'honza/vim-snippets'
 " pandoc markdown syntax
 Plugin 'vim-pandoc/vim-pandoc-syntax'
 
+" emmet
+Plugin 'mattn/emmet-vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
