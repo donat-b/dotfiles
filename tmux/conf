@@ -65,6 +65,8 @@ bind-key -n S-up \
   send-keys M-F12 \; \
   unbind -n S-C-left \; \
   unbind -n S-C-right \; \
+  unbind -n S-left \; \
+  unbind -n S-right \; \
   unbind -n C-t \; \
   set -wg window-status-current-fg 'colour214' \; \
   set -g prefix C-b
@@ -73,6 +75,8 @@ bind-key -n S-down \
   send-keys M-F11 \; \
   bind -n S-C-left swap-window -t -1 \; \
   bind -n S-C-right swap-window -t +1 \; \
+  bind -n S-left  prev \; \
+  bind -n S-right next \; \
   bind -n C-t new-window -a -c "#{pane_current_path}" \; \
   set -wg window-status-current-fg 'colour204' \; \
   set -g prefix C-a
