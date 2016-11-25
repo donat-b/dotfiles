@@ -52,6 +52,7 @@ function main() {
     [vim/Vundle.vim]=.vim/bundle/Vundle.vim
     [vim/ftplugin]=.vim/ftplugin
     [vim/spell]=.vim/spell
+    [vimperatorrc]=.vimperatorrc
     [i3/config]=.i3/config
     [i3/i3status]=.config/i3status/config
     [X/xinitrc]=.xinitrc
