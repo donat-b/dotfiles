@@ -506,6 +506,10 @@ colorscheme gruvbox
 " unclutter netrw buffers
 autocmd FileType netrw setl bufhidden=wipe
 autocmd Filetype gitcommit setlocal spell textwidth=72
+
+" unite doesn't work in paste mode
+autocmd Filetype unite set nopaste
+
 """"""""""""
 
 " Add/change file extension in current buffer
