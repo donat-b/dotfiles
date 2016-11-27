@@ -251,6 +251,9 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 " emmet
 Plugin 'mattn/emmet-vim'
 
+" Wrap and unwrap function arguments, lists, and dictionaries
+Plugin 'FooSoft/vim-argwrap'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
