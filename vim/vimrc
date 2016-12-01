@@ -254,6 +254,9 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 " emmet
 Plugin 'mattn/emmet-vim'
 
+" Wrap and unwrap function arguments, lists, and dictionaries
+Plugin 'FooSoft/vim-argwrap'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -487,9 +490,15 @@ let g:rooter_silent_chdir = 1
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
 
-" Plugin key-mappings.
+" Plugin key-mappings
 inoremap <expr><C-g>     neocomplete#undo_completion()
 inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+nnoremap <silent> <C-Left>  :TmuxNavigateLeft<CR>
+nnoremap <silent> <C-Down>  :TmuxNavigateDown<CR>
+nnoremap <silent> <C-Up>    :TmuxNavigateUp<CR>
+nnoremap <silent> <C-Right> :TmuxNavigateRight<CR>
+nnoremap <silent> <C-/>     :TmuxNavigatePrevious<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Misc
