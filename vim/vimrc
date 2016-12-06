@@ -133,6 +133,7 @@ inoremap <<CR> <<CR>><Esc>O
 
 " Fugitive
 " commit currently open file
+nnoremap <silent> <Leader>gA  :Git add .<CR>
 nnoremap <silent> <Leader>ga  :Gwrite<CR>
 nnoremap <silent> <Leader>gb  :Gblame<CR>
 nnoremap <silent> <Leader>gca :Gcommit --amend -v<CR>
