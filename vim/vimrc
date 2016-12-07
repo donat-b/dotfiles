@@ -429,8 +429,8 @@ set statusline+=%*
 
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "active_filetypes": ['ansible'],
-    \ "passive_filetypes": ['yaml', 'vim', 'bash'] }
+    \ "active_filetypes": [],
+    \ "passive_filetypes": ['ansible', 'yaml', 'vim', 'bash'] }
 
 let g:syntastic_ansible_ansible_lint_exec = '/usr/local/bin/ansible-lint'
 let g:syntastic_ansible_checkers = ['ansible_lint']
