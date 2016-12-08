@@ -282,6 +282,9 @@ Plugin 'xolox/vim-misc'
 
 "Plugin 'Lokaltog/vim-easymotion'
 
+" Eclipse like task list
+Plugin 'TaskList.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Controls
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
