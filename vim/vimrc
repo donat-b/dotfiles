@@ -393,6 +393,9 @@ Plugin 'reedes/vim-wordy'
 " Pandoc integration
 Plugin 'vim-pandoc/vim-pandoc'
 
+" Multi-language DBGP debugger
+Plugin 'joonty/vdebug'
+
 " Color schemes
 Plugin 'morhetz/gruvbox'
 Plugin 'nanotech/jellybeans.vim'
