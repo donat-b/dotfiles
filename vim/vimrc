@@ -4,10 +4,14 @@
 set nocompatible
 set noshowmode
 
-" Unicode
-scriptencoding utf-8
+" Encoding {{{
+scriptencoding 'utf-8'
 set encoding=utf-8
-set fileformat=unix
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=utf-8
+set fileformats=unix,dos,mac
+" }}}
 
 " Enable syntax highlighting
 syntax on
@@ -17,11 +21,14 @@ filetype off
 " screen lines to use for the command-line
 set cmdheight=4
 
-" indentation
+" Indentation {{{
 set autoindent
 set expandtab
+set shiftround
 set shiftwidth=2
 set softtabstop=2
+set tabstop=2
+" }}}
 
 set textwidth=99
 
