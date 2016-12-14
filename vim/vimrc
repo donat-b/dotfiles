@@ -164,7 +164,7 @@ nnoremap <silent> <Leader>gs  :Gstatus<CR>
 
 " vim-session
 nnoremap <Leader>sd  :DeleteSession<CR>
-nnoremap <Leader>so  :OpenSession<CR>
+nnoremap <Leader>so  :OpenSession<BAR>AirlineRefresh<CR>
 nnoremap <Leader>sq  :CloseSession<CR>
 nnoremap <Leader>ss  :SaveSession<CR>
 nnoremap <Leader>sv  :ViewSession<CR>
@@ -299,7 +299,7 @@ Plugin 'TaskList.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Controls
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
- 
+
 " Multiple Selection in vim
 Plugin 'terryma/vim-multiple-cursors'
 
