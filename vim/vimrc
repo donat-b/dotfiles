@@ -135,10 +135,9 @@ inoremap (<CR> (<CR>)<Esc>O
 inoremap [<CR> [<CR>]<Esc>O
 inoremap <<CR> <<CR>><Esc>O
 
-" Fugitive
-" commit currently open file
-nnoremap <silent> <Leader>gA  :Git add .<CR>
-nnoremap <silent> <Leader>ga  :Gwrite<CR>
+" Git {{{
+nnoremap <silent> <Leader>gA  :Git add .<BAR>GitGutter<CR>
+nnoremap <silent> <Leader>ga  :Gwrite<BAR>sleep 50m<BAR>GitGutterAll<CR>
 nnoremap <silent> <Leader>gb  :Gblame<CR>
 nnoremap <silent> <Leader>gca :Gcommit --amend -v<CR>
 nnoremap <silent> <Leader>gcc :Gcommit -v<CR>
@@ -147,13 +146,18 @@ nnoremap <silent> <Leader>gcv :update <BAR> Gcommit -v %<CR>
 nnoremap <silent> <Leader>gd  :Gdiff<CR>
 nnoremap <silent> <Leader>gdd :Gdiff HEAD<CR>
 nnoremap <silent> <Leader>gf  :Gfetch<CR>
+" update signs across all buffers
+nnoremap <silent> <Leader>gg  :GitGutterAll<CR>
 nnoremap <silent> <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
 nnoremap <silent> <Leader>ggp :Git diff --patch % > /tmp/%:t.diff<CR>
 nnoremap <silent> <Leader>gll :Git log --graph --decorate --stat<CR>
 nnoremap <silent> <Leader>glp :Git log --graph --decorate --stat --cc -p<CR>
 nnoremap <silent> <Leader>gpl :Gpull<CR>
 nnoremap <silent> <Leader>gps :Gpush<CR>
+" unadd current file
+nnoremap <silent> <Leader>grs :Git reset HEAD -- %<BAR>GitGutterAll<CR>
 nnoremap <silent> <Leader>gs  :Gstatus<CR>
+" }}}
 
 " vim-session
 nnoremap <Leader>sd  :DeleteSession<CR>
