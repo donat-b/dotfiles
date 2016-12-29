@@ -49,7 +49,7 @@ function main() {
     [ranger/rifle.conf]=.config/ranger/rifle.conf
     [tmux/conf]=.tmux.conf
     [vim/vimrc]=.vimrc
-    [vim/Vundle.vim]=.vim/bundle/Vundle.vim
+    [vim/vim-plug/plug.vim]=.vim/autoload/plug.vim
     [vim/ftplugin]=.vim/ftplugin
     [vim/spell]=.vim/spell
     [vimperatorrc]=.vimperatorrc
