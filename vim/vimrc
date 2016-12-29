@@ -220,7 +220,7 @@ call plug#begin('~/.vim/bundle')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntastic syntax checking plugin
-Plug 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggle' }
 
 " Completion plugin for Haskell, using ghc-mod
 Plug 'eagletmt/neco-ghc'
@@ -235,7 +235,7 @@ Plug 'nginx.vim'
 Plug 'tpope/vim-endwise'
 
 " Text filtering and alignment
-Plug 'godlygeek/tabular'
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 
 " Code formatting in Vim by integrating existing code formatters.
 Plug 'Chiel92/vim-autoformat'
@@ -250,7 +250,7 @@ Plug 'honza/vim-snippets'
 Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " emmet
-Plug 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': 'html' }
 
 " Wrap and unwrap function arguments, lists, and dictionaries
 Plug 'FooSoft/vim-argwrap'
@@ -373,7 +373,7 @@ Plug 'qstrahl/vim-matchmaker'
 Plug 'tpope/vim-surround'
 
 " Undo history visualizer
-Plug 'mbbill/undotree'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 " Increment dates, times, and more
 Plug 'tpope/vim-speeddating'
@@ -394,7 +394,7 @@ Plug 'reedes/vim-wordy'
 Plug 'vim-pandoc/vim-pandoc'
 
 " Multi-language DBGP debugger
-Plug 'joonty/vdebug'
+Plug 'joonty/vdebug', { 'on': 'VdebugStart' }
 
 " Color schemes
 Plug 'morhetz/gruvbox'
