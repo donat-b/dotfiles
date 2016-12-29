@@ -350,7 +350,7 @@ Plug 'kabbamine/vbox.vim'
 Plug 'mhinz/vim-rfc'
 
 " Lean & mean status/tabline for vim that's light as air
-Plug 'vim-airline/vim-airline'
+Plug 'donat-b/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Global Replace plugin
@@ -401,7 +401,6 @@ Plug 'joonty/vdebug', { 'on': 'VdebugStart' }
 " Color schemes
 Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
-Plug 'joshdick/onedark.vim'
 
 augroup load_insertm
   autocmd!
