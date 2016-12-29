@@ -247,7 +247,7 @@ Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 Plug 'Chiel92/vim-autoformat'
 
 " Snippet engine
-Plug 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'on': [] }
 
 " vim-snipmate default snippets
 Plug 'honza/vim-snippets'
@@ -295,18 +295,14 @@ Plug 'TaskList.vim'
 " Multiple Selection in vim
 Plug 'terryma/vim-multiple-cursors'
 
-if has('nvim')
-  " Dark powered asynchronous completion framework for neovim
-  Plug 'Shougo/deoplete.nvim'
-elseif has('lua')
-  Plug 'Shougo/neocomplete.vim'
-else
-  " A code-completion engine
-  Plug 'valloric/YouCompleteMe'
-endif
+" Dark powered asynchronous completion framework for neovim
+Plug 'Shougo/deoplete.nvim', Cond(has('nvim'))
+
+" A code-completion engine
+Plug 'valloric/YouCompleteMe', { 'on': [] }
 
 " Use <Tab> for all insert completion
-Plug 'ervandew/supertab'
+Plug 'ervandew/supertab', { 'on': [] }
 
 " enable repeating supported plugin maps with .
 Plug 'tpope/vim-repeat'
@@ -407,8 +403,13 @@ Plug 'morhetz/gruvbox'
 Plug 'nanotech/jellybeans.vim'
 Plug 'joshdick/onedark.vim'
 
+augroup load_insertm
+  autocmd!
+  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe', 'supertab')
+                     \| autocmd! load_insertm
+augroup END
+
 call plug#end()
-filetype plugin indent on
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configure plugins
