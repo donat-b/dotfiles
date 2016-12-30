@@ -4,6 +4,7 @@
 [submodule "tmux/plugins/resurrect"]
 	path = tmux/plugins/resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+	shallow = true
 [submodule "vim/vim-plug"]
 	path = vim/vim-plug
 	url = https://github.com/junegunn/vim-plug
