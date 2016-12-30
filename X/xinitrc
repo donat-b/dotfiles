@@ -2,6 +2,8 @@
 [[ -s /etc/profile ]] && source /etc/profile
 [[ -s ~/dotfiles/X/modmap ]] && which xmodmap && xmodmap ~/dotfiles/X/modmap
 
+ulimit -c unlimited
+
 function gnupg {
     envfile = "$HOME/.gnupg/gpg-agent.env"
 
