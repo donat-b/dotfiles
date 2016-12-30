@@ -35,6 +35,7 @@ function main() {
   # [source]=destination
   # destination can be '.' in which case it links the file using same name, prefixed with '.'
     [aria2.conf]=.aria2/aria2.conf
+    [asoundrc]=.asoundrc
     [dunstrc]=.config/dunst/dunstrc
     [gdbinit]=.gdbinit
     [ghci]=.
