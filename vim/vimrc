@@ -230,6 +230,7 @@ Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggle' }
 
 " Completion plugin for Haskell, using ghc-mod
 Plug 'eagletmt/neco-ghc'
+Plug 'eagletmt/ghcmod-vim'
 
 " Ansible yaml syntax
 Plug 'chase/vim-ansible-yaml'
