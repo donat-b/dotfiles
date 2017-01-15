@@ -228,6 +228,9 @@ endfunction
 " Syntastic syntax checking plugin
 Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggle' }
 
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
+
 " Completion plugin for Haskell, using ghc-mod
 Plug 'eagletmt/neco-ghc'
 Plug 'eagletmt/ghcmod-vim'
@@ -464,6 +467,15 @@ let g:necoghc_enable_detailed_browse = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Haskell
+let g:haskell_enable_quantification = 1   " hl of `forall`
+let g:haskell_enable_recursivedo = 1      " hl of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " hl of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " hl of `pattern`
+let g:haskell_enable_typeroles = 1        " hl of type roles
+let g:haskell_enable_static_pointers = 1  " hl of `static`
+let g:haskell_backpack = 1                " hl of backpack keywords
 
 " vim-wiki
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]
