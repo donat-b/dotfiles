@@ -1,9 +1,11 @@
-[submodule "vim/Vundle.vim"]
-	path = vim/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
 [submodule "qfc"]
 	path = qfc
 	url = git@github.com:pindexis/qfc.git
 [submodule "tmux/plugins/resurrect"]
 	path = tmux/plugins/resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
+	shallow = true
+[submodule "vim/vim-plug"]
+	path = vim/vim-plug
+	url = https://github.com/junegunn/vim-plug
+	shallow = true

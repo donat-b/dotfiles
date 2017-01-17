@@ -13,11 +13,6 @@ set fileencodings=utf-8
 set fileformats=unix,dos,mac
 " }}}
 
-" Enable syntax highlighting
-syntax on
-" Required by vundle
-filetype off
-
 " screen lines to use for the command-line
 set cmdheight=4
 
@@ -63,9 +58,6 @@ set shell=sh
 
 " alias unnamed register to the + register
 "set clipboard=unnamedplus
-
-" Enable file-type specific indenting
-filetype indent on
 
 set viminfo='100,<50,s10,h,%
 
@@ -224,199 +216,206 @@ nnoremap <leader>tut :UndotreeToggle<CR>
 " Plugins
 " :help local-additions
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-Plugin 'VundleVim/Vundle.vim'
+" helper function for on-demand loading
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntax/language/formatting
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Syntastic syntax checking plugin
-Plugin 'scrooloose/syntastic'
+Plug 'scrooloose/syntastic', { 'on': 'SyntasticToggle' }
+
+" Haskell
+Plug 'neovimhaskell/haskell-vim'
 
 " Completion plugin for Haskell, using ghc-mod
-Plugin 'eagletmt/neco-ghc'
+Plug 'eagletmt/neco-ghc'
+Plug 'eagletmt/ghcmod-vim'
 
 " Ansible yaml syntax
-Plugin 'chase/vim-ansible-yaml'
+Plug 'chase/vim-ansible-yaml'
 
 " Nginx syntax
-Plugin 'nginx.vim'
+Plug 'nginx.vim'
 
 " Add end keywords in various languages
-Plugin 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
 
 " Text filtering and alignment
-Plugin 'godlygeek/tabular'
+Plug 'godlygeek/tabular', { 'on': 'Tabularize' }
 
 " Code formatting in Vim by integrating existing code formatters.
-Plugin 'Chiel92/vim-autoformat'
+Plug 'Chiel92/vim-autoformat'
 
 " Snippet engine
-Plugin 'SirVer/ultisnips'
+Plug 'SirVer/ultisnips', { 'on': [] }
 
 " vim-snipmate default snippets
-Plugin 'honza/vim-snippets'
+Plug 'honza/vim-snippets'
 
 " pandoc markdown syntax
-Plugin 'vim-pandoc/vim-pandoc-syntax'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 
 " emmet
-Plugin 'mattn/emmet-vim'
+Plug 'mattn/emmet-vim', { 'for': ['css', 'haml', 'html', 'xml', 'xsl'] }
 
 " Wrap and unwrap function arguments, lists, and dictionaries
-Plugin 'FooSoft/vim-argwrap'
+Plug 'FooSoft/vim-argwrap'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Windows/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Run commands in tmux
-Plugin 'benmills/vimux'
+Plug 'benmills/vimux', Cond(len($TMUX) > 0)
 
 " Shell reverse search emulation
-Plugin 'goldfeld/ctrlr.vim'
+Plug 'goldfeld/ctrlr.vim'
 
 " Dim inactive windows
-Plugin 'blueyed/vim-diminactive'
+Plug 'blueyed/vim-diminactive'
 
-Plugin 'Shougo/vimproc.vim'
-Plugin 'Shougo/unite.vim'
+Plug 'Shougo/vimproc.vim'
+Plug 'Shougo/unite.vim'
   " File explorer
-  Plugin 'Shougo/vimfiler.vim'
+  Plug 'Shougo/vimfiler.vim'
 
 " Session management
-Plugin 'xolox/vim-misc'
-  Plugin 'xolox/vim-session'
+Plug 'xolox/vim-misc'
+  Plug 'xolox/vim-session'
 
-"Plugin 'Lokaltog/vim-easymotion'
+"Plug 'Lokaltog/vim-easymotion'
 
 " Eclipse like task list
-Plugin 'TaskList.vim'
+Plug 'TaskList.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Controls
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Multiple Selection in vim
-Plugin 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 
-if has('nvim')
-  " Dark powered asynchronous completion framework for neovim
-  Plugin 'Shougo/deoplete.nvim'
-elseif has('lua')
-  Plugin 'Shougo/neocomplete.vim'
-else
-  " A code-completion engine
-  Plugin 'valloric/YouCompleteMe'
-endif
+" Dark powered asynchronous completion framework for neovim
+Plug 'Shougo/deoplete.nvim', Cond(has('nvim'))
+
+" A code-completion engine
+Plug 'valloric/YouCompleteMe', { 'on': [] }
 
 " Use <Tab> for all insert completion
-Plugin 'ervandew/supertab'
+Plug 'ervandew/supertab', { 'on': [] }
 
 " enable repeating supported plugin maps with .
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
 
 " move between Vim panes and tmux splits seamlessly
-Plugin 'christoomey/vim-tmux-navigator'
+Plug 'christoomey/vim-tmux-navigator'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Sensible defaults
-Plugin 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 
 " File-type-specific templates
-Plugin 'noahfrederick/vim-skeleton'
+Plug 'noahfrederick/vim-skeleton'
 
 " Ultimate calendar application
 " :help calendar
-Plugin 'itchyny/calendar.vim'
+Plug 'itchyny/calendar.vim'
 
 " Commenting operations and styles
-Plugin 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdcommenter'
 
 " ASCII drawing
-Plugin 'vim-scripts/DrawIt'
+Plug 'vim-scripts/DrawIt'
 
 " Personal wiki for vim
-Plugin 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki'
 
 " View man pages in vim
-Plugin 'vim-utils/vim-man'
+Plug 'vim-utils/vim-man'
 
 " Execute program with options.
-Plugin 'thinca/vim-quickrun'
+Plug 'thinca/vim-quickrun'
 
 " An Interface to WEB APIs
-Plugin 'mattn/webapi-vim'
+Plug 'mattn/webapi-vim'
 
 " Creating gists on http://gist.github.com
-Plugin 'mattn/gist-vim'
+Plug 'mattn/gist-vim'
 
 " A simple vim plugin for quickly create and insert templates
-Plugin 'kabbamine/vbox.vim'
+Plug 'kabbamine/vbox.vim'
 
 " Querying of the RFC database and loading RFC/STD documents into a Vim buffer
-Plugin 'mhinz/vim-rfc'
+Plug 'mhinz/vim-rfc'
 
 " Lean & mean status/tabline for vim that's light as air
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plug 'donat-b/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Global Replace plugin
-Plugin 'vim-scripts/Greplace.vim'
+Plug 'vim-scripts/Greplace.vim'
 
 " Git runtime files
-Plugin 'tpope/vim-git'
+Plug 'tpope/vim-git'
 
 " Git wrapper
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " Shows a git diff in the 'gutter'
-Plugin 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 
 " Vim sugar for UNIX shell commands
-Plugin 'tpope/vim-eunuch'
+Plug 'tpope/vim-eunuch'
 
 " Highlight matches
-Plugin 'qstrahl/vim-matchmaker'
+Plug 'qstrahl/vim-matchmaker'
 
 " Quoting/parenthesizing
-Plugin 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Undo history visualizer
-Plugin 'mbbill/undotree'
+Plug 'mbbill/undotree', { 'on': 'UndotreeToggle' }
 
 " Increment dates, times, and more
-Plugin 'tpope/vim-speeddating'
+Plug 'tpope/vim-speeddating'
 
 " Changes working directory to project root
-Plugin 'airblade/vim-rooter'
+Plug 'airblade/vim-rooter'
 
 " Handling column separated data with Vim
-Plugin 'chrisbra/csv.vim'
+Plug 'chrisbra/csv.vim'
 
 " Interactive scratchpad
-Plugin 'metakirby5/codi.vim'
+Plug 'metakirby5/codi.vim'
 
 " Uncover usage problems in your writing
-Plugin 'reedes/vim-wordy'
+Plug 'reedes/vim-wordy'
 
 " Pandoc integration
-Plugin 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc'
 
 " Multi-language DBGP debugger
-Plugin 'joonty/vdebug'
+Plug 'joonty/vdebug', { 'on': 'VdebugStart' }
 
 " Color schemes
-Plugin 'morhetz/gruvbox'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'joshdick/onedark.vim'
+Plug 'morhetz/gruvbox'
+Plug 'nanotech/jellybeans.vim'
 
-call vundle#end()
-filetype plugin indent on
+augroup load_insertm
+  autocmd!
+  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe', 'supertab')
+                     \| autocmd! load_insertm
+augroup END
+
+call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Configure plugins
@@ -471,6 +470,15 @@ let g:necoghc_enable_detailed_browse = 1
 " Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
+
+" Haskell
+let g:haskell_enable_quantification = 1   " hl of `forall`
+let g:haskell_enable_recursivedo = 1      " hl of `mdo` and `rec`
+let g:haskell_enable_arrowsyntax = 1      " hl of `proc`
+let g:haskell_enable_pattern_synonyms = 1 " hl of `pattern`
+let g:haskell_enable_typeroles = 1        " hl of type roles
+let g:haskell_enable_static_pointers = 1  " hl of `static`
+let g:haskell_backpack = 1                " hl of backpack keywords
 
 " vim-wiki
 let g:vimwiki_list = [{}, {'path': '~/vimwiki-work/'}]

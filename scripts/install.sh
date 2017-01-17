@@ -35,6 +35,7 @@ function main() {
   # [source]=destination
   # destination can be '.' in which case it links the file using same name, prefixed with '.'
     [aria2.conf]=.aria2/aria2.conf
+    [asoundrc]=.asoundrc
     [dunstrc]=.config/dunst/dunstrc
     [gdbinit]=.gdbinit
     [ghci]=.
@@ -45,12 +46,13 @@ function main() {
     [mpv/input.conf]=.config/mpv/input.conf
     [mutt/rc]=.muttrc
     [newsbeuter.conf]=.newsbeuter/config
+    [psqlrc]=.psqlrc
     [qxkb.cfg]=.config/qxkb.cfg
     [ranger/rc]=.config/ranger/rc.conf
     [ranger/rifle.conf]=.config/ranger/rifle.conf
     [tmux/conf]=.tmux.conf
     [vim/vimrc]=.vimrc
-    [vim/Vundle.vim]=.vim/bundle/Vundle.vim
+    [vim/vim-plug/plug.vim]=.vim/autoload/plug.vim
     [vim/ftplugin]=.vim/ftplugin
     [vim/spell]=.vim/spell
     [vimperatorrc]=.vimperatorrc

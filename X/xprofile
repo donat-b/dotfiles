@@ -1,6 +1,8 @@
 [[ -s ~/.Xresources ]] && xrdb -merge ~/.Xresources
 [[ -s ~/dotfiles/X/modmap ]] && which xmodmap && xmodmap ~/dotfiles/X/modmap
 
+ulimit -c unlimited
+
 function gnupg {
     envfile="$HOME/.gnupg/gpg-agent.env"
 

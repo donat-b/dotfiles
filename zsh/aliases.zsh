@@ -66,3 +66,6 @@ alias xzec='xz -9ev --no-adjust'
 alias dps='docker ps -lq'
 
 alias _=sudo
+
+# start vim with the system vimrc
+alias vi='vim -u /etc/vim/vimrc'
