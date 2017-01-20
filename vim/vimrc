@@ -167,6 +167,7 @@ nnoremap <Leader>vnr :call VimuxRunCommand(getline('.'), 0)<CR>
 nnoremap <Leader>vp  :VimuxPromptCommand<CR>
 nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 nnoremap <Leader>vr  :VimuxRunCommand getline('.')<CR>
+nnoremap <Leader>vt  :VimuxTogglePane<CR>
 nnoremap <Leader>vrz :call VimuxRunCommand(getline('.')) <BAR> VimuxZoomRunner<CR>
 nnoremap <Leader>vv  :update<BAR>call VimuxRunCommand(
   \ 'sensible-browser '.expand('%:p'))<CR>
