@@ -1,0 +1,2 @@
+set net:reconnect-interval-base 2
+set net:reconnect-interval-max 300

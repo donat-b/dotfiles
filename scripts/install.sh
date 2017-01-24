@@ -34,6 +34,8 @@ function main() {
   config_paths=(
   # [source]=destination
   # destination can be '.' in which case it links the file using same name, prefixed with '.'
+    [X/Xresources]=.Xresources
+    [X/xprofile]=.xprofile
     [aria2.conf]=.aria2/aria2.conf
     [asoundrc]=.asoundrc
     [dunstrc]=.config/dunst/dunstrc
@@ -41,9 +43,12 @@ function main() {
     [ghci]=.
     [gimp/rc]=.gimp-2.8/gimprc
     [gitconfig]=.
+    [i3/config]=.i3/config
+    [i3/i3status]=.config/i3status/config
+    [lftprc]=.
     [monky.hs]=.monky/monky.hs
-    [mpv/mpv.conf]=.config/mpv/mpv.conf
     [mpv/input.conf]=.config/mpv/input.conf
+    [mpv/mpv.conf]=.config/mpv/mpv.conf
     [mutt/rc]=.muttrc
     [newsbeuter.conf]=.newsbeuter/config
     [psqlrc]=.psqlrc
@@ -51,19 +56,15 @@ function main() {
     [ranger/rc]=.config/ranger/rc.conf
     [ranger/rifle.conf]=.config/ranger/rifle.conf
     [tmux/conf]=.tmux.conf
-    [vim/vimrc]=.vimrc
-    [vim/vim-plug/plug.vim]=.vim/autoload/plug.vim
     [vim/ftplugin]=.vim/ftplugin
     [vim/spell]=.vim/spell
+    [vim/vim-plug/plug.vim]=.vim/autoload/plug.vim
+    [vim/vimrc]=.vimrc
     [vimperatorrc]=.vimperatorrc
-    [i3/config]=.i3/config
-    [i3/i3status]=.config/i3status/config
-    [X/xprofile]=.xprofile
-    [X/Xresources]=.Xresources
-    [zsh/env]=.zshenv
-    [zsh/rc]=.zshrc
-    [zsh/profile]=.zprofile
     [weechat/alias.conf]=.weechat/alias.conf
+    [zsh/env]=.zshenv
+    [zsh/profile]=.zprofile
+    [zsh/rc]=.zshrc
     )
 
   for i in "${!config_paths[@]}"; do
