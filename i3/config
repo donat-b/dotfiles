@@ -257,8 +257,8 @@ for_window [class="Gxmessage"] floating enable
 for_window [class="Psi-plus"] floating enable
 for_window [class="^Remmina$"] floating enable
 for_window [class="Shutter"] floating enable
-# intended for DTA
-#for_window [class="Firefox"] floating enable
+
+for_window [title="^Android Emulator -"] floating enable
 for_window [title="^XMind$"] floating enable
 
 #assign [class="^URxvt$"] 2
