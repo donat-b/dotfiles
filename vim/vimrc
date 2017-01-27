@@ -202,10 +202,11 @@ nnoremap <Leader><Delete>   :call ReloadVimrc()<CR>
 """"""""""
 " Toggles
 
-nnoremap <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
-nnoremap <leader>tp  :set invpaste paste?<CR>
+nnoremap <leader>tlc :set invlist<CR>
 nnoremap <leader>tn  :set invnumber<CR>
+nnoremap <leader>tp  :set invpaste paste?<CR>
 nnoremap <leader>trn :set invrelativenumber<CR>
+nnoremap <leader>tsl :setlocal spell! spelllang=en_us <BAR> set complete+=kspell<CR>
 nnoremap <leader>tut :UndotreeToggle<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

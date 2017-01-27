@@ -1,7 +1,7 @@
 #!/usr/bin/env zsh
 
 typeset -U path
-path=( $HOME/dotfiles/{qfc/bin,scripts} $HOME/bin $HOME/.local/bin $HOME/opt/bin $path )
+path=( $HOME/dotfiles/{qfc/bin,scripts} $HOME/bin $HOME/.local/bin $HOME/opt/bin $path $HOME/Android/Sdk/platform-tools $HOME/opt/android-studio/bin )
 
 # add custom completion scripts
 if [[ "${UID}" -ge 1000 ]]; then
