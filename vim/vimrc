@@ -316,7 +316,12 @@ Plug 'tpope/vim-repeat'
 " move between Vim panes and tmux splits seamlessly
 Plug 'christoomey/vim-tmux-navigator'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Utils/general {{{
+
+" Auto save files
+Plug '907th/vim-auto-save'
+
+" }}}
 
 " Sensible defaults
 Plug 'tpope/vim-sensible'
@@ -512,6 +517,10 @@ call unite#custom#source('file_rec/async', 'ignore_pattern',
 " session
 let g:session_autosave = 'no'
 let g:session_autoload = 'no'
+
+" auto-save
+let g:auto_save = 1
+let g:auto_save_events = ["InsertLeave", "TextChanged"]
 
 " Plugin key-mappings
 inoremap <expr><C-g>     neocomplete#undo_completion()
