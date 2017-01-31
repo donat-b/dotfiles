@@ -58,6 +58,7 @@ function main() {
     [tmux/conf]=.tmux.conf
     [vim/ftplugin]=.vim/ftplugin
     [vim/spell]=.vim/spell
+    [vim/syntax]=.vim/syntax
     [vim/vim-plug/plug.vim]=.vim/autoload/plug.vim
     [vim/vimrc]=.vimrc
     [vimperatorrc]=.vimperatorrc
