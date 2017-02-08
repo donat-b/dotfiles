@@ -53,6 +53,9 @@ set autoread
 set splitbelow
 set splitright
 
+" time in milliseconds that is waited for a sequence to complete
+set timeoutlen=500
+
 " alias unnamed register to the + register
 "set clipboard=unnamedplus
 
