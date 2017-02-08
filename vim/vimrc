@@ -196,6 +196,9 @@ noremap <silent> <Leader>fl :VimFilerExplorer -toggle -find<CR>
 noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
 
+" Tabular
+nnoremap <Leader>= :Tabularize<CR>
+
 " Reload configuration
 nnoremap <Leader><Delete>   :call ReloadVimrc()<CR>
 
