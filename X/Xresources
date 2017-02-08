@@ -18,8 +18,8 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
-URxvt.font:     xft:Sauce Code Powerline:style=regular:antialias=true:hinting=true:size=10,xft:Droid Sans Mono:size=10
-URxvt.boldfont: xft:Sauce Code Powerline:style=bold:size=10,xft:Droid Sans Mono:style=bold:size=10
+URxvt.font    :  xft:Sauce Code Powerline:style=regular:antialias=true:hinting=true:size=9,xft:Droid Sans Mono:size=10
+URxvT.boldfont:  xft:Sauce Code Powerline:style=bold:size=9,xft:Droid Sans Mono:style=bold:size=10
 
 
 !-*- Colors -*-
@@ -60,12 +60,17 @@ URxvt.matcher.rend.0: Uline fg5
 ! URxvt.clipboard.copycmd:  xsel -ib
 ! URxvt.clipboard.pastecmd: xsel -ob
 ! keyboard select
-URxvt.keysym.M-Escape: perl:keyboard-select:activate
-URxvt.keysym.M-u:      perl:url-select:select_next
-URxvt.keysym.C-Delete: perl:matcher:last
-URxvt.keysym.M-Delete: perl:matcher:list
+URxvt.keysym.M-Escape :       perl:keyboard-select:activate
+URxvt.keysym.M-u      :       perl:url-select:select_next
+URxvt.keysym.C-Delete :       perl:matcher:last
+URxvt.keysym.M-Delete :       perl:matcher:list
 ! font-size
-URxvt.keysym.M-Up:     perl:font-size:increase
-URxvt.keysym.M-Down:   perl:font-size:decrease
-URxvt.keysym.M-S-Up:   perl:font-size:incglobal
-URxvt.keysym.M-S-Down: perl:font-size:decglobal
+URxvt.keysym.M-Up     :       perl:font-size:increase
+URxvt.keysym.M-Down   :       perl:font-size:decrease
+URxvt.keysym.M-S-Up   :       perl:font-size:incglobal
+URxvt.keysym.M-S-Down :       perl:font-size:decglobal
+! end/home keys
+URxvt.keysym.Home     :       \033[1~
+URxvt.keysym.End      :       \033[4~
+URxvt.keysym.KP_Home  :       \033[1~
+URxvt.keysym.KP_End   :       \033[4~

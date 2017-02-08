@@ -184,8 +184,8 @@ nnoremap <Leader>vz  :VimuxZoomRunner<CR>
 nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
 " Unite
-nnoremap <C-P> :Unite -start-insert file_rec/async<CR>
-nnoremap <C-K> :Unite -start-insert buffer<CR>
+nnoremap <Space>; :Unite -start-insert buffer file_rec/async<CR>
+inoremap <Space>; <Esc>:UniteClose<CR>
 nnoremap <silent> <Leader>G  :Unite grep:.<CR>
 nnoremap <silent> <Leader>pp :Unite -vertical-preview -winheight=50 -auto-preview file_rec/async<CR>
 nnoremap <silent> <Leader>yy :Unite history/yank<CR>
@@ -193,11 +193,14 @@ nnoremap <silent> <Leader>bb :Unite -quick-match buffer<CR>
 nnoremap <silent> <Leader>bp :Unite -auto-preview buffer<CR>
 
 " VimFiler
-noremap <silent> <Leader>f :VimFilerExplorer -winwidth=25 -split -toggle -no-quit<CR>
-noremap <silent> <Leader>a :VimFilerExplorer -find -winwidth=25 -split -toggle -no-quit<CR>
+noremap <silent> <Leader>f  :VimFilerExplorer -winwidth=25 -split -toggle -no-quit<CR>
+noremap <silent> <Leader>a  :VimFilerExplorer -find -winwidth=25 -split -toggle -no-quit<CR>
 noremap <silent> <Leader>fl :VimFilerExplorer -toggle -find<CR>
 noremap <silent> <Leader>fb :VimFilerBufferDir<CR>
 noremap <silent> <Leader>fs :VimFilerSplit<CR>
+
+" Tabular
+nnoremap <Leader>= :Tabularize<CR>
 
 " Reload configuration
 nnoremap <Leader><Delete>   :call ReloadVimrc()<CR>
