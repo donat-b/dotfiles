@@ -101,7 +101,7 @@ bindsym $mod+Control+Shift+o exec xrandr --output $xrandr_eout --mode 1920x1080 
 bindsym $mod+F4 exec "~/dotfiles/scripts/lockscreen.sh"
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec urxvt -tr -sh 13 -blr 4x4
 
 # kill focused window
 bindsym $mod+Shift+apostrophe kill
