@@ -306,7 +306,7 @@ bar {
   }
   position top
   font pango:Roboto Mono, Icons 11
-  status_command ~/.cabal/bin/monky
+  status_command monky
 }
 #bar {
 #  colors {
