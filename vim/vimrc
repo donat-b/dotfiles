@@ -57,7 +57,7 @@ set splitright
 set shell=sh
 
 " time in milliseconds that is waited for a sequence to complete
-set timeoutlen=500
+set timeoutlen=600
 
 " alias unnamed register to the + register
 "set clipboard=unnamedplus
