@@ -21,6 +21,7 @@ main :: IO()
 main = startLoop (getI3Output)
   [ pollPack 1 $ getDynamicHandle "No Network" filterNs
   , evtPack    $ getVOLHandle "default"
+  , pollPack 5 $ getCPUHandle ScalingCur "thermal_zone0"
   , pollPack 3 $ getMemoryHandle
   , pollPack 10 $ getDiskHandle "f9546c54-8df5-4572-a868-ef3cbb0d9ec5"
   , pollPack 10 $ getDiskHandle "e3cc9481-7566-4a2f-8fcd-54181fc0842b"
