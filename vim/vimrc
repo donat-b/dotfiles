@@ -147,7 +147,11 @@ nnoremap <silent> <Leader>ggm :Git stash save <BAR> Git checkout master<CR>
 nnoremap <silent> <Leader>ggp :Git diff --patch % > /tmp/%:t.diff<CR>
 nnoremap <silent> <Leader>gll :Git log --graph --decorate --stat<CR>
 nnoremap <silent> <Leader>glp :Git log --graph --decorate --stat --cc -p<CR>
+" list branches by recently commited
+nnoremap <silent> <Leader>glr :Git recent<CR>
+" git-pull
 nnoremap <silent> <Leader>gpl :Gpull<CR>
+" git-push
 nnoremap <silent> <Leader>gps :Gpush<CR>
 " unadd current file
 nnoremap <silent> <Leader>grs :Git reset HEAD -- %<BAR>GitGutterAll<CR>
