@@ -306,7 +306,7 @@ bar {
   }
   position top
   font pango:DejaVu Sans Mono for Powerline, Symbola 11
-  status_command stack exec monky --package monky
+  status_command stack exec --stack-yaml ~/git/monky/stack.yaml monky
 }
 #bar {
 #  colors {
