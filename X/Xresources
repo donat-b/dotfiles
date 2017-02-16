@@ -18,8 +18,8 @@ Xft.rgba:       rgb
 Xft.hinting:    true
 Xft.hintstyle:  hintslight
 
-URxvt.font    :  xft:Sauce Code Powerline:style=regular:antialias=true:hinting=true:size=9,xft:Droid Sans Mono:size=9
-URxvT.boldfont:  xft:Sauce Code Powerline:style=bold:size=9,xft:Droid Sans Mono:style=bold:size=9
+URxvt.font    :  xft:Sauce Code Powerline:style=regular:antialias=true:hinting=true:size=8,xft:Droid Sans Mono:size=8,xft:FontAwesome:style=regular:size=8
+URxvT.boldfont:  xft:Sauce Code Powerline:style=bold:antialias=true:hinting=true:size=8,xft:Droid Sans Mono:size=8,xft:FontAwesome:style=bold:size=8
 
 
 !-*- Colors -*-
