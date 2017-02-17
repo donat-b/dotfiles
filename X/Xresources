@@ -59,16 +59,27 @@ URxvt.url-select.button: 2
 URxvt.matcher.rend.0: Uline fg5
 ! URxvt.clipboard.copycmd:  xsel -ib
 ! URxvt.clipboard.pastecmd: xsel -ob
+
 ! keyboard select
+! h/j/k/l:    Move cursor left/down/up/right (also with arrow keys)
+! g/G/0/^/$/H/M/L/f/F/;/,/w/W/b/B/e/E: More vi-like cursor movement keys
+! '/'/?:      Start forward/backward search
+! n/N:        Repeat last search, N: in reverse direction
+! Ctrl-f/b:   Scroll down/up one screen
+! Ctrl-d/u:   Scroll down/up half a screen
+! v/V/Ctrl-v: Toggle normal/linewise/blockwise selection
+! y/Return:   Copy selection to primary buffer, Return: quit afterwards
+! Y:          Copy selected lines to primary buffer or cursor line and quit
+! q/Escape:   Quit keyboard selection mode
 URxvt.keysym.M-Escape :       perl:keyboard-select:activate
-URxvt.keysym.M-u      :       perl:url-select:select_next
-URxvt.keysym.C-Delete :       perl:matcher:last
-URxvt.keysym.M-Delete :       perl:matcher:list
+
+! open URL
+URxvt.keysym.M-Delete :       perl:matcher:last
+URxvt.keysym.C-Delete :       perl:matcher:list
+
 ! font-size
 URxvt.keysym.M-Up     :       perl:font-size:increase
 URxvt.keysym.M-Down   :       perl:font-size:decrease
-URxvt.keysym.M-S-Up   :       perl:font-size:incglobal
-URxvt.keysym.M-S-Down :       perl:font-size:decglobal
 ! end/home keys
 URxvt.keysym.Home     :       \033[1~
 URxvt.keysym.End      :       \033[4~
