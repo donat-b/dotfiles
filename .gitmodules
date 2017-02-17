@@ -9,3 +9,6 @@
 	path = vim/vim-plug
 	url = https://github.com/junegunn/vim-plug
 	shallow = true
+[submodule "tmux/plugins/continuum"]
+	path = tmux/plugins/continuum
+	url = https://github.com/tmux-plugins/tmux-continuum

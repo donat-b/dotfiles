@@ -74,3 +74,12 @@ URxvt.keysym.Home     :       \033[1~
 URxvt.keysym.End      :       \033[4~
 URxvt.keysym.KP_Home  :       \033[1~
 URxvt.keysym.KP_End   :       \033[4~
+
+
+!-*- rofi options -*-
+rofi.bg     : #292929
+rofi.bw     : 2
+rofi.fg     : #cdcdcd
+rofi.font   : Sauce Code Powerline 15
+rofi.lines  : 8
+rofi.opacity: 75
