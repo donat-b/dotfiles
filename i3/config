@@ -302,8 +302,8 @@ bar {
     urgent_workspace #dca3a3 #3c3b37 #dca3a3
   }
   position top
-  font pango:Miriam Mono 10
-  status_command i3status
+  font pango:Droid Sans Mono, Symbola 11
+  status_command stack exec --stack-yaml ~/git/x11/monky/stack.yaml monky
 }
 #bar {
 #  colors {
