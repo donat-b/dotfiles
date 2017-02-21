@@ -303,7 +303,7 @@ bar {
   }
   position top
   font pango:Droid Sans Mono, Symbola 11
-  status_command stack exec --stack-yaml ~/git/x11/monky/stack.yaml monky
+  status_command monky
 }
 #bar {
 #  colors {
