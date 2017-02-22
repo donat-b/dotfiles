@@ -321,7 +321,7 @@ bar {
     urgent_workspace #dca3a3 #3c3b37 #dca3a3
   }
   position top
-  font pango:DejaVu Sans Mono for Powerline, Symbola 11
+  font pango:Noto Sans, Noto Emoji, FontAwesome, Symbola 12
   status_command stack exec --stack-yaml ~/git/monky/stack.yaml monky
 }
 #bar {

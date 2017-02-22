@@ -281,7 +281,7 @@ Plug 'mattn/emmet-vim', { 'for': ['css', 'haml', 'html', 'xml', 'xsl'] }
 Plug 'FooSoft/vim-argwrap'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Windows/navigation
+" Interface/navigation
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Run commands in tmux
@@ -306,6 +306,13 @@ Plug 'xolox/vim-misc'
 
 " Eclipse like task list
 Plug 'TaskList.vim'
+
+" Lean & mean status/tabline for vim that's light as air
+Plug 'donat-b/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Adds filetype glyphs (icons) to other plugins
+Plug 'ryanoasis/vim-devicons'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Controls
@@ -372,10 +379,6 @@ Plug 'kabbamine/vbox.vim'
 
 " Querying of the RFC database and loading RFC/STD documents into a Vim buffer
 Plug 'mhinz/vim-rfc'
-
-" Lean & mean status/tabline for vim that's light as air
-Plug 'donat-b/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " Global Replace plugin
 Plug 'vim-scripts/Greplace.vim'
