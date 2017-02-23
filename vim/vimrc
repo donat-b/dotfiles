@@ -525,6 +525,7 @@ call unite#custom#source('file_rec/async', 'ignore_pattern',
   \ '\.jpg',
   \ '\.png',
   \ '\.retry',
+  \ '\.stack-work',
   \ '\.vagrant/',
   \ 'vault.yml',
   \ ], '\|'))
