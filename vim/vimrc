@@ -340,6 +340,16 @@ Plug '907th/vim-auto-save'
 
 " }}}
 
+" Search/replace {{{
+
+" Perl ack frontend for vim
+Plug 'mileszs/ack.vim'
+
+" Global Replace
+Plug 'vim-scripts/Greplace.vim'
+
+" }}}
+
 " Sensible defaults
 Plug 'tpope/vim-sensible'
 
@@ -376,9 +386,6 @@ Plug 'kabbamine/vbox.vim'
 
 " Querying of the RFC database and loading RFC/STD documents into a Vim buffer
 Plug 'mhinz/vim-rfc'
-
-" Global Replace plugin
-Plug 'vim-scripts/Greplace.vim'
 
 " Git runtime files
 Plug 'tpope/vim-git'
