@@ -35,3 +35,5 @@ export VISUAL='vi'
 
 # gpg-agent workaround
 export SSH_AUTH_SOCK=0
+
+export RANGER_LOAD_DEFAULT_RC=False
