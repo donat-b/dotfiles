@@ -97,7 +97,7 @@ fi
 # The following lines were added by compinstall
 zstyle :compinstall filename '/etc/zsh/zshrc'
 
-if [[ "${UID}" -ge 1000 ]]; then
+if [[ "${UID}" -ge 1000 ]] && [[ $- == *i* ]]; then
   # gpg-agent
   envfile=${HOME}/.gnupg/gpg-agent.env
   if [[ -f "${envfile}" ]]; then
@@ -109,15 +109,13 @@ if [[ "${UID}" -ge 1000 ]]; then
     export GPG_TTY
   fi
 
-  # Auto start tmux if shell is interactive
-  if [[ -o interactive && -z "$TMUX" ]]; then
-    hash tmux 2>/dev/null \
-      && tmux attach
-  fi
-
   autoload -U tetris
   zle -N tetris
   bindkey  tetris
+
+  if [[ -z "$TMUX" ]]; then
+    exec tmux new -A -s main
+  fi
 fi
 
 [[ -f ~/dotfiles/zsh/env ]] \
