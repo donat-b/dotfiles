@@ -36,7 +36,7 @@ bind-key P paste-buffer
 bind-key -t vi-copy 'v' begin-selection
 bind-key -t vi-copy 'y' copy-selection
 
-bind-key -n C-t new-window -a
+bind-key -n C-t new-window
 
 # Switching windows
 bind-key -n S-left  prev
