@@ -29,6 +29,15 @@ bind-key R split-window 'exec sudo -s'
 # Reload config
 bind-key r source-file ~/.tmux.conf \; display-message 'configuration loaded'
 
+# commands in a new window
+bind-key C-m command-prompt -p man: "new-window -n %1 'man %1'"
+bind-key C-x command-prompt -p eix: "new-window -n %1 'eix %1; read -rst 120'"
+
+# current path versions of common commands
+bind 'M-"' split-window -c "#{pane_current_path}"
+bind M-% split-window -h -c "#{pane_current_path}"
+bind M-c new-window -c "#{pane_current_path}"
+
 # Copy-paste
 bind-key P paste-buffer
 
