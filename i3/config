@@ -104,6 +104,7 @@ bindsym $mod+Return exec urxvt -tr -sh 13 -blr 4x4
 
 # kill focused window
 bindsym $mod+Shift+apostrophe kill
+bindsym --release $mod+Shift+z exec xkill
 
 # start dmenu (a program launcher)
 bindsym $mod+e exec rofi -show run
