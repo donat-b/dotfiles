@@ -53,11 +53,10 @@ alias t='task'
 alias ta='task add'
 
 # emerge
-alias ems='emerge -s'
+alias em1='emerge --nodeps --oneshot'
 alias emS='emerge --searchdesc'
-
-# qemu-img with progress bar
-alias qemu-img='qemu-img -p'
+alias emc='emerge --depclean'
+alias emq='emerge --quiet-build'
 
 # xzip extreme compression
 alias xzec='xz -9ev --no-adjust'
@@ -70,4 +69,5 @@ alias _=sudo
 # start vim with the system vimrc
 alias vi='vim -u /etc/vim/vimrc'
 
-alias reload='source ~/.zshrc'
+# reload zsh
+alias reload='exec zsh -l'
