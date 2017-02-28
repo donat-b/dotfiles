@@ -41,20 +41,21 @@ TRAPWINCH() {
   zle && { zle reset-prompt; zle -R }
 }
 
-bindkey -v
+bindkey -e
 
-bindkey '^r' history-incremental-search-backward      # [Ctrl-r]    - Search backward incrementally for a specified string
 bindkey '^P' up-history                               # [Ctrl-p]    - Move to the previous event in the history list
 bindkey '^N' down-history                             # [Ctrl-n]    - Move to the next event in the history list
 bindkey '^?' backward-delete-char                     # [Backspace] - Delete the character behind the cursor
 bindkey '^h' backward-delete-char                     # [Ctrl-h]    - ″
 bindkey '^w' backward-kill-word                       # [Ctrl-w]    - Kill the word behind the cursor
-bindkey '^a' vi-beginning-of-line                     # [Ctrl-a]    - Move to the beginning of the line, without changing lines
-bindkey '^e' vi-end-of-line                           # [Ctrl-e]    - Move to the end of the line
-bindkey '\ew' kill-region                             # [Esc-w]     - Kill from the cursor to the mark
-bindkey -s '\el' 'ls\n'                               # [Esc-l]     - run command: ls
-bindkey -s '\ell' 'ls -lh\n'                          # [Esc-ll]    - run command: ls -lh
-bindkey -s '\eh' 'cd\n'                               # [Esc-h]     - run command: cd
+bindkey '\M-F' forward-word
+bindkey '\M-B' backward-word
+# Escape
+bindkey '\ew' kill-region
+bindkey -s '\e,ll' 'ls -lh\n'
+bindkey -s '\e,-' 'cd -\n'
+bindkey -s '\e,v' 'vim\n'
+bindkey -s '\e,s' '^Rssh ' # rev search ssh
 
 # Edit the current command line in $EDITOR
 autoload -U edit-command-line
@@ -76,9 +77,6 @@ if [[ "${terminfo[kend]}" != "" ]]; then
 fi
 
 bindkey ' ' magic-space                               # [Space] - do history expansion
-
-bindkey '^[[1;5C' forward-word                        # [Ctrl-RightArrow] - move forward one word
-bindkey '^[[1;5D' backward-word                       # [Ctrl-LeftArrow] - move backward one word
 
 # if mode indicator wasn't setup by theme, define default
 if [[ "$MODE_INDICATOR" == "" ]]; then
