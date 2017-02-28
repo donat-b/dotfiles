@@ -69,3 +69,5 @@ alias _=sudo
 
 # start vim with the system vimrc
 alias vi='vim -u /etc/vim/vimrc'
+
+alias reload='source ~/.zshrc'
