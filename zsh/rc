@@ -92,7 +92,9 @@ if [[ "$RPS1" == "" && "$RPROMPT" == "" ]]; then
   RPS1='$(vi_mode_prompt_info)'
 fi
 
-# The following lines were added by compinstall
+# auto rebuild the cache of executable commands
+zstyle ':completion:*' rehash true
+# added by compinstall
 zstyle :compinstall filename '/etc/zsh/zshrc'
 
 if [[ "${UID}" -ge 1000 ]] && [[ $- == *i* ]]; then
