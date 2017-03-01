@@ -54,6 +54,7 @@ function main() {
     [qxkb.cfg]=.config/qxkb.cfg
     [ranger/rc]=.config/ranger/rc.conf
     [ranger/rifle.conf]=.config/ranger/rifle.conf
+    [rofi-pass.conf]=.config/rofi-pass/config
     [tmux/conf]=.tmux.conf
     [vim/ftplugin]=.vim/ftplugin
     [vim/spell]=.vim/spell
