@@ -16,7 +16,7 @@ alias la='ls -lA'
 
 alias lad='ls -d -- .*(/)'   # only dot-directories
 alias lsa='ls -a -- .*(.)'   # only dot-files
-alias lsd='ls -d -- *(/)'    # only directories
+alias lsd='ls -1d -- *(/)'   # only directories
 alias lse='ls -ld -- *(/^F)' # only empty directories
 alias lsen='ls -d *(/om[1])' # newest directory
 alias lsx='ls -l -- *(*) | head $@ 2&>/dev/null'       # only executables
@@ -53,11 +53,10 @@ alias t='task'
 alias ta='task add'
 
 # emerge
-alias ems='emerge -s'
+alias em1='emerge --nodeps --oneshot'
 alias emS='emerge --searchdesc'
-
-# qemu-img with progress bar
-alias qemu-img='qemu-img -p'
+alias emc='emerge --depclean'
+alias emq='emerge --quiet-build'
 
 # xzip extreme compression
 alias xzec='xz -9ev --no-adjust'
@@ -70,4 +69,5 @@ alias _=sudo
 # start vim with the system vimrc
 alias vi='vim -u /etc/vim/vimrc'
 
-alias reload='source ~/.zshrc'
+# reload zsh
+alias reload='exec zsh -l'

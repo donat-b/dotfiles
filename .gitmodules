@@ -12,3 +12,6 @@
 [submodule "tmux/plugins/continuum"]
 	path = tmux/plugins/continuum
 	url = https://github.com/tmux-plugins/tmux-continuum
+[submodule "rofi-pass"]
+	path = rofi-pass
+	url = https://github.com/carnager/rofi-pass.git

@@ -37,3 +37,4 @@ export VISUAL='vi'
 export SSH_AUTH_SOCK=0
 
 export RANGER_LOAD_DEFAULT_RC=False
+export TMUX_TMPDIR=/tmp
