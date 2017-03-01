@@ -449,6 +449,19 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "
+" VimFiler
+"
+call vimfiler#custom#profile('default', 'context', {
+      \ 'edit_action' : 'tabopen',
+      \ 'safe' : 1,
+      \ 'toggle' : 1,
+      \ 'winwidth' : 45,
+      \ })
+let g:vimfiler_no_default_key_mappings = 1
+autocmd FileType vimfiler nmap <buffer> q <Plug>(vimfiler_hide)
+autocmd FileType vimfiler nmap <buffer> Q <Plug>(vimfiler_exit)
+
+"
 " YouCompleteMe
 "
 let g:ycm_min_num_of_chars_for_completion = 1
