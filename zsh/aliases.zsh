@@ -26,6 +26,9 @@ alias lssmall="=ls -Sl -- *(.) | tail $@ 2&>/dev/null" # display the smallest fi
 alias lsbig="ls -lSh -- *(.) | grep -v total | head $@ 2&>/dev/null" # display the biggest files
 alias lso="ls -alG | awk '{k=0;for(i=0;i<=8;i++)k+=((substr(\$1,i+2,1)~/[rwx]/)*2^(8-i));if(k)printf(\" %0o \",k);print}'" # octal
 
+# no time to waste!
+alias g=git
+alias ka=killall
 alias rg=ranger
 
 # Parenting changing perms on / #
