@@ -277,9 +277,7 @@ Plug 'mattn/emmet-vim', { 'for': ['css', 'haml', 'html', 'xml', 'xsl'] }
 " Wrap and unwrap function arguments, lists, and dictionaries
 Plug 'FooSoft/vim-argwrap'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Interface/navigation
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" UI {{{
 
 " Run commands in tmux
 Plug 'benmills/vimux', Cond(len($TMUX) > 0)
@@ -311,9 +309,15 @@ Plug 'vim-airline/vim-airline-themes'
 " Adds filetype glyphs (icons) to other plugins
 Plug 'ryanoasis/vim-devicons'
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Controls
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" dependency
+Plug 'tpope/vim-dispatch'
+
+" Auto save files
+Plug '907th/vim-auto-save'
+
+" }}}
+
+" Controls {{{
 
 " Multiple Selection in vim
 Plug 'terryma/vim-multiple-cursors'
@@ -332,13 +336,6 @@ Plug 'tpope/vim-repeat'
 
 " move between Vim panes and tmux splits seamlessly
 Plug 'christoomey/vim-tmux-navigator'
-
-" Utils/general {{{
-
-" Auto save files
-Plug '907th/vim-auto-save'
-
-" }}}
 
 " Search/replace {{{
 
