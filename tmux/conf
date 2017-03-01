@@ -62,8 +62,6 @@ bind-key -t emacs-copy -n 'j' page-down
 # Toggle pane synchronization
 bind-key S set-window-option synchronize-panes
 
-bind-key p run '[ -n "$DISPLAY" ] && (pass sudo -c > /dev/null && xdotool type $(xclip -o -selection c) && xdotool key Return)'
-
 # Aggressive resize
 setw -g aggressive-resize on
 
