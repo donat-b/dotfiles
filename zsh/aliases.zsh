@@ -16,7 +16,7 @@ alias la='ls -lA'
 
 alias lad='ls -d -- .*(/)'   # only dot-directories
 alias lsa='ls -a -- .*(.)'   # only dot-files
-alias lsd='ls -d -- *(/)'    # only directories
+alias lsd='ls -1d -- *(/)'   # only directories
 alias lse='ls -ld -- *(/^F)' # only empty directories
 alias lsen='ls -d *(/om[1])' # newest directory
 alias lsx='ls -l -- *(*) | head $@ 2&>/dev/null'       # only executables
