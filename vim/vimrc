@@ -166,6 +166,11 @@ nnoremap <Leader>ss  :SaveSession<CR>
 nnoremap <Leader>sv  :ViewSession<CR>
 
 " vimux
+function! VimuxRevSearch()
+  call VimuxSendKeys('')
+  call _VimuxTmux("select-"._VimuxRunnerType()." -t ".g:VimuxRunnerIndex)
+endfunction
+
 nnoremap <Leader>vdr :call VimuxRunCommandInDir(getline('.'), expand('%:p'))<CR>
 nnoremap <Leader>vi  :VimuxInspectRunner<CR>
 nnoremap <Leader>vj  :call VimuxRunCommand('cd '.expand('%:p:h'))<CR>
@@ -174,6 +179,7 @@ nnoremap <Leader>vnr :call VimuxRunCommand(getline('.'), 0)<CR>
 nnoremap <Leader>vp  :VimuxPromptCommand<CR>
 nnoremap <Leader>vq  :VimuxCloseRunner<CR>
 nnoremap <Leader>vr  :VimuxRunCommand getline('.')<CR>
+nnoremap <Leader>vs  :call VimuxRevSearch()<CR>
 nnoremap <Leader>vt  :VimuxTogglePane<CR>
 nnoremap <Leader>vrz :call VimuxRunCommand(getline('.')) <BAR> VimuxZoomRunner<CR>
 nnoremap <Leader>vv  :update<BAR>call VimuxRunCommand(
