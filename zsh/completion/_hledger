@@ -1,0 +1,36 @@
+#compdef hledger
+#autoload
+
+local -a _1st_arguments
+_1st_arguments=(
+    'accounts:account names'
+    'activity:ascii barchart of posting counts per interval (default: daily)'
+    'add:prompt for transactions and add them to the journal'
+    'balance:accounts and balances (bal)'
+    'balancesheet:balance sheet (bs)'
+    'cashflow:cashflow statement (cf)'
+    'help:show any of the hledger manuals'
+    'man:show any of the hledger manuals with man'
+    'incomestatement:income statement (is)'
+    'print:transaction entries'
+    'register:postings and running total (reg)'
+    'stats:journal statistics'
+    "--help:show the current program's manual as plain text (or after an add-on COMMAND, the add-on's manual)"
+    '--version:Prints the Vagrant version information'
+)
+
+local expl
+
+local curcontext="$curcontext" state line
+typeset -A opt_args
+
+_arguments -C \
+    ':command:->command' \
+    '*::options:->options'
+
+case $state in
+  (command)
+      _describe -t commands "subcommand" _1st_arguments
+      return
+  ;;
+esac
