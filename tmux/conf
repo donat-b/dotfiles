@@ -1,5 +1,13 @@
 set-option -g default-term "screen-256color"
 set -g xterm-keys on
+
+# Turn on window titles
+set-option -g set-titles on
+# Set window title string
+set-option -g set-titles-string '#H/#S:#I.#P #W'
+# Automatically set window title
+setw -g automatic-rename
+
 # History
 set-option -g history-limit 15000
 # Start numbering at 1
