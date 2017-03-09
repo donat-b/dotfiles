@@ -161,13 +161,6 @@ nnoremap <silent> <Leader>grs :Git reset HEAD -- %<BAR>GitGutterAll<CR>
 nnoremap <silent> <Leader>gs  :Gstatus<CR>
 " }}}
 
-" vim-session
-nnoremap <Leader>sd  :DeleteSession<CR>
-nnoremap <Leader>so  :OpenSession<BAR>AirlineRefresh<CR>
-nnoremap <Leader>sq  :CloseSession<CR>
-nnoremap <Leader>ss  :SaveSession<CR>
-nnoremap <Leader>sv  :ViewSession<CR>
-
 " vimux
 function! VimuxRevSearch()
   call VimuxSendKeys('')
@@ -194,13 +187,13 @@ nnoremap <Leader>vz  :VimuxZoomRunner<CR>
 nnoremap <Leader>wv <Plug>VimwikiVSplitLink
 
 " Unite
-nnoremap <Space>; :Unite -start-insert buffer file_rec/async<CR>
-inoremap <Space>; <Esc>:UniteClose<CR>
-nnoremap <silent> <Leader>G  :Unite grep:.<CR>
-nnoremap <silent> <Leader>pp :Unite -vertical-preview -winheight=50 -auto-preview file_rec/async<CR>
-nnoremap <silent> <Leader>yy :Unite history/yank<CR>
-nnoremap <silent> <Leader>bb :Unite -quick-match buffer<CR>
-nnoremap <silent> <Leader>bp :Unite -auto-preview buffer<CR>
+nnoremap <Space>;   :Unite buffer file_rec/async<CR>
+inoremap <Space>;   <Esc>:UniteClose<CR>
+nnoremap <Space>:   :Unite session<CR>
+nnoremap <Leader>G  :Unite grep:.<CR>
+nnoremap <Leader>yy :Unite history/yank<CR>
+nnoremap <Leader>bb :Unite -quick-match buffer<CR>
+nnoremap <Leader>bp :Unite -auto-preview buffer<CR>
 
 " VimFiler
 noremap <silent> <Leader>f  :VimFilerExplorer -winwidth=25 -split -toggle -no-quit<CR>
@@ -301,10 +294,8 @@ Plug 'Shougo/vimproc.vim'
 Plug 'Shougo/unite.vim'
   " File explorer
   Plug 'Shougo/vimfiler.vim'
-
-" Session management
-Plug 'xolox/vim-misc'
-  Plug 'xolox/vim-session'
+  " Sessions
+  Plug 'Shougo/unite-session'
 
 "Plug 'Lokaltog/vim-easymotion'
 
@@ -452,6 +443,19 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "
+" VimFiler
+"
+call vimfiler#custom#profile('default', 'context', {
+      \ 'edit_action' : 'tabopen',
+      \ 'safe' : 1,
+      \ 'toggle' : 1,
+      \ 'winwidth' : 45,
+      \ })
+let g:vimfiler_no_default_key_mappings = 1
+autocmd FileType vimfiler nmap <buffer> q <Plug>(vimfiler_hide)
+autocmd FileType vimfiler nmap <buffer> Q <Plug>(vimfiler_exit)
+
+"
 " YouCompleteMe
 "
 let g:ycm_min_num_of_chars_for_completion = 1
@@ -544,8 +548,7 @@ call unite#custom#source('file_rec/async', 'ignore_pattern',
   \ ], '\|'))
 
 " session
-let g:session_autosave = 'no'
-let g:session_autoload = 'no'
+let g:unite_source_session_enable_auto_save = 1
 
 " auto-save
 let g:auto_save = 1

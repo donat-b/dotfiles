@@ -1,5 +1,13 @@
 set-option -g default-term "screen-256color"
 set -g xterm-keys on
+
+# Turn on window titles
+set-option -g set-titles on
+# Set window title string
+set-option -g set-titles-string '#H/#S:#I.#P #W'
+# Automatically set window title
+setw -g automatic-rename
+
 # History
 set-option -g history-limit 15000
 # Start numbering at 1
@@ -11,12 +19,13 @@ set-option -g repeat-time 205
 
 # Status line
 set-option -g status-keys 'vi'
+set-option -g status-interval 30
 set-option -g status-utf8 on
 set-option -g status-style 'bg=colour234'
 set-option -ag status-style 'fg=colour214,bold'
 set-option -wg window-status-current-fg 'colour204'
-set-option -g status-right '#{=21:pane_title}|#(uptime -p|tr -d ",")|%H:%M'
 set-option -g status-right-length 52
+set-option -g status-right '#{=21:pane_title} | up #(uptime -p| cut -f 4-5 -d " " | cut -f 1 -d ",") | #[fg=white,bg=default]%H:%M:%S'
 
 unbind C-b
 set-option -g prefix C-a

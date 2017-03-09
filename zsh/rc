@@ -109,12 +109,8 @@ if [[ "${UID}" -ge 1000 ]] && [[ $- == *i* ]]; then
     export GPG_TTY
   fi
 
-  autoload -U tetris
-  zle -N tetris
-  bindkey  tetris
-
   if [[ -z "$TMUX" ]]; then
-    exec tmux new -A -s main
+    tmux new -A -s main
   fi
 fi
 
