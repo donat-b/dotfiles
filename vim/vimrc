@@ -547,9 +547,6 @@ call unite#custom#source('file_rec/async', 'ignore_pattern',
   \ 'vault.yml',
   \ ], '\|'))
 
-" session
-let g:unite_source_session_enable_auto_save = 1
-
 " auto-save
 let g:auto_save = 1
 let g:auto_save_events = ["InsertLeave", "TextChanged"]
