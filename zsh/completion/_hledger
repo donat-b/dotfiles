@@ -16,7 +16,6 @@ _1st_arguments=(
     'register:postings and running total (reg)'
     'stats:journal statistics'
     "--help:show the current program's manual as plain text (or after an add-on COMMAND, the add-on's manual)"
-    '--version:Prints the Vagrant version information'
 )
 
 local expl

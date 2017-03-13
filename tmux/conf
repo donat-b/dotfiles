@@ -50,10 +50,6 @@ bind M-c new-window -c "#{pane_current_path}"
 # Copy-paste
 bind-key P paste-buffer
 
-# Vi-like selection and yank
-bind-key -t vi-copy 'v' begin-selection
-bind-key -t vi-copy 'y' copy-selection
-
 bind-key -n C-t new-window
 
 # Switching windows
@@ -63,10 +59,6 @@ bind-key -n S-right next
 # Swap tabs
 bind-key -n M-S-left  swap-window -t -1
 bind-key -n M-S-right swap-window -t +1
-
-# scrolling
-bind-key -t emacs-copy -n 'x' page-up
-bind-key -t emacs-copy -n 'j' page-down
 
 # Toggle pane synchronization
 bind-key S set-window-option synchronize-panes
