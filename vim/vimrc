@@ -109,9 +109,6 @@ imap ;; <ESC>
 
 " Use gQ instead
 map Q <Nop>
-" Screw F1 help
-map <F1> <Nop>
-nnoremap <F1> :help<Space>
 
 " Duplicate a line with increment
 nnoremap yA yyp<C-a>
