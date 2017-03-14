@@ -253,7 +253,7 @@ Plug 'chase/vim-ansible-yaml'
 Plug 'nginx.vim'
 
 " Python
-Plug 'python-mode/python-mode'
+Plug 'python-mode/python-mode', { 'for': ['python'] }
 
 " Add end keywords in various languages
 Plug 'tpope/vim-endwise'
