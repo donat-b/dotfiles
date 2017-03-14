@@ -279,6 +279,19 @@ Plug 'mattn/emmet-vim', { 'for': ['css', 'haml', 'html', 'xml', 'xsl'] }
 " Wrap and unwrap function arguments, lists, and dictionaries
 Plug 'FooSoft/vim-argwrap'
 
+" Documentation {{{
+
+" Pandoc integration
+Plug 'vim-pandoc/vim-pandoc'
+
+" Flexible viewer for any documentation source 
+Plug 'powerman/vim-plugin-viewdoc'
+
+" Querying of the RFC database and loading RFC/STD documents into a Vim buffer
+Plug 'mhinz/vim-rfc'
+
+" }}}
+
 " UI {{{
 
 " Run commands in tmux
@@ -366,9 +379,6 @@ Plug 'vim-scripts/DrawIt'
 " Personal wiki for vim
 Plug 'vimwiki/vimwiki'
 
-" View man pages in vim
-Plug 'vim-utils/vim-man'
-
 " Execute program with options.
 Plug 'thinca/vim-quickrun'
 
@@ -380,9 +390,6 @@ Plug 'mattn/gist-vim'
 
 " A simple vim plugin for quickly create and insert templates
 Plug 'kabbamine/vbox.vim'
-
-" Querying of the RFC database and loading RFC/STD documents into a Vim buffer
-Plug 'mhinz/vim-rfc'
 
 " Git runtime files
 Plug 'tpope/vim-git'
@@ -419,9 +426,6 @@ Plug 'metakirby5/codi.vim'
 
 " Uncover usage problems in your writing
 Plug 'reedes/vim-wordy'
-
-" Pandoc integration
-Plug 'vim-pandoc/vim-pandoc'
 
 " Multi-language DBGP debugger
 Plug 'joonty/vdebug', { 'on': 'VdebugStart' }
