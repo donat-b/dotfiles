@@ -39,23 +39,34 @@ function gh_org_clone() {
 typeset -Ag abbreviations
 
 abbreviations=(
-  "Ia"    "| awk"
-  "Il"    "| less"
-  "Im"    "| more"
-  "Ig"    "| grep"
-  "Ieg"   "| egrep"
-  "Iag"   "| agrep"
-  "Igr"   "| groff -s -p -t -e -Tlatin1 -mandoc"
-  "Ip"    "| $PAGER"
-  "Ih"    "| head"
-  "Ik"    "| keep"
-  "It"    "| tail"
-  "Is"    "| sort"
-  "Iv"    "| ${VISUAL:-${EDITOR}}"
-  "Iw"    "| wc"
-  "Ix"    "| xargs"
-  "TX"    "tar xvf"
-  "TC"    "tar cvf"
+  'Ia'   '| awk'
+  'Il'   '| less'
+  'Im'   '| more'
+  'Ig'   '| grep'
+  'Ieg'  '| egrep'
+  'Iag'  '| agrep'
+  'Igr'  '| groff -s -p -t -e -Tlatin1 -mandoc'
+  'Ip'   "| $PAGER"
+  'Ih'   '| head'
+  'Ik'   '| keep'
+  'It'   '| tail'
+  'Is'   '| sort'
+  'Iv'   "| ${VISUAL:-${EDITOR}}"
+  'Iw'   '| wc'
+  'Ix'   '| xargs'
+
+  'TX'   'tar xvf'
+  'TC'   'tar cvf'
+
+  'Um'   'udisksctl mount'
+  'Us'   'udisksctl status'
+  'Uu'   'udisksctl unmount'
+
+  'Agi'  'sudo apt-get install'
+  'Agr'  'sudo apt-get remove'
+  'Agu'  'sudo apt-get update'
+  'Acp'  'apt-cache policy'
+  'Acs'  'apt-cache search'
 )
 
 magic-abbrev-expand() {
