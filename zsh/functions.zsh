@@ -26,6 +26,13 @@ function current_branch() {
 function eeb() {
   $EDITOR "/usr/portage/$1"
 }
+
+# clones all repos in a github org
+function gh_org_clone() {
+  local username=$1 org=$2
+  curl -u "${username}" -s "https://api.github.com/orgs/${org}/repos?per_page=200" | ruby -rubygems -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["ssh_url"]} ]}'
+}
+
 # vim-like abbreviations
 # taken from:
 # http://zshwiki.org/home/examples/zleiab
