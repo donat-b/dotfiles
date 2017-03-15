@@ -26,29 +26,47 @@ function current_branch() {
 function eeb() {
   $EDITOR "/usr/portage/$1"
 }
+
+# clones all repos in a github org
+function gh_org_clone() {
+  local username=$1 org=$2
+  curl -u "${username}" -s "https://api.github.com/orgs/${org}/repos?per_page=200" | ruby -rubygems -e 'require "json"; JSON.load(STDIN.read).each { |repo| %x[git clone #{repo["ssh_url"]} ]}'
+}
+
 # vim-like abbreviations
 # taken from:
 # http://zshwiki.org/home/examples/zleiab
 typeset -Ag abbreviations
 
 abbreviations=(
-  "Ia"    "| awk"
-  "Il"    "| less"
-  "Im"    "| more"
-  "Ig"    "| grep"
-  "Ieg"   "| egrep"
-  "Iag"   "| agrep"
-  "Igr"   "| groff -s -p -t -e -Tlatin1 -mandoc"
-  "Ip"    "| $PAGER"
-  "Ih"    "| head"
-  "Ik"    "| keep"
-  "It"    "| tail"
-  "Is"    "| sort"
-  "Iv"    "| ${VISUAL:-${EDITOR}}"
-  "Iw"    "| wc"
-  "Ix"    "| xargs"
-  "TX"    "tar xvf"
-  "TC"    "tar cvf"
+  'Ia'   '| awk'
+  'Il'   '| less'
+  'Im'   '| more'
+  'Ig'   '| grep'
+  'Ieg'  '| egrep'
+  'Iag'  '| agrep'
+  'Igr'  '| groff -s -p -t -e -Tlatin1 -mandoc'
+  'Ip'   "| $PAGER"
+  'Ih'   '| head'
+  'Ik'   '| keep'
+  'It'   '| tail'
+  'Is'   '| sort'
+  'Iv'   "| ${VISUAL:-${EDITOR}}"
+  'Iw'   '| wc'
+  'Ix'   '| xargs'
+
+  'TX'   'tar xvf'
+  'TC'   'tar cvf'
+
+  'Um'   'udisksctl mount'
+  'Us'   'udisksctl status'
+  'Uu'   'udisksctl unmount'
+
+  'Agi'  'sudo apt-get install'
+  'Agr'  'sudo apt-get remove'
+  'Agu'  'sudo apt-get update'
+  'Acp'  'apt-cache policy'
+  'Acs'  'apt-cache search'
 )
 
 magic-abbrev-expand() {
