@@ -1,3 +1,12 @@
+# run a command until it succeeds
+function retry {
+  local -i MAX_TRIES=999
+  trap break INT
+  for i in {1..$MAX_TRIES}; do
+    $@ && break || printf '\x1b[33;01mretrying\x1b[39;49;00m (%d)\n' $i && sleep 5
+  done
+}
+
 # remove current working directory recursively
 function rmwd {
   local d=$(pwd)
