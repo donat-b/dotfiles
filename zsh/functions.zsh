@@ -9,9 +9,13 @@ function retry {
 
 # remove current working directory recursively
 function rmwd {
-  local d=$(pwd)
-  cd ..
-  rm -rvf -- "$d"
+  local WORKING_DIR=$(pwd)
+  local FILES_COUNT=$(ls -Af1 $WORKING_DIR | wc -l)
+
+  read -q "REPLY?Remove ${WORKING_DIR} (${FILES_COUNT} files or more)? " || return
+  printf '\n'
+  cd .. \
+    && rm -rvf -- "$WORKING_DIR"
 }
 
 # cd to a directory, creating if it doesn't exist
