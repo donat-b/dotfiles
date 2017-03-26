@@ -13,8 +13,9 @@
   cp      = cherry-pick
   # commit with diff
   c       = commit --verbose
-  ca      = commit --all --verbose
-  ci      = commit --interactive --verbose
+  ca      = commit --verbose --all
+  ci      = commit --verbose --interactive 
+  cs      = commit --verbose --signoff 
   # checkout
   co      = checkout
   # diff for last commit
