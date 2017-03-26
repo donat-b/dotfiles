@@ -67,7 +67,7 @@
 [color "status"]
   added = yellow
   changed = green
-  untracked = red
+  untracked = white
 
 [commit]
 	gpgSign = true
