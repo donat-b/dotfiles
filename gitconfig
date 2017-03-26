@@ -69,6 +69,9 @@
   changed = green
   untracked = red
 
+[commit]
+	gpgSign = true
+
 [core]
   autocrlf = false
   compression = 9
@@ -95,6 +98,7 @@
 [user]
   email = donat@opmbx.org
   name = donat-b
+	signingkey = A49CD63E
 
 [github]
   user = donat-b
