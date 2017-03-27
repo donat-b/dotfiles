@@ -13,8 +13,9 @@
   cp      = cherry-pick
   # commit with diff
   c       = commit --verbose
-  ca      = commit --all --verbose
-  ci      = commit --interactive --verbose
+  ca      = commit --verbose --all
+  ci      = commit --verbose --interactive 
+  cs      = commit --verbose --signoff 
   # checkout
   co      = checkout
   # diff for last commit
@@ -66,7 +67,10 @@
 [color "status"]
   added = yellow
   changed = green
-  untracked = red
+  untracked = white
+
+[commit]
+	gpgSign = true
 
 [core]
   autocrlf = false
@@ -94,6 +98,7 @@
 [user]
   email = donat@opmbx.org
   name = donat-b
+	signingkey = A49CD63E
 
 [github]
   user = donat-b

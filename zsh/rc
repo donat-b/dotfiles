@@ -1,5 +1,14 @@
 #!/usr/bin/env zsh
 
+[[ -f ~/dotfiles/zsh/env ]] \
+  && source ~/dotfiles/zsh/env
+[[ -f ~/dotfiles/zsh/aliases.zsh ]] \
+  && source ~/dotfiles/zsh/aliases.zsh
+[[ -f ~/dotfiles/zsh/functions.zsh ]] \
+  && source ~/dotfiles/zsh/functions.zsh
+[[ -s ~/dotfiles/qfc/bin/qfc.sh ]] \
+  && source ~/dotfiles/qfc/bin/qfc.sh
+
 setopt APPEND_HISTORY      # Append history list to the history file
 setopt AUTO_CD             # Perform cd to the command if it can't be executed
 setopt HIST_IGNORE_DUPS    # Do not enter duplicate command lines into the history list
@@ -113,15 +122,6 @@ if [[ "${UID}" -ge 1000 ]] && [[ $- == *i* ]]; then
     tmux new -A -s main
   fi
 fi
-
-[[ -f ~/dotfiles/zsh/env ]] \
-  && source ~/dotfiles/zsh/env
-[[ -f ~/dotfiles/zsh/aliases.zsh ]] \
-  && source ~/dotfiles/zsh/aliases.zsh
-[[ -f ~/dotfiles/zsh/functions.zsh ]] \
-  && source ~/dotfiles/zsh/functions.zsh
-[[ -s ~/dotfiles/qfc/bin/qfc.sh ]] \
-  && source ~/dotfiles/qfc/bin/qfc.sh
 
 # added by travis gem
 [ -f /home/leat/.travis/travis.sh ] && source /home/leat/.travis/travis.sh
