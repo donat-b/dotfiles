@@ -80,6 +80,9 @@ abbreviations=(
   'Agu'  'sudo apt-get update'
   'Acp'  'apt-cache policy'
   'Acs'  'apt-cache search'
+
+  'rav' 'rsync -avP'
+  'rrv' 'rsync -avP --remove-source-files'
 )
 
 magic-abbrev-expand() {
