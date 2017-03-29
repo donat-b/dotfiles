@@ -1,11 +1,16 @@
-[[ -s ~/.Xresources ]] && xrdb -merge ~/.Xresources
-[[ -s /etc/profile ]] && source /etc/profile
-[[ -s ~/dotfiles/X/modmap ]] && which xmodmap && xmodmap ~/dotfiles/X/modmap
+# :vi set ft=shell :
+
+[[ -s ~/.Xresources ]] \
+  && xrdb -merge ~/.Xresources
+[[ -s /etc/profile ]] \
+  && source /etc/profile
+[[ -s ~/dotfiles/X/modmap ]] \
+  && which xmodmap && xmodmap ~/dotfiles/X/modmap
 
 ulimit -c unlimited
 
 function gnupg {
-    envfile = "$HOME/.gnupg/gpg-agent.env"
+    local envfile="$HOME/.gnupg/gpg-agent.env"
 
     if [ "$1" == "start" ]; then
         [[ -e "$envfile" ]] && kill -0 $(grep GPG_AGENT_INFO "$envfile" | cut -d: -f 2) 2>/dev/null
@@ -23,4 +28,4 @@ function gnupg {
 gnupg start
 
 xrandr --output HDMI1 --mode 1920x1080 --above LVDS1 --rotate normal --rate 60
-exec dbus-launch --sh-syntax --exit-with-session i3 #-V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
+exec dbus-launch --sh-syntax --exit-with-session i3 # -V -d all > ~/.i3/i3log-$(date +'%F-%k-%M-%S') 2>&1
